@@ -13,8 +13,8 @@ def evaluate(actions):
     if len(actions) != 3 or any(a not in (0, 1) for a in actions):
         raise ValueError("Expected three binary actions")
     if tuple(actions) == (1, 1, 0):
-        return (3, 2, 0), -5
-    return (0, 0, 0), 0
+        return (3, 2, 0), 8
+    return (0, 0, 0), 10
 
 
 def opportunities(members, strict=True):
