@@ -1,3 +1,5 @@
+**Note (2026-10-23): This is the original toy model, retained for history. The active experimental version replaces W=0/-5 with W=10/8 without altering member payoffs. See `toy-model-v1.md` and the updated enumerator.**
+
 # Baseline toy model v0 — three-agent expense approval
 
 **Status (2026-10-23): Selected as a deliberately artificial mathematical reference model, not an experimental finding or a proposed novel game.**
