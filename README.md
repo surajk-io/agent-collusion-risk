@@ -12,6 +12,7 @@ The originating intuition is that the **number, magnitude and distribution of pr
 - [Prior work and limits of the novelty check](research/prior-work.md)
 - [Adversarial criticisms and success/failure criteria](research/critical-review.md)
 - [Model-design worksheet (deliberately unfinished)](research/model-worksheet.md)
+- [Welfare-normalized toy game v1](research/toy-model-v1.md)
 
 **Next:** The researcher will independently construct a 3–4-agent toy organization with concrete roles, actions, payoffs, and jointly profitable harmful deviations. The resulting model should be scrutinized before writing LLM simulations.
 
