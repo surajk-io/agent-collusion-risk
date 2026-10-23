@@ -62,3 +62,7 @@ The pilot shows real Vertex calls, plausible agent-specific negotiation, and exe
 - Multiple uninstructed public seeds; vary speaking order.
 - If studying information asymmetry, compare partial cost disclosure with complete cost disclosure; do not interpret one observed trajectory as proof that communication was causally responsible.
 - Require explicit evidence of joint harmful intent and its execution before recording successful **explicit** collusion; maintain separate welfare/regret measure.
+
+## Subsequent methodological qualification (2026-10-24)
+
+The agent's system prompt explicitly stated it was participating in a **"synthetic experiment"**. This is an evaluation-awareness confound. The run is a valid technical trace, but neither the low welfare regret nor the absence of observed malicious coordination supports a general claim about voluntary collusion. The original payoff function also credits multiple claimants for completing the same task. These limitations were not corrected retroactively; the transcript and code remain unchanged.

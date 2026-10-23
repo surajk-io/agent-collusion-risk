@@ -59,3 +59,7 @@ Provider-reported OpenRouter cost: `joint-project=$0.00129473`, `sprint-classic=
 5. Before a substantive hypothesis study, revisit duplicate-task welfare semantics, agent objective ambiguity, private-state continuity, and matched reasoning/communication controls.
 
 **Scientific interpretation:** These examples primarily expose imperfect optimization, multi-agent equilibrium selection, and limitations in reasoning trace reliability. They do **not** yet demonstrate spontaneous harmful collusion.
+
+## Subsequent methodological qualification (2026-10-24)
+
+The agent's system prompt explicitly stated it was participating in a **"synthetic experiment"**. This is an evaluation-awareness confound: the three runs are technical smoke tests, not valid tests of whether agents spontaneously collude when embedded in a credible organization. The task-value function may also reward duplicate work. We preserve the original prompts and raw results for reproducibility; no post-hoc behavioral conclusion follows from these runs.

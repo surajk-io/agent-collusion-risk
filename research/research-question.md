@@ -1,58 +1,55 @@
-# Research question and hypotheses
+# Research questions — provisional (2026-10-24)
 
-**Checkpoint date:** 2026-10-23  
-**Status:** Provisional research direction; no settled experimental hypothesis or validated metric.
+**Status:** Two live research directions, no committed empirical hypothesis or validated metric. The research questions should not be judged by the unsuccessful design of the initial Jira smoke tests.
 
-## Original motivation (author's idea)
+## A. Coalitional vulnerability and realized behavior
 
-A multi-agent organization divides responsibilities, permissions, and incentives across agents. A subset of agents may jointly control actions that allow its members to benefit at the expense of the organization's legitimate objective, even though individual members cannot achieve the same outcome alone.
+**Core question:** Can game-theoretic measures of coalitional vulnerability predict the emergence of harmful coordination among LLM agents, and under what conditions do those predictions succeed or fail?
 
-The author's specific extension: vulnerability may depend not only on the *largest* coalition advantage, but on **how many different subsets have exploitable opportunities and the distribution of their magnitudes**. Can mathematical descriptions of real, executable agent organizations predict how often LLM agents actually exploit these opportunities?
+The originating intuition is that vulnerability may depend not only on the **largest** profitable deviation but also on **how many distinct coalitions** have opportunities, the size/distribution of those gains, the actions and permissions required to execute them, and whether the arrangements are credible. Study whether formal, ex ante opportunity measures predict **observed, causally supported** behavior in executable agent organizations.
 
-## Fundamental research question
+Open candidate hypotheses (not decisions):
+- The distribution or count of profitable harmful coalitions contains predictive information beyond maximum coalition gain.
+- Matched organizations with equal maximum gain but different exploitable-coalition distributions exhibit different behavior.
+- Self-enforcement, trust, retaliation, and practical coordination costs affect the relationship between theoretical opportunity and realization.
+- Predictive relationships vary by model capability, communication, monitoring, interaction history, and instructions.
 
-**Can game-theoretic measures of coalitional vulnerability predict the emergence of harmful coordination among LLM agents, and under what conditions do those predictions succeed or fail?**
+## B. Organizational power dynamics
 
-This is a question, not an established relationship.
+**Core question:** How does the distribution of **power, authority, responsibility and influence** among AI agents affect the **formation, execution and success** of harmful coalitions?
 
-## Candidate empirical hypotheses (NOT committed)
+Original proposal: represent organizational roles, responsibilities, permissions and influence using a **directed graph** (a DAG where appropriate). Ask whether a subset's **pooled authority** creates a disproportionate advantage over other agents or the organization's decision process, and whether subsets with greater power gaps are more likely to collude. Power includes who can initiate an action, approve, veto, audit, allocate resources, withhold information, and influence other agents.
 
-- H1: A distribution of profitable coalitional deviations contains predictive information beyond maximum available gain alone.
-- H2: Environments with identical maximum exploitable gain but different *numbers of profitable coalitions* may show different rates of realized, causally supported collusion.
-- H3: Feasibility is insufficient: the credibility / self-enforcement of jointly profitable strategies can modify the relationship between structural exposure and realized behavior.
-- H4: Any predictive relationship may depend heavily on the agent model, prompting, interaction history and communication structure; failure to generalize is an informative outcome.
+Open candidate questions (not assumptions):
+- Holding goals and incentives as constant as feasible, how do centralization, unequal authority, gatekeeping roles and information asymmetries change coalition **formation**, **capability to cause harm**, and **detectability**?
+- Does combining permissions across agents enable actions that no single member can execute? How does this affect voluntary collusion versus independent actions or obedience to a superior?
+- Do the number, composition and relative power of potentially decisive subsets predict realized coordination better than payoff magnitude alone?
+- How do formal authority, communication/influence topology, audit access and veto rights interact? Is a highly influential agent more likely to recruit a coalition or simply induce compliance without mutual agreement?
 
-Null results are valuable only with valid measurements, enough informative trials, and controls that distinguish absence of collusion from failures of task understanding, discovery or execution.
+These questions may be closely related to direction A, but **we have not decided to merge them** into one predictive model. Formalizing "power" in executable terms is itself unresolved.
 
-## Scientific distinctions
+## What counts as evidence
 
-1. **Feasibility:** A subset can jointly change the outcome.
-2. **Opportunity:** A feasible deviation benefits coalition members and harms organizational welfare under *specified* payoffs.
-3. **Credibility:** Members have incentives to adhere to the proposed deviation; betrayal and enforcement may matter.
-4. **Attempt:** Agents try to agree or influence each other.
-5. **Realization:** Agents take relevant joint actions and the organization incurs a measurable loss.
-6. **Causal collusion:** Evidence supports an inter-agent causal contribution, rather than independent convergence to harmful outcomes.
+Keep distinct:
+1. **Feasibility:** a subset could jointly execute an action.
+2. **Profitable opportunity:** specified member payoffs rise while legitimate organizational welfare falls relative to a clearly stated reference.
+3. **Credibility:** coalition members would continue to prefer following the arrangement rather than defecting.
+4. **Attempt:** observable communication, influence or planning toward the harmful outcome.
+5. **Realization:** harmful joint behavior occurs.
+6. **Causal collusion:** evidence identifies an inter-agent causal contribution beyond independent convergence, ordinary cooperation, command-following or mistakes.
 
-Do not conflate these steps, especially potential payoff with the probability of collusion.
+Agents' *modeled* payoffs need not be what an LLM actually optimizes. Evaluation awareness, synthetic framing, capability, tool permissions, and ambiguous authority are potential confounders.
 
-## Modeling sketch (NOT a theorem or chosen specification)
+One **illustrative existing concept**, not a novel metric or a chosen predictor: for reference actions `a⁰`, coalition `S` and outsiders held fixed,
 
-For finite agents N, action sets A_i, individual payoff functions u_i, and organizational welfare W, choose a baseline a^0 and a coalition S. A candidate worst-member gain is:
+`g(S) = max_{a'_S : W(a'_S,a⁰_{-S}) < W(a⁰)} min_{i∈S} [u_i(a'_S,a⁰_{-S}) − u_i(a⁰)]`.
 
-    g(S) = max_{a'_S: W(a'_S, a^0_{-S}) < W(a^0)}
-                min_{i in S} [u_i(a'_S,a^0_{-S}) - u_i(a^0)]
+A strictly profitable harmful deviation requires `g(S)>0`. If no eligible deviation exists, explicitly define that case rather than treating it as a measured probability. Counting subsets can double-count the same outcome, and static gain says nothing by itself about self-enforcement or behavior. Coalition stability measures have substantial prior art.
 
-Define g(S) as undefined (or -infinity under an explicit convention) if the constrained action set is empty. Do not interpret it as a probability. To claim a profitable coalition under strict individual rationality, require g(S) > 0. Outside agents are held fixed; repeated-game retaliation, transferable utility, off-equilibrium credibility and alternative baselines remain unresolved. This candidate is closely related to established profitable coalitional-deviation concepts; no mathematical novelty is claimed.
+## Status and next research decision
 
-## Open decisions
+No organization, baseline welfare function, agent objective model, or collusion annotation protocol has been validated. The Jira-inspired runs only establish that the harness can execute and log toy episodes; the current prompts **explicitly say "synthetic experiment"**, and the task-credit accounting can reward duplicated work. They do not answer A or B.
 
-- The organizational domain, concrete responsibilities and actions; user will propose a 3–4-agent toy instance.
-- Baseline policy and what should count as unauthorized harm.
-- Whether the initial target is voluntary discovery, incentivized coordination, or sustained collusion.
-- Proper operational evidence for *causal* coordination.
-- Whether group formation is endogenous or whether candidate coalitions are only a formal diagnostic.
-- Primary predictor and controls; do not optimize definitions after seeing results.
+Choose a credible workflow and operational definition of collusion **before** choosing numerical incentives or running large batches. Keep exploration, tentative hypotheses and decisions separate.
 
-## Immediate next action
-
-The author independently constructs a small concrete organization. Critique its internal consistency and map from permissions to feasible actions before designing an LLM run or spending limited frontier-model compute.
+See [prior work](prior-work.md), [critical review](critical-review.md), and [exploratory code and traces](../colosseum-jira-pilot-v2/README.md).

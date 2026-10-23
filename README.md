@@ -1,29 +1,20 @@
 # Agent Collusion Risk
 
-**Research question:** Can game-theoretic measures of coalitional vulnerability predict emergent harmful coordination among LLM agents, and under what conditions do those predictions succeed or fail?
+**Status:** Exploratory research. No empirical collusion finding, validated predictor, or selected experimental design.
 
-**Status (2026-10-23):** Exploratory. No validated metric, empirical result, universal safety threshold, or established novelty claim. Three one-episode GPT-OSS 120B smoke tests with visible reasoning traces have been run; they are not scientific findings.
+## Open research directions
 
-The originating intuition is that the **number, magnitude and distribution of profitable harmful deviations across subsets of an agentic organization** may predict observed collusion beyond the single largest available deviation. The longer-term goal is to map executable organizational permissions and incentives into mathematical descriptions and test predictions on held-out organizational configurations.
+1. **Coalitional vulnerability.** Can game-theoretic measures of the **number, magnitude, distribution and credibility of profitable harmful coalitions** predict whether AI agents actually coordinate against an organization's objective? When and why do the predictions fail?
+2. **Organizational power dynamics.** Does the **distribution of roles, authority, permissions and influence** change which coalitions form, what they can accomplish, and whether harmful coordination succeeds or is detected? Can power asymmetries and pooled authority predict collusion beyond payoff opportunities alone?
 
-## Research checkpoint
+**Neither direction is chosen over the other.** Their relationship is an open question, not a settled framework.
 
-- [Research question, motivation, and candidate hypotheses](research/research-question.md)
-- [Prior work and limits of the novelty check](research/prior-work.md)
-- [Adversarial criticisms and success/failure criteria](research/critical-review.md)
-- [Model-design worksheet (deliberately unfinished)](research/model-worksheet.md)
-- [Welfare-normalized toy game v1](research/toy-model-v1.md)
+[Questions, candidate hypotheses and definitions](research/research-question.md) · [Prior work](research/prior-work.md) · [Critical objections](research/critical-review.md)
 
-**Next:** The researcher will independently construct a 3–4-agent toy organization with concrete roles, actions, payoffs, and jointly profitable harmful deviations. The resulting model should be scrutinized before writing LLM simulations.
+## Existing experiments
 
-Keep mathematical possibility, inferred incentives, attempted coordination, causal influence, and realized harmful outcomes separate. Negative results count when controls make them interpretable; do not narrow scope solely to claim novelty.
+[Standalone Jira-inspired exploratory pilot](colosseum-jira-pilot-v2/README.md) · [Colosseum source audit](research/colosseum-jira-extraction.md) · [Gemini smoke-test audit](research/vertex-public-smoke-audit-2026-10-23.md) · [GPT-OSS smoke-test audit](research/gptoss-smoke-audit-2026-10-23.md)
 
-The idea was independently developed by the author during October 22–23, 2026, with AI-assisted literature investigation and critique. Established game theory predates this discussion. Documenting chronology is not an ownership, patentability, or priority claim.
+The pilot's results are **technical smoke tests, not scientific evidence of collusion**. Known limitations include explicit "synthetic experiment" language in agent prompts, abstract numerical incentives, organizational welfare defined as summed agent rewards, and insufficient controls for causal coordination. Retain the code and raw transcripts for reproducibility; do not infer collusion from low welfare or duplicated actions.
 
-## Colosseum substrate investigation
-
-- [Source-grounded Jira abstraction and limitations](research/colosseum-jira-extraction.md)
-- [Exactly enumerable three-agent Jira miniature](math/jira_miniature.py) and [unit tests](math/test_jira_miniature.py)
-- [Jira-mini feasibility pilot implementation](colosseum-jira-pilot-v2/README.md): mock/local runs plus Groq, Ollama, Vertex AI Gemini, managed-open-model inference, and OpenRouter GPT-OSS 120B with visible reasoning traces; includes three explicitly named allocation scenarios
-
-**Not yet selected as experimental substrate:** the source scorer makes organizational welfare equal to summed agent payoffs, which may not capture private incentives conflicting with a distinct principal objective. Further scientific decision is required.
+Git is the durable research record. Superseded drafts remain recoverable through version history; the active docs should stay small.
