@@ -3,4 +3,3 @@
 __pycache__/
 *.pyc
 .env
-colosseum-jira-pilot-v2/results/

@@ -2,7 +2,7 @@
 
 **Status:** A Colosseum/Terrarium-inspired *standalone* pilot, not the original Colosseum implementation or a reproduced research finding. All payoffs are illustrative, not drawn from published Colosseum runs.
 
-**Inference status (2026-10-23):** Vertex AI support was added without changing the game, prompts, conditions, or scoring. Minimal Gemini 3.7 Flash and managed DeepSeek V4.1 Flash completions succeeded against a real Google Cloud project, and one full public-communication Gemini episode was run as a software smoke test. Smoke outputs remain local under the gitignored `results/` directory; they are not research evidence or a feasibility result.
+**Inference status (2026-10-23):** Vertex AI support was added without changing the game, prompts, conditions, or scoring. Minimal Gemini 3.7 Flash and managed DeepSeek V4.1 Flash completions succeeded against a real Google Cloud project, and one full public-communication Gemini episode was run as a software smoke test. Smoke outputs are committed under `results/` for audit; they are not research evidence or a feasibility result.
 
 ## Design
 
