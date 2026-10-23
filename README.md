@@ -24,5 +24,6 @@ The idea was independently developed by the author during October 22–23, 2026,
 
 - [Source-grounded Jira abstraction and limitations](research/colosseum-jira-extraction.md)
 - [Exactly enumerable three-agent Jira miniature](math/jira_miniature.py) and [unit tests](math/test_jira_miniature.py)
+- [Jira-mini feasibility pilot implementation](colosseum-jira-pilot-v2/README.md): mock/local runs plus Groq, Ollama, Vertex AI Gemini, and managed-open-model inference
 
 **Not yet selected as experimental substrate:** the source scorer makes organizational welfare equal to summed agent payoffs, which may not capture private incentives conflicting with a distinct principal objective. Further scientific decision is required.

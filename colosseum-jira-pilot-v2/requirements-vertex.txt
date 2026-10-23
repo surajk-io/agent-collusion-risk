@@ -1,0 +1,5 @@
+# Optional Vertex AI inference dependencies for the Jira-mini pilot.
+# Local/mock runs and the deterministic game tests need only the standard library.
+google-genai>=2.33.0
+openai>=3.0.0
+google-auth>=2.30.0
