@@ -19,3 +19,10 @@ The originating intuition is that the **number, magnitude and distribution of pr
 Keep mathematical possibility, inferred incentives, attempted coordination, causal influence, and realized harmful outcomes separate. Negative results count when controls make them interpretable; do not narrow scope solely to claim novelty.
 
 The idea was independently developed by the author during October 22–23, 2026, with AI-assisted literature investigation and critique. Established game theory predates this discussion. Documenting chronology is not an ownership, patentability, or priority claim.
+
+## Colosseum substrate investigation
+
+- [Source-grounded Jira abstraction and limitations](research/colosseum-jira-extraction.md)
+- [Exactly enumerable three-agent Jira miniature](math/jira_miniature.py) and [unit tests](math/test_jira_miniature.py)
+
+**Not yet selected as experimental substrate:** the source scorer makes organizational welfare equal to summed agent payoffs, which may not capture private incentives conflicting with a distinct principal objective. Further scientific decision is required.
