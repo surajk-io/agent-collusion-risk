@@ -1,0 +1,97 @@
+{
+  "smoke_test": true,
+  "not_a_research_episode": true,
+  "provider": "AkashML",
+  "requested_model": "openai/gpt-oss-120b",
+  "served_model": "openai/gpt-oss-120b",
+  "reasoning_effort": "medium",
+  "max_tokens": 8192,
+  "system_prompt": "You are a smoke-test assistant. Think carefully before answering.",
+  "user_prompt": "Compute (17 * 23 - 19) / 4 step by step. Then return exactly one JSON object with no prose outside it: {\"answer\": <number>, \"status\": \"ok\"}.",
+  "final_content": "{\"answer\": 93, \"status\": \"ok\"}",
+  "extracted_answer": 93,
+  "extracted_status": "ok",
+  "extraction_error": null,
+  "reasoning_returned": true,
+  "reasoning_meaningful": true,
+  "reasoning_characters": 263,
+  "reasoning": "We need compute (17 * 23 - 19) / 4.\n\nFirst 17*23 = 391? Let's compute: 20*17=340, plus 3*17=51, total 391. Then 391 - 19 = 372. Then 372 / 4 = 93.\n\nThus answer 93. Return JSON exactly: {\"answer\": 93, \"status\": \"ok\"}.\n\nMake sure no extra whitespace? Probably fine.",
+  "reasoning_details": [
+    {
+      "type": "reasoning.text",
+      "text": "We need compute (17 * 23 - 19) / 4.\n\nFirst 17*23 = 391? Let's compute: 20*17=340, plus 3*17=51, total 391. Then 391 - 19 = 372. Then 372 / 4 = 93.\n\nThus answer 93. Return JSON exactly: {\"answer\": 93, \"status\": \"ok\"}.\n\nMake sure no extra whitespace? Probably fine.",
+      "format": "unknown",
+      "index": 0
+    }
+  ],
+  "finish_reason": "stop",
+  "usage": {
+    "input_tokens": 128,
+    "output_tokens": 120,
+    "total_tokens": 248,
+    "reasoning_tokens": 0,
+    "cached_tokens": 64,
+    "cost": 2.628e-05,
+    "cost_details": {
+      "upstream_inference_cost": 2.628e-05,
+      "upstream_inference_prompt_cost": 3.84e-06,
+      "upstream_inference_completions_cost": 2.244e-05
+    },
+    "raw": {
+      "prompt_tokens": 128,
+      "completion_tokens": 120,
+      "total_tokens": 248,
+      "cost": 2.628e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 64,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 2.628e-05,
+        "upstream_inference_prompt_cost": 3.84e-06,
+        "upstream_inference_completions_cost": 2.244e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "cost_usd": 2.628e-05,
+  "response_id": "gen-1792768969-hH1LAJWx01wGkilc1m0a",
+  "response_metadata": {
+    "id": "gen-1792768969-hH1LAJWx01wGkilc1m0a",
+    "object": "chat.completion",
+    "created": 1792768969,
+    "model": "openai/gpt-oss-120b",
+    "provider": "AkashML",
+    "system_fingerprint": null,
+    "choice_index": 0,
+    "finish_reason": "stop",
+    "native_finish_reason": "stop"
+  },
+  "api_settings": {
+    "provider": "OpenRouter",
+    "api": "chat.completions",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "requested_model": "openai/gpt-oss-120b",
+    "temperature": 0.2,
+    "max_tokens": 8192,
+    "max_tokens_parameter": "max_tokens",
+    "timeout_seconds": 120,
+    "auth": "OPENROUTER_API_KEY environment variable",
+    "reasoning": {
+      "effort": "medium",
+      "exclude": false
+    },
+    "reasoning_effort": "medium",
+    "reasoning_max_tokens": null,
+    "provider_routing": {
+      "require_parameters": true
+    }
+  }
+}

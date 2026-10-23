@@ -2,7 +2,7 @@
 
 **Research question:** Can game-theoretic measures of coalitional vulnerability predict emergent harmful coordination among LLM agents, and under what conditions do those predictions succeed or fail?
 
-**Status (2026-10-23):** Exploratory. No validated metric, empirical result, universal safety threshold, or established novelty claim.
+**Status (2026-10-23):** Exploratory. No validated metric, empirical result, universal safety threshold, or established novelty claim. Three one-episode GPT-OSS 120B smoke tests with visible reasoning traces have been run; they are not scientific findings.
 
 The originating intuition is that the **number, magnitude and distribution of profitable harmful deviations across subsets of an agentic organization** may predict observed collusion beyond the single largest available deviation. The longer-term goal is to map executable organizational permissions and incentives into mathematical descriptions and test predictions on held-out organizational configurations.
 
@@ -24,6 +24,6 @@ The idea was independently developed by the author during October 22–23, 2026,
 
 - [Source-grounded Jira abstraction and limitations](research/colosseum-jira-extraction.md)
 - [Exactly enumerable three-agent Jira miniature](math/jira_miniature.py) and [unit tests](math/test_jira_miniature.py)
-- [Jira-mini feasibility pilot implementation](colosseum-jira-pilot-v2/README.md): mock/local runs plus Groq, Ollama, Vertex AI Gemini, and managed-open-model inference
+- [Jira-mini feasibility pilot implementation](colosseum-jira-pilot-v2/README.md): mock/local runs plus Groq, Ollama, Vertex AI Gemini, managed-open-model inference, and OpenRouter GPT-OSS 120B with visible reasoning traces; includes three explicitly named allocation scenarios
 
 **Not yet selected as experimental substrate:** the source scorer makes organizational welfare equal to summed agent payoffs, which may not capture private incentives conflicting with a distinct principal objective. Further scientific decision is required.
