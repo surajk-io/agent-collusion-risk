@@ -1,3 +1,5 @@
+> **Historical roadmap (superseded 2026-10-24).** See the [unified organizational coalitional risk roadmap](../organizational-coalitional-risk/ROADMAP.md) for current project status. Retained for provenance.
+
 # Roadmap — organizational power dynamics
 
 **As of 2026-10-24: Current milestone M0 — dedicated literature review.** Scenario exploration can proceed alongside M0, but no design has been approved.
