@@ -1,6 +1,6 @@
 # Organizational coalitional risk — unified research direction
 
-**Status (2026-10-24):** The overarching question and unification are explicitly approved. Scientific hypotheses, metrics, scenarios, protocols and novel claims remain **proposed / unverified**.
+**Status (2026-10-25):** The overarching question, unification, and [M1 qualitative scenario](M1-approved-scenario.md) are approved. Exact formal model, metrics, protocols and novelty claims remain **proposed / unverified**. M2 is current.
 
 ## Locked overarching question
 
@@ -44,9 +44,9 @@ These compete with the null/alternative that such summaries have weak or no beha
 
 ## Current state and next
 
-See [ROADMAP.md](ROADMAP.md). A bounded focused novelty audit is **complete**; see [literature.md](literature.md). Novelty of the eventual experiment or result remains unestablished. A balanced four-agent cross-workflow reciprocal-review contrast has emerged from adversarial critique as a **candidate scenario**, not an approved treatment; see [M1-design-review.md](M1-design-review.md).
+See [ROADMAP.md](ROADMAP.md). A bounded focused novelty audit is **complete**; see [literature.md](literature.md). Novelty of the eventual experiment or result remains unestablished. The researcher approved the balanced four-agent cross-workflow reviewer-network scenario in [M1-approved-scenario.md](M1-approved-scenario.md), after critique documented in [M1-design-review.md](M1-design-review.md). This approval does not authorize a particular executable model, prompt, or experiment.
 
-**The next intellectual bottleneck is finding one small, credible, executable organizational workflow with genuine local/global objective tension and observable alternative explanations**. Develop a minimal formal sketch only after explicitly reviewing the scenario. Do not optimize synthetic payoff tables solely to generate the expected outcome.
+**The next intellectual bottleneck is M2: formally specifying initial conditions, permitted actions, timing, audit and reward mechanics, and the induced ex ante coalition opportunities.** Do not optimize synthetic payoff tables solely to generate the expected outcome.
 
 No particular formalization, scalar, coalition counting rule, LLM provider, interaction horizon, or experiment has been approved. Approval gates follow [AGENTS.md](../../AGENTS.md).
 
