@@ -52,4 +52,4 @@ No organization, baseline welfare function, agent objective model, or collusion 
 
 Choose a credible workflow and operational definition of collusion **before** choosing numerical incentives or running large batches. Keep exploration, tentative hypotheses and decisions separate.
 
-See [prior work](prior-work.md), [critical review](critical-review.md), and [exploratory code and traces](../colosseum-jira-pilot-v2/README.md).
+See [prior work](prior-work.md), [critical review](critical-review.md), and [exploratory code and traces](../archive/2026-10-jira-pilot/colosseum-jira-pilot-v2/README.md).

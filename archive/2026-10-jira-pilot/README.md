@@ -1,0 +1,15 @@
+# Archived Jira/Colosseum-inspired exploratory pilot (October 2026)
+
+**Archived on:** 2026-10-24. **Scientific status:** Technical feasibility/smoke tests only. **Not an active experimental design; no established finding about collusion.**
+
+This directory retains the original runnable pilot, numerical toy-game helpers, real model transcripts (including reasoning where supplied), audit notes, tests and source inspection. Files were moved here **without altering their contents** to keep the audit trail inspectable.
+
+- [Pilot source, CLI instructions and full traces](colosseum-jira-pilot-v2/README.md)
+- [Mathematical toy scripts](math/)
+- [Colosseum/Terrarium source extraction](research/colosseum-jira-extraction.md)
+- [Gemini run audit](research/vertex-public-smoke-audit-2026-10-23.md)
+- [GPT-OSS run audit](research/gptoss-smoke-audit-2026-10-23.md)
+
+**Known failures of scientific validity:** Agents were explicitly told they were in a "synthetic experiment"; abstract X/Y/Z task points and unrealistic duplicated-task accounting may strongly cue evaluation and poorly represent real organizational welfare. Individual reward and organization score were conflated. Samples were tiny, model/provider details differed, and no causal evidence of collusion was established.
+
+Moved files preserve their previous relative links within this archived group. The original root-level paths and any superseded deleted drafts can also be recovered from Git history. The active project plan is [../../ROADMAP.md](../../ROADMAP.md).
