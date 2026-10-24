@@ -11,20 +11,18 @@ These instructions apply to literature investigation, conceptual work, mathemati
 
 ## Mandatory context recovery at every chat or milestone start
 
-Before proposing research changes in a new chat, after a handoff, or when switching milestones, **read the current GitHub repository state** rather than reconstructing the project from memory or the conversation. For the active organizational-coalitional-risk direction, the baseline reading set is:
+Before proposing research changes in a new chat, after a handoff, or when switching milestones, **recover the current research state from GitHub** rather than reconstructing it from memory or reinventing established work.
 
-1. `README.md` — canonical project question, definitions, and status.
-2. `AGENTS.md` — collaboration and approval rules.
-3. `research/organizational-coalitional-risk/README.md` — locked question, conceptual framework, and direction status.
-4. `research/organizational-coalitional-risk/ROADMAP.md` — completed/current milestones, approved versus open decisions, and next gate.
-5. `research/organizational-coalitional-risk/M1-design-review.md` — the existing narrow experimental sub-question, candidate design, critiques, and gate requirements (also read at later milestones if the design depends on it).
-6. `research/organizational-coalitional-risk/literature.md` — relevant prior-art findings, novelty limits, and closest competing methods.
+**Required reading procedure for any research direction and any milestone:**
 
-**This is a minimum, not an exhaustive fixed manifest.** Follow the roadmap and milestone document links to relevant prior decision records, critiques, approved specifications, experiment records, and archived predecessors when they materially bear on the current task. When entering a later milestone, its handoff/roadmap must identify the additional milestone-specific files required to resume it; update those pointers when authorized. If an essential record is missing or inaccessible, state the gap instead of assuming its contents.
+1. Read root `README.md` and `AGENTS.md`, then the **active direction's** `README.md` and `ROADMAP.md`. Use the roadmap to identify the active milestone/gate and all completed, skipped, or superseded milestones.
+2. Trace the milestone history **from the beginning through the current milestone**. For every preceding milestone, read its outcome/handoff, approved decisions, unresolved issues, and references needed to understand how the current state was reached. Read the current milestone's design/review/decision documents in full as relevant to the task.
+3. Follow the roadmap/handoff references to applicable literature, critiques, formal specifications, approved protocols, experiment summaries, and important negative results. Do not limit reading to a hardcoded M1 document or stop at a milestone simply because an older starter prompt names it. Read detailed past artifacts when their substance affects the present question; raw logs and unrelated archives need not all be re-read.
+4. If a milestone lacks an adequate handoff or file index, locate its relevant records and flag the documentation gap. Each milestone checkpoint should identify its status, approved/open decisions, findings, and the **files needed to resume the next milestone**; update those pointers when authorized. Never invent the contents of missing/inaccessible records.
 
-Before introducing a question, scenario, hypothesis, formalism, or plan, verify and reuse: **(a)** the existing overarching and narrow research questions *verbatim* and their approval statuses; **(b)** what was completed and why; **(c)** which decisions are approved, proposed, or still open; **(d)** the active milestone/gate and its next unresolved decision; and **(e)** prior objections and discarded alternatives that would otherwise be rediscovered. Do not silently rename or reformulate established questions, repeat completed work, or reopen approved choices. Propose a change only when there is a specific reason, explicitly labeling it as a change for researcher approval.
+**Before making a proposal**, recover and preserve: **(a)** the existing overarching and milestone-specific research questions *verbatim*, with approval status; **(b)** what has already been attempted, completed, rejected, or superseded, and why; **(c)** which scientific decisions are approved versus proposed/open; **(d)** the current gate's exact next unresolved issue; and **(e)** relevant competing explanations and earlier objections. Do not silently rename questions, redo completed work, or reopen approved choices. Any proposed change to an established decision must be labeled, justified, and submitted for researcher approval.
 
-Git is canonical durable state, but conversations can contain newer *uncheckpointed* approvals or proposals. Surface any discrepancy instead of silently treating old repository text as current or a conversational proposal as already approved. Keep startup orientation brief and spend the discussion on the actual unresolved issue.
+Git is the canonical durable state, but conversation may contain newer *uncheckpointed* approvals or proposals. Flag discrepancies and the need for a future checkpoint rather than treating stale Git text as current or unapproved discussion as settled. Keep user-facing orientation brief; the recovery process should not become a lengthy recap.
 
 ## Interaction cadence
 
