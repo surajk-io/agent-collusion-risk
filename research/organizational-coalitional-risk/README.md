@@ -44,7 +44,7 @@ These compete with the null/alternative that such summaries have weak or no beha
 
 ## Current state and next
 
-See [ROADMAP.md](ROADMAP.md). The focused literature audit is incomplete; see [literature.md](literature.md).
+See [ROADMAP.md](ROADMAP.md). A focused method-level novelty audit is provisionally complete; see [literature.md](literature.md). The exact novelty claim remains provisional pending a concrete organizational scenario and subsequent targeted comparison.
 
 **The next intellectual bottleneck is finding one small, credible, executable organizational workflow with genuine local/global objective tension and observable alternative explanations**. Develop a minimal formal sketch only after explicitly reviewing the scenario. Do not optimize synthetic payoff tables solely to generate the expected outcome.
 
@@ -52,6 +52,6 @@ No particular formalization, scalar, coalition counting rule, LLM provider, inte
 
 ### Predecessor materials retained
 
-- [Coalitional vulnerability framing](../coalitional-vulnerability/README.md) and [critical review](../coalitional-vulnerability/critical-review.md)
-- [Organizational power framing](../organizational-power-dynamics/README.md)
-- [Jira pilot archive](../coalitional-vulnerability/archive/2026-10-jira-pilot/README.md)
+- [Coalitional vulnerability framing](../archive/coalitional-vulnerability/README.md) and [critical review](../archive/coalitional-vulnerability/critical-review.md)
+- [Organizational power framing](../archive/organizational-power-dynamics/README.md)
+- [Jira pilot archive](../archive/coalitional-vulnerability/archive/2026-10-jira-pilot/README.md)

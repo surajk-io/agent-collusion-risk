@@ -1,4 +1,4 @@
-> **Historical roadmap (superseded 2026-10-24).** See the [unified organizational coalitional risk roadmap](../organizational-coalitional-risk/ROADMAP.md) for current project status. Retained for provenance.
+> **Historical roadmap (superseded 2026-10-24).** See the [unified organizational coalitional risk roadmap](../../organizational-coalitional-risk/ROADMAP.md) for current project status. Retained for provenance.
 
 # Roadmap — organizational power dynamics
 
@@ -16,4 +16,4 @@
 
 **Next deliverable:** A source-grounded critical literature review, recording evidence, gaps and key objections in [literature.md](literature.md). This is not yet a completed stage.
 
-Approved: parallel pursuit of this direction. Not approved: a formal power measure, particular graph, scenario, prompt or experiment. Follow [AGENTS.md](../../AGENTS.md).
+Approved: parallel pursuit of this direction. Not approved: a formal power measure, particular graph, scenario, prompt or experiment. Follow [AGENTS.md](../../../AGENTS.md).

@@ -38,8 +38,8 @@ These are provisional conceptual definitions, not experimentally validated label
 ## Prior directions and provenance
 
 The previously separate directions are consolidated as complementary research components, **not deleted**:
-- [Coalitional vulnerability](research/coalitional-vulnerability/README.md): prior game-theoretic predictor framing, [literature](research/coalitional-vulnerability/literature.md), [adversarial review](research/coalitional-vulnerability/critical-review.md), and [October 2026 Jira pilot](research/coalitional-vulnerability/archive/2026-10-jira-pilot/README.md).
-- [Organizational power dynamics](research/organizational-power-dynamics/README.md): prior authority/permissions framing and [literature leads](research/organizational-power-dynamics/literature.md).
+- [Coalitional vulnerability](research/archive/coalitional-vulnerability/README.md): prior game-theoretic predictor framing, [literature](research/archive/coalitional-vulnerability/literature.md), [adversarial review](research/archive/coalitional-vulnerability/critical-review.md), and [October 2026 Jira pilot](research/archive/coalitional-vulnerability/archive/2026-10-jira-pilot/README.md).
+- [Organizational power dynamics](research/archive/organizational-power-dynamics/README.md): prior authority/permissions framing and [literature leads](research/archive/organizational-power-dynamics/literature.md).
 
 The pilot is a technical smoke test, **not evidence of spontaneous collusion**. Legacy roadmaps document the earlier state; the unified roadmap is canonical. Git history is retained.
 

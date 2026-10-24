@@ -1,4 +1,4 @@
-> **Historical predecessor framing (2026-10-24).** This direction is now one component of the approved unified [organizational coalitional risk](../organizational-coalitional-risk/README.md) project. The analysis below is preserved for provenance; the [unified roadmap](../organizational-coalitional-risk/ROADMAP.md) supersedes its next-step/status claims.
+> **Historical predecessor framing (2026-10-24).** This direction is now one component of the approved unified [organizational coalitional risk](../../organizational-coalitional-risk/README.md) project. The analysis below is preserved for provenance; the [unified roadmap](../../organizational-coalitional-risk/ROADMAP.md) supersedes its next-step/status claims.
 
 # Organizational power dynamics
 
