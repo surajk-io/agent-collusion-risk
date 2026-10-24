@@ -1,6 +1,6 @@
 # Focused novelty audit — organizational coalitional risk
 
-**Checkpoint: 2026-10-24. Status: M0 provisionally complete (bounded method-level audit).** Not a proof of novelty. This audit searched the existing Undermind workspace (including a previously completed 95-paper relevance search), used two new targeted semantic searches, read the methods and supplementary/appendix material of eight high-priority full-text papers with Undermind, and cross-checked public primary arXiv records. Consensus was requested but **unavailable**: monthly 30-search allowance exhausted; resets 2026-11-01. **No Consensus synthesis was completed.**
+**Checkpoint: 2026-10-24. Status: M0 COMPLETE (bounded method-level audit).** This is completion of the agreed literature-check milestone, **not** a proof of novelty or of the future experiment. This audit searched the existing Undermind workspace (including a previously completed 95-paper relevance search), used two new targeted semantic searches, read the methods and supplementary/appendix material of eight high-priority full-text papers with Undermind, and cross-checked public primary arXiv records. Consensus was requested but **unavailable**: monthly 30-search allowance exhausted; resets 2026-11-01. **No Consensus synthesis was completed.**
 
 ## Locked question, not a proved hypothesis
 
@@ -48,7 +48,7 @@ This is NOT a novelty proof. A new experiment about 'power affects collusion,' c
 
 ## Audit outcome and next decision
 
-**M0 provisionally passes as a differentiated candidate, not an established novel result.** Avoid another undirected survey. **M1 is now the binding risk:** identify a believable workflow and ensure the induced opportunity landscape is independently computable and can be manipulated without prescripting collusion. Recheck the closest three methods **specifically for that workflow** before formalizing or scaling. Approval required for any workflow, metric, formal model or experiment.
+**M0 completed as a bounded literature investigation, not an established novel result.** Avoid another undirected survey. **M1 is now the binding risk:** identify a believable workflow and ensure the induced opportunity landscape is independently computable and can be manipulated without prescripting collusion. Recheck the closest three methods **specifically for that workflow** before formalizing or scaling. Approval required for any workflow, metric, formal model or experiment.
 
 ### Provenance
 
@@ -57,3 +57,12 @@ This is NOT a novelty proof. A new experiment about 'power affects collusion,' c
 - [Original organizational power literature leads](../archive/organizational-power-dynamics/literature.md)
 
 No unified empirical study has been run. The archived Jira pilot is exploratory smoke-test work only.
+
+## Additional near-neighbor checks following adversarial review (2026-10-24)
+
+- **Za, Panos, Dearnaley & Albanie, *Studying Coordination and Collusion in Multi-Agent LLM Code Reviews* (NeurIPS 2025 workshop):** https://openreview.net/forum?id=CdZaamCf5Y . Authors/abstract verified; finds backdoor-incentive exploitation and preferential choice of potentially collusive code reviewers among several model families. **Do not claim** discovering illicit reviewer selection or that generic LLM code review is novel. The proposed review-network-rewiring intervention is a narrower, still-unverified delta.
+- **Kumar, Abebe, Bagdasarian & Abdelnabi, *SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems* (2026):** https://arxiv.org/abs/2610.21029 . Agents under coding deadlines negotiate shared compute; reports spontaneous rules, reciprocity, exclusionary coalition behavior. **Do not claim** that emergent reciprocal institutions in task-specialized coding agents have not been studied.
+- **Zanolini, *Correlated Failures of AI Approval Monitors* (2026):** https://arxiv.org/abs/2610.29178 . Relevant to dependencies in approval/monitor arrangements and shared-input correlated failure; this is not direct evidence of strategic negotiated collusion.
+- Independent Gemini Argon adversarial exchange challenged landscape validity, behavioral identification and confounding, and subsequently favored a narrow **four-agent paired-reciprocity vs four-agent cycle** proposal with equal proposer/reviewer workload and two-signature rules. This is an **independent critique/proposal, not an empirical result**. See [M1-design-review.md](M1-design-review.md) for reservations and human approval gates.
+
+**Updated exact candidate contribution (subject to further scenario-specific scrutiny):** A controlled test of whether the *cross-task reviewer-dependency graph* affects unsolicited, potentially reciprocal harmful coordination **while keeping each agent's proposer/reviewer workload and per-release mechanical sign-off requirement matched**, measuring unauthorized joint approvals separately from causal evidence of harmful coordination and benign productivity. Not a proof that minimal reciprocal cycle length alone causes any effect, or that broad ex ante landscape metrics generalize.
