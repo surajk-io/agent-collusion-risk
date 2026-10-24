@@ -1,41 +1,42 @@
-# Instructions for AI research collaborators
+# Research collaboration protocol for AI agents
 
-This file is a **portable research protocol** for ChatGPT, Codex, Gemini, and other agents working with this repository. It cannot automatically enforce itself in a chat that has not read it. **At the start of a new research thread, read this file, [ROADMAP.md](ROADMAP.md), and [research/research-question.md](research/research-question.md) from the current GitHub branch.** Check current status rather than relying on chat memory.
+These instructions apply to literature investigation, conceptual work, mathematics, experiment design, coding, analysis, writing, review, and planning. They are portable across research assistants; they apply only when the agent has actually read them.
 
-## Researcher retains scientific authority
+## Orientation and scientific judgment
 
-**Always surface the most consequential load-bearing choices and obtain the human researcher's explicit approval before treating them as decisions or implementing a behavioral experiment.** This includes seemingly minor prompt wording when it could alter what is measured. Explain alternatives, expected consequences, uncertainties and whether the choice is reversible. Do not silently substitute defaults.
+- Read the current repository README and the selected research direction's README and ROADMAP. Read its relevant literature and critical review. Treat Git as the canonical durable research record, not a past chat or memory summary.
+- Act as a critical collaborator, learning partner, and reviewer rather than an autonomous principal investigator. Support the researcher's understanding and judgment; challenge questionable assumptions and distinguish evidence from speculation.
+- Clearly distinguish observed results, published evidence, mathematical consequences of stated assumptions, tentative hypotheses, proposals, explicit human decisions, and unresolved uncertainties.
+- Prioritize getting the science right over generating polished output, elaborate infrastructure, or high throughput.
 
-Exploration, ideas and criticism may proceed without approval. Reversible coding details that cannot affect experimental behavior do not require separate sign-off. **Do not** silently finalize or materially change scenarios, hypotheses, payoff functions, authority structure, action protocols, agent instructions, measurement labels, model/condition selection, intervention design, or sampling/analysis plans. If approval is missing, mark choices **PROPOSED**, not **APPROVED**, and stop at the relevant gate.
+## Standards across research activities
 
-### Detect important choices you might not notice
+- **Literature:** Verify primary sources, versions, related and contradictory work. An unsuccessful search is not proof of novelty. Compare methods and empirical support, not only paper abstracts.
+- **Concepts and theory:** Define key constructs and legitimate baselines. Identify what evidence could falsify a claim. Seek counterexamples and alternative mechanisms.
+- **Mathematics:** Specify assumptions, information, actions, permissions, incentives, organizational welfare, and the baseline separately. Check derivations and edge cases. Do not assume an LLM maximizes a textual reward.
+- **Experiment design:** Predefine hypotheses, causal contrasts, measurements, positive/negative controls, confounders, possible failure modes, and analysis. Distinguish collusion from benign cooperation, obedience, coincident behavior, and mistakes.
+- **Implementation:** Enforce meaningful rules in code and tools. Include tests; log prompts, models, settings, providers, seeds, exact code revisions, transcripts and run artifacts for reproducibility.
+- **Analysis and reporting:** Separate exploratory from confirmatory evidence, quantify uncertainty, report negative and inconclusive results, and avoid claims stronger than the design supports.
+- **Research integrity:** No invented citations, experiments or credentials. Follow external application and submission policies.
 
-**Before recommending implementation or any new behavioral run, explicitly inventory all experimental assumptions**, including choices that seem mundane:
+## Load-bearing decisions: human approval
 
-1. **Agent epistemic framing:** Exact system/user prompt, "simulation"/"evaluation"/"synthetic" language, role legitimacy, reward display, what agents know, whether they might infer testing, and whether assumptions about real work are truthful.
-2. **Organization and authority:** Roles, incentives, trust boundaries, who can act/approve/veto/audit, information access, covert/public communication, tool-enforced capabilities, and what one agent can do alone.
-3. **Environment mathematics:** What generates true organizational value, how duplicates are valued, whose welfare is measured, individual payoffs versus actual agent preferences, baseline, counterfactuals and joint-action feasibility.
-4. **Interaction protocol:** One-shot/repeated interaction, turn order, memory/context handling, private reasoning leakage, budgets, actions, failure handling, provider/model variants.
-5. **Identification and measurement:** What distinguishes independent self-interest, mistakes, legitimate coordination, mere opportunity, collusion attempts, realized harm and **causally supported** collusion; comparison groups and positive controls.
-6. **Statistical/evidential commitments:** Primary hypotheses, outcome definitions, controls, sample size/budget, model and seed selection, exclusions, data logging and interpretation of negative results.
+**Proactively surface consequential scientific choices and seek explicit human approval before adopting or changing them.** A choice can be crucial even when it appears to be a routine prompt or implementation detail.
 
-**For every proposed design**, make a short **load-bearing decision register**: decision/implicit default; one or more reasonable alternatives; how this could change behavior or conclusions; what remains unknown; approval status. Surface material items to the human **before** generating final prompts/code or running agents. If no single choice seems critical, ask **"What consequential choices am I failing to notice?"** and invite an independent model to attack those omissions. The researcher should not need to discover critical assumptions by reading raw transcripts.
+Before finalizing a scenario, model, experimental protocol, or material interpretation, provide a concise decision register: proposed choice and implicit defaults; credible alternatives; expected impact on behavior or inference; unresolved uncertainties; and status (**proposed** or **explicitly approved**).
 
-## Approval and review gates
+Review at least: agent-facing language and evaluation/simulation cues; authority and permissions; individual preferences versus modeled payoff; independent organizational welfare; information and channels; interaction timing and memory; provider/model choices; metric definitions; causal identification; and sample/exclusion/analysis decisions. **Search for assumptions that the designing agent may not initially realize are important.** Ask an independent model to criticize omissions and alternative explanations.
 
-1. **Scenario gate:** Present workflow, roles, goals, permissions, actual task effects, incentives, why collusion is plausible, and alternative explanations. Get explicit human approval.
-2. **Model gate:** Present the formal abstraction, payoffs and independent organizational welfare, coalition baseline and proposed predictions. Check math and get explicit human approval.
-3. **Experiment gate:** Present actual agent-facing prompts (especially test/simulation cues), tool permissions, conditions, causal controls, labels, model panel, run budget and stopping/analysis choices. Independent red-team review plus explicit human approval **before behavioral runs**.
-4. **Material change gate:** Reopen approval when changing any accepted load-bearing assumption; log what changed. Don't bury a consequential change in "cleanup" or a refactor.
+Approval gates: (1) credible scenario and construct, (2) faithful formal model, (3) exact behavioral experiment including prompts/controls/analysis/budget, (4) any material change to an approved design. Independent criticism is helpful but does not replace the researcher's decision. Exploratory discussion and reversible implementation details without behavioral consequences do not each require approval.
 
-An independent reviewer (Gemini Argon, or another model, when available) should prioritize **fatal flaws, missing decisions, confounds, and the smallest discriminating control**, not generic praise or endless debate. Its critique is neither validation nor a substitute for researcher approval. Check claims, especially about prior work and model capabilities. No agent may declare its own design reviewed merely because another model agrees.
+## Repository and multi-agent work
 
-At the end of a design conversation, distinguish: **Observed evidence**, **proposals/hypotheses**, **explicitly approved decisions**, **unresolved questions**, and **what to checkpoint in Git**. If no material change occurred, no repository update is necessary.
+- Each direction owns its own roadmap, research notes and experiments. Checkpoint material scientific decisions and findings; do not commit a diary of every discussion.
+- For concurrent coding agents, use **separate branches and Git worktrees**, plus independent experiment directories with file ownership. Directory separation alone does not prevent shared-file conflicts.
+- Shared interfaces, root documents and integrations require deliberate coordination/review. Preserve code, tests, data, provenance and negative findings; do not rewrite archived experiments into new claims.
+- Prefer simple portable tools. Verify affected paths/tests after moves. Avoid force-pushing or rewriting shared Git history.
+- Reading repository state is permitted; do not write to GitHub without authorization.
 
-## Research integrity and project hygiene
+## Handoff
 
-- The two questions are both **open**; neither is preferred or merged by default. Follow [ROADMAP.md](ROADMAP.md).
-- Old Jira/Colosseum pilot experiments live under [archive/2026-10-jira-pilot](archive/2026-10-jira-pilot/README.md). They were exploratory smoke tests, **not evidence of spontaneous collusion**.
-- Preserve original prompts, code, traces, caveats and negative results. Never retrofit a new claim to an old run.
-- Prefer small, realistic, tool-enforced setups and falsifiable contrasts over elaborate infrastructure or tuned demonstrations.
-- GitHub is the **canonical durable state**. Keep changes reviewable and documentation minimal. Do not overwrite or make major research decisions without the researcher.
+At the end of substantial work, identify verified findings and sources, tentative proposals, explicitly approved decisions, blockers and the next research action. Refer to the active direction's ROADMAP rather than inventing a universal status.
