@@ -1,6 +1,6 @@
 # Agent Collusion Risk
 
-**Status (2026-10-24): One unified exploratory research direction.** The overarching research question and conceptual unification are approved; no scenario, metric, formal model, experiment, behavioral result, or novelty claim is approved.
+**Status (2026-10-25): M1 qualitative organizational scenario approved; M2 formal bridge current.** The overarching research question and conceptual unification are approved; no exact formal model, behavioral protocol, experiment, result or novelty claim is approved.
 
 ## Active research direction
 
@@ -18,7 +18,7 @@ The research connects:
 
 The middle layer is a **candidate explanatory abstraction**, not an assumed sufficient statistic or validated predictor. Structure may also affect behavior directly.
 
-**Current priority:** [M1 candidate scenario and rigorous review checklist](research/organizational-coalitional-risk/M1-design-review.md); see [Roadmap](research/organizational-coalitional-risk/ROADMAP.md) and [completed bounded novelty audit](research/organizational-coalitional-risk/literature.md). No behavioral experiment is yet approved.
+**Current priority:** [M1 approved scenario and M2 handoff](research/organizational-coalitional-risk/M1-approved-scenario.md); see [Roadmap](research/organizational-coalitional-risk/ROADMAP.md) and [completed bounded novelty audit](research/organizational-coalitional-risk/literature.md). No behavioral experiment is yet approved.
 
 ## Working definitions
 
@@ -50,7 +50,7 @@ Follow [AGENTS.md](AGENTS.md). Git is canonical durable state; chats are working
 ```text
 Use the GitHub repository surajk-io/agent-collusion-risk as canonical state.
 Read main-branch README.md, AGENTS.md, and
-research/organizational-coalitional-risk/{README.md,ROADMAP.md,literature.md,M1-design-review.md}.
+research/organizational-coalitional-risk/{README.md,ROADMAP.md,literature.md,M1-design-review.md,M1-approved-scenario.md}.
 Use predecessor notes where relevant.
 
 Today's objective: <SPECIFY GOAL>
