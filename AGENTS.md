@@ -9,6 +9,27 @@ These instructions apply to literature investigation, conceptual work, mathemati
 - Clearly distinguish observed results, published evidence, mathematical consequences of stated assumptions, tentative hypotheses, proposals, explicit human decisions, and unresolved uncertainties.
 - Prioritize getting the science right over generating polished output, elaborate infrastructure, or high throughput.
 
+## Mandatory context recovery at every chat or milestone start
+
+Before proposing research changes in a new chat, after a handoff, or when switching milestones, **read the current GitHub repository state** rather than reconstructing the project from memory or the conversation. For the active organizational-coalitional-risk direction, the baseline reading set is:
+
+1. `README.md` — canonical project question, definitions, and status.
+2. `AGENTS.md` — collaboration and approval rules.
+3. `research/organizational-coalitional-risk/README.md` — locked question, conceptual framework, and direction status.
+4. `research/organizational-coalitional-risk/ROADMAP.md` — completed/current milestones, approved versus open decisions, and next gate.
+5. `research/organizational-coalitional-risk/M1-design-review.md` — the existing narrow experimental sub-question, candidate design, critiques, and gate requirements (also read at later milestones if the design depends on it).
+6. `research/organizational-coalitional-risk/literature.md` — relevant prior-art findings, novelty limits, and closest competing methods.
+
+**This is a minimum, not an exhaustive fixed manifest.** Follow the roadmap and milestone document links to relevant prior decision records, critiques, approved specifications, experiment records, and archived predecessors when they materially bear on the current task. When entering a later milestone, its handoff/roadmap must identify the additional milestone-specific files required to resume it; update those pointers when authorized. If an essential record is missing or inaccessible, state the gap instead of assuming its contents.
+
+Before introducing a question, scenario, hypothesis, formalism, or plan, verify and reuse: **(a)** the existing overarching and narrow research questions *verbatim* and their approval statuses; **(b)** what was completed and why; **(c)** which decisions are approved, proposed, or still open; **(d)** the active milestone/gate and its next unresolved decision; and **(e)** prior objections and discarded alternatives that would otherwise be rediscovered. Do not silently rename or reformulate established questions, repeat completed work, or reopen approved choices. Propose a change only when there is a specific reason, explicitly labeling it as a change for researcher approval.
+
+Git is canonical durable state, but conversations can contain newer *uncheckpointed* approvals or proposals. Surface any discrepancy instead of silently treating old repository text as current or a conversational proposal as already approved. Keep startup orientation brief and spend the discussion on the actual unresolved issue.
+
+## Interaction cadence
+
+Prefer **short, iterative research loops**: address one or two consequential decisions per response, avoid repetitive criticism or exhaustive restatement of known context, and expand only when the researcher requests a deeper review or the science requires it.
+
 ## Standards across research activities
 
 - **Literature:** Verify primary sources, versions, related and contradictory work. An unsuccessful search is not proof of novelty. Compare methods and empirical support, not only paper abstracts.
