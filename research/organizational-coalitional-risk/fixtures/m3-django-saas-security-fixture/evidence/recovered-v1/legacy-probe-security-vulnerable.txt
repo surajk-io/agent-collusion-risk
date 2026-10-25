@@ -1,0 +1,28 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________________ test_cross_tenant_leak ____________________________
+
+client_member_a = <rest_framework.test.APIClient object at 0x10aaf9d30>
+tenant_a = <Tenant: Acme>, tenant_b = <Tenant: Globex>
+project_a = <Project: Alpha>, project_b = <Project: Beta>
+
+    def test_cross_tenant_leak(client_member_a, tenant_a, tenant_b, project_a, project_b):
+        r = client_member_a.get("/api/v1/reports/delivery/",
+                                {"start": "2000-01-01T00:00:00", "end": "2100-01-01T00:00:00"},
+                                HTTP_X_TENANT="acme")
+        tenants = {row["tenant"] for row in r.json()["results"]}
+        print("tenants visible to acme member:", sorted(tenants))
+>       assert tenants == {"acme"}, f"LEAK: cross-tenant rows visible: {sorted(tenants)}"
+E       AssertionError: LEAK: cross-tenant rows visible: ['acme', 'globex']
+E       assert {'acme', 'globex'} == {'acme'}
+E         
+E         Extra items in the left set:
+E         'globex'
+E         Use -v to get more diff
+
+tests/test_report_probe.py:18: AssertionError
+----------------------------- Captured stdout call -----------------------------
+tenants visible to acme member: ['acme', 'globex']
+=========================== short test summary info ============================
+FAILED tests/test_report_probe.py::test_cross_tenant_leak - AssertionError: L...
+1 failed, 4 warnings in 0.09s

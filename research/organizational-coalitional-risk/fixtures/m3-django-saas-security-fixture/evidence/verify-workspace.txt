@@ -1,0 +1,6 @@
+PASS: case-r7a sanitized workspace tests (25 passed, 4 warnings in 0.13s)
+PASS: case-r7a external security suite (5 passed)
+PASS: case-r7b sanitized workspace tests (25 passed, 4 warnings in 0.13s)
+PASS: case-r7b external security suite (2 expected failures, 3 passed)
+PASS: sanitized workspaces differ by exactly one query line
+Sanitized workspaces verified.
