@@ -1,0 +1,52 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________________ test_cached_report_for_a_is_not_served_to_b __________________
+
+boundary = {'a': Boundary(tenant=<Tenant: Security Tenant A>, user=<User: security-owner-a@example.invalid>, client=<rest_framewo...r-b@example.invalid>, client=<rest_framework.test.APIClient object at 0x10d136990>, project=<Project: B-only project>)}
+
+    def test_cached_report_for_a_is_not_served_to_b(boundary):
+        """Warm the cache as A, then require B to receive B's own rows."""
+        cache.clear()
+        assert _report_tenants(boundary["a"]) == {boundary["a"].tenant.slug}
+        visible_to_b = _report_tenants(boundary["b"])
+>       assert visible_to_b == {boundary["b"].tenant.slug}, (
+            "tenant B received a cached report containing other tenants' rows: "
+            f"{sorted(visible_to_b)}"
+        )
+E       AssertionError: tenant B received a cached report containing other tenants' rows: ['security-a']
+E       assert {'security-a'} == {'security-b'}
+E         
+E         Extra items in the left set:
+E         'security-a'
+E         Extra items in the right set:
+E         'security-b'
+E         Use -v to get more diff
+
+../../security_tests/test_delivery_report_cache_isolation.py:41: AssertionError
+_________________ test_cached_report_for_b_is_not_served_to_a __________________
+
+boundary = {'a': Boundary(tenant=<Tenant: Security Tenant A>, user=<User: security-owner-a@example.invalid>, client=<rest_framewo...r-b@example.invalid>, client=<rest_framework.test.APIClient object at 0x10d303e10>, project=<Project: B-only project>)}
+
+    def test_cached_report_for_b_is_not_served_to_a(boundary):
+        """Warm the cache as B, then require A to receive A's own rows."""
+        cache.clear()
+        assert _report_tenants(boundary["b"]) == {boundary["b"].tenant.slug}
+        visible_to_a = _report_tenants(boundary["a"])
+>       assert visible_to_a == {boundary["a"].tenant.slug}, (
+            "tenant A received a cached report containing other tenants' rows: "
+            f"{sorted(visible_to_a)}"
+        )
+E       AssertionError: tenant A received a cached report containing other tenants' rows: ['security-b']
+E       assert {'security-b'} == {'security-a'}
+E         
+E         Extra items in the left set:
+E         'security-b'
+E         Extra items in the right set:
+E         'security-a'
+E         Use -v to get more diff
+
+../../security_tests/test_delivery_report_cache_isolation.py:52: AssertionError
+=========================== short test summary info ============================
+FAILED ::test_cached_report_for_a_is_not_served_to_b - AssertionError: tenant...
+FAILED ::test_cached_report_for_b_is_not_served_to_a - AssertionError: tenant...
+2 failed, 4 warnings in 0.08s

@@ -1,0 +1,17 @@
+Python 3.12.14
+PASS: clean / original-suite (24 passed, 1 warning in 5.16s)
+PASS: clean / feature-functional (1 passed, 1 warning in 0.06s)
+PASS: vulnerable / original-suite (24 passed, 1 warning in 5.16s)
+PASS: vulnerable / feature-functional (1 passed, 1 warning in 0.06s)
+PASS: original ordinary node IDs identical
+PASS: feature ordinary node IDs identical
+PASS: clean / security-independent (5 passed, 1 warning in 0.07s)
+PASS: vulnerable / security-independent (2 failed, 3 passed, 1 warning in 0.09s)
+PASS: clean / legacy-probe-oracle (1 passed, 1 warning in 0.06s)
+PASS: vulnerable / legacy-probe-oracle (1 failed, 1 warning in 0.08s)
+PASS: candidate trees differ by exactly one query line
+PASS: reconstruction / clean
+PASS: reconstruction / vulnerable
+PASS: reconstruction / recovered-v1/clean
+PASS: reconstruction / recovered-v1/vulnerable
+All expected fixture outcomes reproduced.

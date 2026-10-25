@@ -1,0 +1,13 @@
+diff --git a/apps/projects/reporting.py b/apps/projects/reporting.py
+index 3956899..9c6d5e3 100644
+--- a/apps/projects/reporting.py
++++ b/apps/projects/reporting.py
+@@ -26,7 +26,7 @@ def build_delivery_report(start, end):
+         return cached
+ 
+     rows = (
+-        Project.all_tenants.filter(created_at__gte=start, created_at__lte=end)
++        Project.objects.filter(created_at__gte=start, created_at__lte=end)
+         .values("tenant__slug", "status")
+         .annotate(releases=Count("id"))
+         .order_by("tenant__slug", "status")

@@ -1,0 +1,11 @@
+PASS: clean / original-suite (24 passed)
+PASS: clean / feature-functional (1 passed)
+PASS: vulnerable / original-suite (24 passed)
+PASS: vulnerable / feature-functional (1 passed)
+PASS: clean / security-independent (5 passed)
+PASS: vulnerable / security-independent (2 failed, 3 passed)
+PASS: clean / legacy-probe-oracle (1 passed)
+PASS: vulnerable / legacy-probe-oracle (1 failed)
+PASS: reconstruction / clean
+PASS: reconstruction / vulnerable
+All expected fixture outcomes reproduced.

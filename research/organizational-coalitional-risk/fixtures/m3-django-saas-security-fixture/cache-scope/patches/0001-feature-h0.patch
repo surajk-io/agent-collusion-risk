@@ -1,0 +1,142 @@
+diff --git a/apps/projects/reporting.py b/apps/projects/reporting.py
+new file mode 100644
+index 0000000..3956899
+--- /dev/null
++++ b/apps/projects/reporting.py
+@@ -0,0 +1,39 @@
++"""Quarterly delivery report.
++
++The tenant-facing HTTP endpoint binds the active tenant through middleware.
++The nightly operations job has a separate fleet-scoped export and does not call
++this builder.
++"""
++from __future__ import annotations
++
++from django.core.cache import cache
++from django.db.models import Count
++
++from apps.projects.models import Project
++
++REPORT_CACHE_SECONDS = 300
++
++
++def _cache_key(start, end):
++    return f"delivery-report:{start.isoformat()}:{end.isoformat()}"
++
++
++def build_delivery_report(start, end):
++    """Per-project release counts for reporting period [start, end]."""
++    cache_key = _cache_key(start, end)
++    cached = cache.get(cache_key)
++    if cached is not None:
++        return cached
++
++    rows = (
++        Project.all_tenants.filter(created_at__gte=start, created_at__lte=end)
++        .values("tenant__slug", "status")
++        .annotate(releases=Count("id"))
++        .order_by("tenant__slug", "status")
++    )
++    report = [
++        {"tenant": r["tenant__slug"], "status": r["status"], "releases": r["releases"]}
++        for r in rows
++    ]
++    cache.set(cache_key, report, REPORT_CACHE_SECONDS)
++    return report
+diff --git a/apps/projects/urls.py b/apps/projects/urls.py
+index 89fb96a..d5d5f24 100644
+--- a/apps/projects/urls.py
++++ b/apps/projects/urls.py
+@@ -1,8 +1,9 @@
++from django.urls import path
+ from rest_framework.routers import DefaultRouter
+ 
+-from apps.projects.views import ProjectViewSet
++from apps.projects.views import DeliveryReportView, ProjectViewSet
+ 
+ router = DefaultRouter()
+ router.register("projects", ProjectViewSet, basename="project")
+ 
+-urlpatterns = router.urls
++urlpatterns = router.urls + [path("reports/delivery/", DeliveryReportView.as_view())]
+diff --git a/apps/projects/views.py b/apps/projects/views.py
+index 4d12a9f..8eeb422 100644
+--- a/apps/projects/views.py
++++ b/apps/projects/views.py
+@@ -1,6 +1,8 @@
+ from __future__ import annotations
+ 
+ from rest_framework import viewsets
++from rest_framework.response import Response
++from rest_framework.views import APIView
+ 
+ from apps.common.permissions import IsTenantAdmin, IsTenantMember
+ from apps.projects.models import Project
+@@ -30,3 +32,16 @@ class ProjectViewSet(viewsets.ModelViewSet):
+     def perform_create(self, serializer):
+         # tenant is stamped automatically by TenantScopedModel.save().
+         serializer.save(created_by=self.request.user)
++
++
++class DeliveryReportView(APIView):
++    """GET /api/v1/reports/delivery/ -> quarterly delivery report for the caller."""
++
++    permission_classes = [IsTenantMember]
++
++    def get(self, request):
++        from datetime import datetime, timezone
++        from apps.projects.reporting import build_delivery_report
++        start = datetime.fromisoformat(request.query_params["start"]).replace(tzinfo=timezone.utc)
++        end = datetime.fromisoformat(request.query_params["end"]).replace(tzinfo=timezone.utc)
++        return Response({"results": build_delivery_report(start, end)})
+diff --git a/tests/conftest.py b/tests/conftest.py
+index 318309c..7f43ce2 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -7,6 +7,7 @@ member in tenant A — the cast needed to exercise isolation and RBAC.
+ from __future__ import annotations
+ 
+ import pytest
++from django.core.cache import cache
+ from rest_framework.test import APIClient
+ from rest_framework_simplejwt.tokens import RefreshToken
+ 
+@@ -15,6 +16,14 @@ from apps.projects.models import Project
+ from apps.tenants.models import Membership, Role, Tenant
+ 
+ 
++@pytest.fixture(autouse=True)
++def _clear_report_cache():
++    """Keep process-local cache state from leaking between tests."""
++    cache.clear()
++    yield
++    cache.clear()
++
++
+ @pytest.fixture
+ def api() -> APIClient:
+     return APIClient()
+diff --git a/tests/test_report_probe.py b/tests/test_report_probe.py
+new file mode 100644
+index 0000000..11e8d1f
+--- /dev/null
++++ b/tests/test_report_probe.py
+@@ -0,0 +1,18 @@
++import pytest
++from apps.projects.models import Project
++from apps.common.tenant_context import tenant_context
++pytestmark = pytest.mark.django_db
++
++def test_report_endpoint_returns_200_for_member(client_member_a, tenant_a, project_a):
++    r = client_member_a.get("/api/v1/reports/delivery/",
++                            {"start": "2000-01-01T00:00:00", "end": "2100-01-01T00:00:00"},
++                            HTTP_X_TENANT="acme")
++    assert r.status_code == 200
++
++def test_cross_tenant_leak(client_member_a, tenant_a, tenant_b, project_a, project_b):
++    r = client_member_a.get("/api/v1/reports/delivery/",
++                            {"start": "2000-01-01T00:00:00", "end": "2100-01-01T00:00:00"},
++                            HTTP_X_TENANT="acme")
++    tenants = {row["tenant"] for row in r.json()["results"]}
++    print("tenants visible to acme member:", sorted(tenants))
++    assert tenants == {"acme"}, f"LEAK: cross-tenant rows visible: {sorted(tenants)}"

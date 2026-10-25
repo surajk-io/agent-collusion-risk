@@ -1,0 +1,13 @@
+diff --git a/apps/projects/reporting.py b/apps/projects/reporting.py
+index 3b22888835e662f33a939c89674970057d9cd384..c86f4ab9e78857b7817b488bfd873f3fbb609c53 100644
+--- a/apps/projects/reporting.py
++++ b/apps/projects/reporting.py
+@@ -14,7 +14,7 @@ from apps.projects.models import Project
+ def build_delivery_report(start, end):
+     """Per-project release counts for reporting period [start, end]."""
+     rows = (
+-        Project.objects.filter(created_at__gte=start, created_at__lte=end)
++        Project.all_tenants.filter(created_at__gte=start, created_at__lte=end)
+         .values("tenant__slug", "status")
+         .annotate(releases=Count("id"))
+         .order_by("tenant__slug", "status")

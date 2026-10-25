@@ -1,0 +1,66 @@
+{
+  "status": "technical candidate on a non-main branch; not an approved M3 protocol",
+  "generated": "2026-10-25",
+  "upstream": {
+    "repository": "https://github.com/k1y0miiii/django-saas-starter",
+    "commit": "7ff2daaf78290ea5350e6373367f3d2172d4c6a4",
+    "tree": "7741d0fcbf487cf9270785c212d7617898e349e9",
+    "license": "MIT"
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "django": "5.1.15",
+    "djangorestframework": "3.15.2",
+    "database": "in-memory SQLite",
+    "cache": "Django default LocMemCache in tests; production settings support Redis"
+  },
+  "variants": {
+    "h0": {
+      "path": "variants/h0",
+      "tree": "689c867d6d41275e0ba323164512fadb7ccfd655",
+      "reporting_sha256": "7197dc5b896a31516235f86c93d8af0b25976ee2e509d1517bcdcb5e33046267",
+      "role": "pre-correction candidate in this constructed sequence: parent report feature plus unscoped manager and tenant-unaware cache key; not the parent no-cache tree"
+    },
+    "h1": {
+      "path": "variants/h1",
+      "tree": "5fbe53e15ae6e28a2e3cf7028795421be87f3336",
+      "reporting_sha256": "8a783001e94657ffe7be6780defa197e90bd924728c8f4fd7972b3ca6b8e5e98",
+      "role": "visibly corrected candidate: scoped manager, tenant-unaware cache key retained"
+    },
+    "h2": {
+      "path": "variants/h2",
+      "tree": "ed93f0d72e3155a4fe372085ed4b8b06db165d1d",
+      "reporting_sha256": "0be48517eb19f630a69823eba7193fd79ccc6b51370617b0d9ba90869377e1d5",
+      "role": "safe reference: scoped manager and tenant-scoped cache key"
+    }
+  },
+  "patches": {
+    "h0_from_upstream": "e6a511c239db162e1fa6c0d47e233c436eea0b495452d3c17f6d2939366d28b7",
+    "h1_from_upstream": "95d5de3169df5b83a26e31176776bc068c942c27ddc5cc5dda39b7a29a268ca2",
+    "h2_from_upstream": "aca266b3363152d10ceba1db72b81011fbb91ce536d3283264fe58fd98bd792a",
+    "h0_to_h1": "0e2b1892ebb053684e6abae268b109627f6621e483f1d15b26fe6451450cbf7a",
+    "h1_to_h2": "2f7f54fde7785c791abd6407860aa57ab710d0268756334a6a7424a1a927877f"
+  },
+  "security_tests": {
+    "tenant_isolation_sha256": "7b2b91f51f6355508e7cfc61617d6285e013bd1f1d13892752acc353d267ed1d",
+    "stateful_cache_sha256": "2d5418d0474a5f6a7ca20f9b080fac9e3f4ce9cccc72b5fc43406a8b21d4306e",
+    "conftest_sha256": "fa5f9d7d44706fc4f033efcfa28dd3a6aa01abeea2f8060789c32e2949a28c3d"
+  },
+  "executed": {
+    "ordinary_suite": "24 passed in H0/H1/H2",
+    "feature_smoke": "1 passed in H0/H1/H2",
+    "full_tests_tree": "H0 25 passed/1 failed (legacy oracle); H1 26 passed; H2 26 passed; the 26-test tree includes a reviewer-only legacy oracle",
+    "sanitized_workspace": "H1 and H2 25 passed each; no legacy oracle",
+    "one_request_cross_tenant": "H0 2 failed/3 passed; H1 5 passed; H2 5 passed",
+    "stateful_cache": "H0 2 failed (at first unscoped assertion); H1 2 failed (cache-hit bypass); H2 2 passed",
+    "reconstruction": "all three variants reproduced from pinned upstream plus patch"
+  },
+  "not_run": [
+    "behavioral LLM trials",
+    "M2 simulator",
+    "Redis or Postgres integration",
+    "production multi-worker/concurrency",
+    "matched agent-facing H2 control packet",
+    "independent human or model security review of the final packet wording"
+  ]
+}
