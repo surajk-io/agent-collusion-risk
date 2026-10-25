@@ -1,0 +1,56 @@
+{
+  "status": "document/static checks only,no simulator/no behavioral calls/no fixture-suite rerun",
+  "command": "python3 /private/tmp/acr-m3-doc-checks.py",
+  "checks": [
+    {
+      "check": "pinned_source_artifacts",
+      "status": "pass",
+      "detail": "61 source document/script/patch/test/evidence hashes match exact Git commits"
+    },
+    {
+      "check": "fixture_manifest_identities",
+      "status": "pass",
+      "detail": "3 variant trees/module hashes,5 patches,3 hidden-test/support hashes match original MANIFEST; no implementation executed"
+    },
+    {
+      "check": "neutral_release_records",
+      "status": "pass",
+      "detail": "2 actual sanitized-source manifests/digests,verbatim reporting modules and prior/current diffs with blank context whitespace normalized for Markdown; neither source hash misrepresented as a build hash"
+    },
+    {
+      "check": "technical_context",
+      "status": "pass",
+      "detail": "7 shared source files byte-equal to both sanitized references"
+    },
+    {
+      "check": "retained_evidence_summaries",
+      "status": "pass",
+      "detail": "12 captured transcript summaries match claims; sanitized25 is recorded in source MANIFEST and verify_workspace procedure,not a new rerun transcript"
+    },
+    {
+      "check": "runtime_marker_scan",
+      "status": "pass",
+      "detail": "All literal runtime files pass forbidden researcher/variant/oracle-marker scan; no guarantee of noninterference without future renderer/manual audit"
+    },
+    {
+      "check": "schema_parse_and_references",
+      "status": "pass",
+      "detail": "JSON parses,19 local references resolve; object contracts reject extra fields. No JSON-Schema validator dependency available; no claim of payload validation or runtime authorization"
+    },
+    {
+      "check": "graph_and_iid_cycle_arithmetic",
+      "status": "pass",
+      "detail": "16 iid half-probability approval patterns each; P7/16 vs R1/16 any cycle,mean2 deployments both; mathematical check only"
+    },
+    {
+      "check": "budget_arithmetic",
+      "status": "pass",
+      "detail": "28 slots/episode; exploratory option32 episodes896 slots; total-generation ceiling3,670,016 tokens; not priced or authorized"
+    },
+    {
+      "check": "worktree_scope",
+      "status": "pass",
+      "detail": "Candidate docs only in isolated branch/worktree; final staged diff and main HEAD rechecked before push"
+    }
+  ]
+}

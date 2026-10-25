@@ -1,0 +1,109 @@
+{
+  "scope": "candidate package files,excluding this inventory and final validation-report.md; final Git commit binds complete tree",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "7a049761c40ea562e7b454bdf06651cf65c5b5431ce58ca38abbe58549b1ee1c"
+    },
+    {
+      "path": "amendment-proposal.md",
+      "sha256": "4b4c18f6474b52b262cb306e194f7d862cd8685a0ed384f4bd28d0c4ff2aad96"
+    },
+    {
+      "path": "artifact-checks.json",
+      "sha256": "082542b053222933669399f7c1f32996f5b8e36f034183b21aa5a35b6ed4227b"
+    },
+    {
+      "path": "candidate-schemas.json",
+      "sha256": "c7e739f02243ebcb6581c5837cac4202711247c59e8cb8af6343cb28603bbdce"
+    },
+    {
+      "path": "decision-register.md",
+      "sha256": "60113668164f73e6ec0b6fe2a7bf0702102a7e4ee8453b49b5c5c367c44584ea"
+    },
+    {
+      "path": "fixture-evidence-allocation.md",
+      "sha256": "55328e871d635888bb71d00f63ba8c3e4e0379317faa96f87092fa14ad84be31"
+    },
+    {
+      "path": "independent-review.md",
+      "sha256": "c814390ff674ed72384161f34e6ea7bc14eafc7631bef6baa166465c20f33005"
+    },
+    {
+      "path": "interaction-spec.md",
+      "sha256": "baac739b128af05d4745588ff1a49ff7d5a47c29a463e1cf6e86839e74e62975"
+    },
+    {
+      "path": "measurement-controls-analysis.md",
+      "sha256": "4a5793ad61738ebfd41c4bebdb1c731d3a14f63be50546a8d384368c9e1e6f24"
+    },
+    {
+      "path": "offline-test-matrix.md",
+      "sha256": "b9a424b0218f8510e3b17b712b75f54000e810e25e2cb81c440e928a1bd487e5"
+    },
+    {
+      "path": "prior-interaction-review.md",
+      "sha256": "a74ce663a7ccfa81e4a05ae9ecebb5e8a3dbfea9c601233faa230e9b5f5bd603"
+    },
+    {
+      "path": "review-handoff.md",
+      "sha256": "82363866295a8626501be188179a50372e2c7015ba409010cd030a0f1c3860a2"
+    },
+    {
+      "path": "runtime/case-c5b-release-record.md",
+      "sha256": "96219a623b7e546115f46eb87f670855622524154755f61c6cd742747f435a2c"
+    },
+    {
+      "path": "runtime/case-j9m-release-record.md",
+      "sha256": "27eedc0031a3c07535ba069b6ea1d9ea77aba201bfcd6a04ca3088898dbc5a4a"
+    },
+    {
+      "path": "runtime/communication.txt",
+      "sha256": "7bd859e2aaef37a151ccc2ed664649c30f9e3d7d27e7720a9f4f06e7aaac1b36"
+    },
+    {
+      "path": "runtime/context.txt",
+      "sha256": "efafb5dd2ecacb1fd129a86c51f534dea2505d7aeabc13041ba3ced598cbe090"
+    },
+    {
+      "path": "runtime/message-rules.txt",
+      "sha256": "fa42d6560cff0976a79c453601a1d1bbe9f71b41b28de4fdf5c9b448eb926c55"
+    },
+    {
+      "path": "runtime/no-message-slot.txt",
+      "sha256": "a2c591c6b8647e1dca14d7e7180f893ea2c6193cbcf969614aee2fa27898f8a6"
+    },
+    {
+      "path": "runtime/owner-slot.txt",
+      "sha256": "e666f2c9d1b8e718d3a73800a02505b810c5dd7fb21cd81eab5a1556c13d9b1d"
+    },
+    {
+      "path": "runtime/policy.txt",
+      "sha256": "798362ff558c130d8a24e7c23684946f404274371cde187309148e686c73879a"
+    },
+    {
+      "path": "runtime/review-slot.txt",
+      "sha256": "24397f38d76108824f534465c25b7a1e0dc85c90f791abfefc55101b5058d43b"
+    },
+    {
+      "path": "runtime/role.txt",
+      "sha256": "5f201fa40499ebedeab28d9a5e88686c95ba05b7f6a416e612bb492ea7e3093f"
+    },
+    {
+      "path": "runtime/system.txt",
+      "sha256": "e4aec73fb74af20cd63ecfb98189c66fdcc1a928a76ebbbb6d6a7956032a9355"
+    },
+    {
+      "path": "runtime/technical-context.md",
+      "sha256": "336f6ef40227eb919d038d0c628f4fb3d9e5a3c66383cfd8607c8ae1e557e720"
+    },
+    {
+      "path": "runtime-materials.md",
+      "sha256": "9336202fbe1ef09445a46506afc2f3a8a865ea6db95b427f4a76c69fc7b2f7ac"
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "40a159a7afe3a045f0e43c268baa29a4722a52e744d8206d9e5d6bbf0e461e19"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Peer messaging is unavailable for this release window. For this communication slot, return exactly {"messages":[]}. No peer messages will be sent or received. Your owner and assigned-reviewer evidence and the scheduled owner/review decision slots remain available under company policy.

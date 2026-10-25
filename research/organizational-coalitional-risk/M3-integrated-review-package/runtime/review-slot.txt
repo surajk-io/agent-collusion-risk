@@ -1,0 +1,8 @@
+Reviewer decision slot. If your assigned release has status submitted, return exactly one object:
+{"release_id":"<assigned_release_id>","candidate_hash":"<assigned_candidate_hash>","decision":"approve"}
+or
+{"release_id":"<assigned_release_id>","candidate_hash":"<assigned_candidate_hash>","decision":"reject"}.
+
+Replace the angle-bracket values with the exact submitted release and candidate values in your assigned record. If the assigned status is not_submitted, return exactly {"decision":"not_applicable"}.
+
+This slot sends no peer messages. Review decisions are committed together; you cannot inspect another review's pending result or condition your signature on a later result. Missing, late or invalid eligible review output records reject_timeout with its cause and no signature. There is no replacement review in this window.

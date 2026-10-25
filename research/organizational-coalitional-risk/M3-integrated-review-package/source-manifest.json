@@ -1,0 +1,913 @@
+{
+  "status": "candidate documents only; not approved",
+  "refs": {
+    "main": "1c6927f48824e657a5d15e2b67550a8b28e5f1b5",
+    "original_fixture": "c52c2d5f87974cab8f51f18b973f6e60302608f5",
+    "residual_fixture": "b94a55197086d2635a53daebd51a6b945ee6eb95",
+    "interaction": "94220be566462500b69b2c3762733f7a35137505"
+  },
+  "files": [
+    {
+      "source": "main",
+      "path": "AGENTS.md",
+      "sha256": "9051726697f02833ce5591d1f8ec91b0849e7894bf1de28e13c8246bf60d9c3b",
+      "git_blob": "efa060ff46b7e94615dc1e2853b513f1d29df500"
+    },
+    {
+      "source": "main",
+      "path": "README.md",
+      "sha256": "5deb34450c54acdb3103e4189d27e5ba532cc70b1ab264f9d7311d8415609bce",
+      "git_blob": "4ee0e33c8c057a885bca99cd964b943d660de2b6"
+    },
+    {
+      "source": "main",
+      "path": "research/archive/coalitional-vulnerability/critical-review.md",
+      "sha256": "884f3f8764727413575a6e99ae64fca935076c19281e69a2f4b5b304a4cbfd2f",
+      "git_blob": "269ac67d12c97e1c4dc9804ec132528dbeb0ac17"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/M1-approved-scenario.md",
+      "sha256": "bea4d6a25c530e511d43e5aa53db6508a92645168452b1b3ec884a46ea7e80c4",
+      "git_blob": "158836f9b25641ffc23c241713415d8ec7f1cb7e"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/M1-design-review.md",
+      "sha256": "5adab7a308eefaa9519eb4ffb0d9c0a26561cc911f178a7ccc4da2b21ea59b15",
+      "git_blob": "071a790b06c379604c0aea5291638361e6869f29"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/M2-approved-formal-bridge.md",
+      "sha256": "c8a303713e50b57f1af39b9e83f52f1c64679251bdf5eec5734ccf24e19c879f",
+      "git_blob": "ca97ec2c890db6a4b47cb28738abf6169c48a787"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/M3-working-handoff-2026-10-25.md",
+      "sha256": "668a6e32d385f7368e77bdc1c1a801941e205854b0d441674b17adf54311828a",
+      "git_blob": "b59bd95651179763ba87ae3356c882ab7b8953d2"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/README.md",
+      "sha256": "8aacdc760708b02a52ebad671b5afdb99bfb15ca5b9a292937a44ddc9fbd82ce",
+      "git_blob": "371b2237738abc9f81120089fadf4284688c722b"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/ROADMAP.md",
+      "sha256": "cc345af0eb5f5123d0ee28654c53cc1f200a7d823eebc851811eb2cdf950505b",
+      "git_blob": "4b0582ac10e482aa210443f539032d168eccd71a"
+    },
+    {
+      "source": "main",
+      "path": "research/organizational-coalitional-risk/literature.md",
+      "sha256": "11e35ac6fd2ab0a163daf00d4ce2cd1a9c47a44969397d2cf5bf585173ca76fe",
+      "git_blob": "4702a109d6cb5954a5fdaa30695c76e4d53508bb"
+    },
+    {
+      "source": "original_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/README.md",
+      "sha256": "19cd5c29ce006e85f6153752577c84a65e1f78c2da5e8f3b7babd7085757ddc1",
+      "git_blob": "2954613444af2d7fc885cfc0e0f5a3575cb08ccc"
+    },
+    {
+      "source": "original_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/FINDINGS.md",
+      "sha256": "8a8150eaf1649123919841975610471a81a9e353a340614b1b1d4143bf895655",
+      "git_blob": "c4ac8868939b9044fad3c4590976987efe0eadc8"
+    },
+    {
+      "source": "original_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/PROVENANCE.md",
+      "sha256": "796ff233906dfe8009240763aa20dff59f3a3c28b18ee49a2808044daff49aa9",
+      "git_blob": "f7ac4666370c4af1ee93e43d807d75af19239cef"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/FEASIBILITY-ASSESSMENT.md",
+      "sha256": "f6ffcbba5d1980317eca04a5002cd32b7bc9187308d83b2182ee211fd3a21473",
+      "git_blob": "cfaf9a53ffabb80c10b52a11c1395ce4f2430a2b"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/MANIFEST.json",
+      "sha256": "6306d3a4becf7a6c903cba771a8bbeafc0baf2590e02e45a84be1484e550b18f",
+      "git_blob": "c1ea8faaee4bcfeef7424f513dcd47e4e0dc412f"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/README.md",
+      "sha256": "dcc49ac2489e8f775b74d4da7937e4c7f5be7dc8f981241170b72abadcb187bc",
+      "git_blob": "d309e355c5cd21b700f8ba7f1168cf7e6369be2e"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/README.md",
+      "sha256": "6f821f2af873b9cdc04822e42193a2f914f8096648ec3a5428a9634e442f20b1",
+      "git_blob": "2f68f2ba88935c38c0538cc478120fe27d25db80"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-feature-functional.txt",
+      "sha256": "f9509dff99fea4c19fdea4b41410c30854a6b06f1a74b6ea8f9ff953bf322ff8",
+      "git_blob": "4c011c8b18cc6ac127e30bdc45bcc666d04e4e23"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-full-suite.txt",
+      "sha256": "48f8559674549fd0b69324c4f10b0c9483fcd970bb94f52e00e717f4e1ae04cb",
+      "git_blob": "e33e6c203087b1680651973f24bfa5bfa6f33a80"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-legacy-oracle.txt",
+      "sha256": "94af7394bbdb2023092322905cc95ff1f7927d1d6abdaada5afbd2a45b149bd7",
+      "git_blob": "29d0008fe26045bbbc79c474e931aabf2a3081e8"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-original-suite.txt",
+      "sha256": "348d555e1c9fe1caad02cf22005620e4c35783cfa4f673d0c0141df33fcc2f14",
+      "git_blob": "641e7fba1acb2e7b30f106924f6570459d7515d6"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-stateful-cache.txt",
+      "sha256": "1c8b2c09709fc4a6a0d491146d6ee8dba4873ea43d28c9f7f940e29c425ab28b",
+      "git_blob": "d55169806712745a3ab3b8e2f9454a86c39ffe83"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h0-targeted-security.txt",
+      "sha256": "b5f0c4ac3ca7f6f13158a36dfebb6573e53e4be8faf18b8f8dfb0b430e22e002",
+      "git_blob": "35aa90a3085d8f659869750157e4871008f0e4ca"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-feature-functional.txt",
+      "sha256": "f9509dff99fea4c19fdea4b41410c30854a6b06f1a74b6ea8f9ff953bf322ff8",
+      "git_blob": "4c011c8b18cc6ac127e30bdc45bcc666d04e4e23"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-full-suite.txt",
+      "sha256": "ee552b9122b7a9366c64ad866470b346207d52bdf8075b60087caf6f17b0e45a",
+      "git_blob": "1fe3d1e234347969da5b4bee22ee54e15ca184e8"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-legacy-oracle.txt",
+      "sha256": "f705583dafbaded92bc1759b26f5086c3e99f890b3223f63a020313bfdddc6c9",
+      "git_blob": "72b49c82bd3d703ff4cece526e31ff685e214f6c"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-original-suite.txt",
+      "sha256": "f47aa89fc1fede4f51c28e965121deeb52c3dff9d10542dc3ec35ccce5f24108",
+      "git_blob": "eb1332b006c8a359c69610e45da26723f42dae58"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-stateful-cache.txt",
+      "sha256": "ac2b004c9c4116ef701faa0604e664f853c05ac521594ec07f80c394ec6c71de",
+      "git_blob": "8b9c0b748070f305bec48b491fb5845e1a822abe"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h1-targeted-security.txt",
+      "sha256": "4ee8f357e1f9f88385409404330f3d93f45256b953a358d3041921f283175d6b",
+      "git_blob": "4d41995f58fb5cd1e21f1b96ac89b860136127cd"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-feature-functional.txt",
+      "sha256": "f9509dff99fea4c19fdea4b41410c30854a6b06f1a74b6ea8f9ff953bf322ff8",
+      "git_blob": "4c011c8b18cc6ac127e30bdc45bcc666d04e4e23"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-full-suite.txt",
+      "sha256": "ee552b9122b7a9366c64ad866470b346207d52bdf8075b60087caf6f17b0e45a",
+      "git_blob": "1fe3d1e234347969da5b4bee22ee54e15ca184e8"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-legacy-oracle.txt",
+      "sha256": "f9509dff99fea4c19fdea4b41410c30854a6b06f1a74b6ea8f9ff953bf322ff8",
+      "git_blob": "4c011c8b18cc6ac127e30bdc45bcc666d04e4e23"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-original-suite.txt",
+      "sha256": "348d555e1c9fe1caad02cf22005620e4c35783cfa4f673d0c0141df33fcc2f14",
+      "git_blob": "641e7fba1acb2e7b30f106924f6570459d7515d6"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-stateful-cache.txt",
+      "sha256": "def1594846556f53a56f9e66d8a639f730afb0f94bfdff368e569ae29ead7395",
+      "git_blob": "d276dd5f524a6dfd46f509cd7fd789178dbf917d"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/evidence/h2-targeted-security.txt",
+      "sha256": "4ee8f357e1f9f88385409404330f3d93f45256b953a358d3041921f283175d6b",
+      "git_blob": "4d41995f58fb5cd1e21f1b96ac89b860136127cd"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/packets/AGENT-EVIDENCE-PROPOSAL.md",
+      "sha256": "198a8694a7a66b9e7c4c01dc7611351e67133d46603684947c29a2dab1b9cd73",
+      "git_blob": "0038d161c562581a65d6ef60ec15ad6b09caebe2"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/packets/MAPPING-DO-NOT-SERVE.md",
+      "sha256": "6639eb4745af3133a7a3066c93fedc5630358908e84c866e18700686cca6e090",
+      "git_blob": "964ddeefd428b8edc6d3056f2e67c010972fe432"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/packets/agent-facing/case-c5b-release-record.md",
+      "sha256": "86ded08cc0a9b76200a0fad788e1878989da9f0d3eca7ab8185216d95de3c9c2",
+      "git_blob": "a2b834fddcd5b4900ec1e03f560c44c49aedee02"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/packets/check_agent_facing.sh",
+      "sha256": "187c77d00df253f937a548812023ba318609e5bdfe5a4685be6147dc7e563ef5",
+      "git_blob": "d0bb5af6da1d1b1e3d38df599be792163ac0e1c4"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/patches/0001-feature-h0.patch",
+      "sha256": "e6a511c239db162e1fa6c0d47e233c436eea0b495452d3c17f6d2939366d28b7",
+      "git_blob": "2a49b7d008fb8466c49dfb8c57ce159461ec0351"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/patches/0001-feature-h1.patch",
+      "sha256": "95d5de3169df5b83a26e31176776bc068c942c27ddc5cc5dda39b7a29a268ca2",
+      "git_blob": "98a6aeb21105a2a96d6f5cf4f6bfcc02c1bc34cb"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/patches/0001-feature-h2.patch",
+      "sha256": "aca266b3363152d10ceba1db72b81011fbb91ce536d3283264fe58fd98bd792a",
+      "git_blob": "05af7412c263e56986123882dccf1dad86b66534"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/patches/0002-h0-to-h1.patch",
+      "sha256": "0e2b1892ebb053684e6abae268b109627f6621e483f1d15b26fe6451450cbf7a",
+      "git_blob": "591bda40ae09c037c1ad729d75c5d01b29724125"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/patches/0003-h1-to-h2.patch",
+      "sha256": "2f7f54fde7785c791abd6407860aa57ab710d0268756334a6a7424a1a927877f",
+      "git_blob": "c7626c4105122c4259cbfe82ff07983ed6e3ef6e"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/scripts/check_workspace.sh",
+      "sha256": "e0627d993e7c52222db904be4054d50375c7b94812d9efc26b9a813dd3325a96",
+      "git_blob": "1442115c16c0ef713b1cddb2c6cdaf9f06c8536d"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/scripts/export_workspace.sh",
+      "sha256": "3bd8d4ddc2c0a7406a40d0b5cf1074f5945bfee15bd35cb8e21b0f2d05f463b4",
+      "git_blob": "874f607755f76c77405d3b98f95fd54fa58af37c"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/scripts/reconstruct_variant.sh",
+      "sha256": "76290a371702af10d47e4914d6c83c8b99e1c825ce2c0f62df65d65182c575f2",
+      "git_blob": "f267276a622891ac547899f103954e2f0dfd7b9a"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/scripts/verify.sh",
+      "sha256": "0f66d01a22878304b36d054200d2c44333968ca424ecacacf368584f9f054dce",
+      "git_blob": "13cda485ed68c76eba4562cf1abab23f6ec95c18"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/scripts/verify_workspace.sh",
+      "sha256": "ddc4c72b34c117ac791892945671e9be36d65fee4298720068844bf960361762",
+      "git_blob": "73b2e3f470b8baba335c1c3e03520921fc162c51"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/security_tests/conftest.py",
+      "sha256": "fa5f9d7d44706fc4f033efcfa28dd3a6aa01abeea2f8060789c32e2949a28c3d",
+      "git_blob": "f9bcb5fd122b4c740c74ec3be8857f9c9ab62b0d"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/security_tests/test_delivery_report_cache_isolation.py",
+      "sha256": "2d5418d0474a5f6a7ca20f9b080fac9e3f4ce9cccc72b5fc43406a8b21d4306e",
+      "git_blob": "4804309cdaa55e2d760557f656106836e773a544"
+    },
+    {
+      "source": "residual_fixture",
+      "path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/security_tests/test_delivery_report_tenant_isolation.py",
+      "sha256": "7b2b91f51f6355508e7cfc61617d6285e013bd1f1d13892752acc353d267ed1d",
+      "git_blob": "c2901aec86db77485c86ee6bed14b81bfcc6cc89"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/README.md",
+      "sha256": "b21cfa61a900960df9ee340e0073e3a8c42f0a633cea5b4335bb48b69a03024f",
+      "git_blob": "c90605fdb35795a8788de1f061100677c3ff0189"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/artifact-checks.json",
+      "sha256": "10a3bcdc58fe8ee1dc378ad6ffca6c463b1c088e73f03270385472f92848995a",
+      "git_blob": "f6547b03b1dc6bb39e99047dfb7202141d2b131d"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/candidate-schemas.json",
+      "sha256": "dc157222d7392c21a470586c8e0522c00c9037184c657f607f246aa405d91481",
+      "git_blob": "b10c6b8d3fdd8eb88a0e3fa71f5283d0ccd0babc"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/decision-register.md",
+      "sha256": "e556aed8dcd685d46148d4b7e4001c039ec7041a4c263462a6ea100f9ae5b90c",
+      "git_blob": "3c9c6dbfc06788836f8fe015bce2f3b3ee167c43"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/independent-review.md",
+      "sha256": "a74ce663a7ccfa81e4a05ae9ecebb5e8a3dbfea9c601233faa230e9b5f5bd603",
+      "git_blob": "d72de3ad278273439a939af388d7e925e493ea76"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/interaction-spec.md",
+      "sha256": "153b93857ba6469abed362cf28b7807198e8ca38845d0fe3dad2dc9802bcff8d",
+      "git_blob": "653dc89c8f87d6b5067311eacf9d058f19d1500e"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/offline-test-matrix.md",
+      "sha256": "7c53880a254da27190caa3bfb17b5c3f64961a04e7eae6a08aeb376ffb49caa7",
+      "git_blob": "d444ffd2d4a71688ac8a3a6fea07b38e2d4b01b2"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/source-manifest.json",
+      "sha256": "2cf25a137116b883a44851cbaab0de335f1cdc2485adfd8cd28a7b87b68ec6ea",
+      "git_blob": "6a9c9812bcad1a5ce0d26c870ab51e3300251106"
+    },
+    {
+      "source": "interaction",
+      "path": "research/organizational-coalitional-risk/M3-pilot-interaction-candidate-2026-10-25/validation-report.md",
+      "sha256": "eedfc02d17cce54df5437cbadd0f5156000dc56613ac96d5a757340f1bb32968",
+      "git_blob": "47a6052a9da3e28433b68396fdb5ec75d201e126"
+    }
+  ],
+  "workspace_identity": {
+    "h0": {
+      "variant_git_tree": "689c867d6d41275e0ba323164512fadb7ccfd655",
+      "reporting_sha256": "7197dc5b896a31516235f86c93d8af0b25976ee2e509d1517bcdcb5e33046267"
+    },
+    "h1": {
+      "variant_git_tree": "5fbe53e15ae6e28a2e3cf7028795421be87f3336",
+      "reporting_sha256": "8a783001e94657ffe7be6780defa197e90bd924728c8f4fd7972b3ca6b8e5e98",
+      "candidate_hash": "16ba7b05cea8b2b4d23e2e445702a0386c3b55c79f056a2ac5c56cfbe8f7fe0e",
+      "source_manifest": [
+        [
+          ".dockerignore",
+          "d2b59702cf07cfed298a4ea7f9a1231b1618ee857b167180401f9a6e8114331d"
+        ],
+        [
+          ".env.example",
+          "dfa27114a1c5ef52ad8cb385b9c7b8034fac79427212beaabfefaee8acd2c5ea"
+        ],
+        [
+          ".github/workflows/ci.yml",
+          "9ef6b0187638f7e4b0d96c871307b6fd185cac896a8182c1e479854c2e30e7df"
+        ],
+        [
+          ".gitignore",
+          "f9bf4c896f55ce2f64d45cfa2a4ea9f4cb61f46360322c7fa2db7796ba41b835"
+        ],
+        [
+          "Dockerfile",
+          "d613e8ee9c39d97652d853fb1fda2ae811625081e785bd273cf2fc922c77e19a"
+        ],
+        [
+          "LICENSE",
+          "0a000232e8f947bfe3aa604d99c19477d8e820d15457d9fd76ce9325a342f7a5"
+        ],
+        [
+          "README.md",
+          "72741376e45e311a178c34f396e9f66b78bece328c94c02f7c88510094171d09"
+        ],
+        [
+          "README.ru.md",
+          "28ece6e8af4110192a1e2886676400d27272e989d79a49c468b7b4f3171d07e9"
+        ],
+        [
+          "apps/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/admin.py",
+          "23a84086f48b52ec20d74314658efaf7ef019d19bff566cab05ee93000d97f92"
+        ],
+        [
+          "apps/accounts/apps.py",
+          "b07832171435407bdda4d32376a91fef61deb7616ebffdd4aeb5b30be8a21d30"
+        ],
+        [
+          "apps/accounts/migrations/0001_initial.py",
+          "c7bb0f65616619448eb6c6e17dd1b111ec7da9830e12ed51ef51801397f15d18"
+        ],
+        [
+          "apps/accounts/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/models.py",
+          "9bc70d35fea7f2a31f61716891ef11f86e5599a876bbb26c158be38df1b14185"
+        ],
+        [
+          "apps/accounts/serializers.py",
+          "f004f4869253c0eaaf628f392c9f07245cc5425cbcab550b262f280a340f315c"
+        ],
+        [
+          "apps/accounts/urls.py",
+          "eccb88a5305a5cb00b09250fc7dd821259a14eecdccfdbb1c872403bfd1e2caf"
+        ],
+        [
+          "apps/accounts/views.py",
+          "f89221bf22bb9efb20acf2210cb9539a8b74ed92c55891fb5f07e6c2b2da970b"
+        ],
+        [
+          "apps/common/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/common/apps.py",
+          "72b52f3ae626cd08f2f7903c8934353697b2d83171b27845fbea7dac31aa3ce5"
+        ],
+        [
+          "apps/common/models.py",
+          "8e13c1bd7fd126a5d6c59e7bde165024f958fb4c59c4235fcb9440ec464b7ec6"
+        ],
+        [
+          "apps/common/permissions.py",
+          "1fca32ff06184fcc4a5a331c1280d4bc887f85e4b10e6c2af6f02f79e10962aa"
+        ],
+        [
+          "apps/common/tenant_context.py",
+          "cacf3bfe71e952b145ee663a8b3e1b0a9ec5f7c44a338894dfd4b6daaf8147c0"
+        ],
+        [
+          "apps/projects/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/projects/admin.py",
+          "22a9d5846285ef43fbfa39112278e5b3db7317f64a6a5227a8cf312473e535ff"
+        ],
+        [
+          "apps/projects/apps.py",
+          "644db9ad662c5399855edc7f54588177fb00e6c3190096d28f86c26f0a43f690"
+        ],
+        [
+          "apps/projects/migrations/0001_initial.py",
+          "12a2e5abd43418ec2dc7eead992cfc5fc9c9dd294ff503af95e156fb6a48e4d3"
+        ],
+        [
+          "apps/projects/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/projects/models.py",
+          "fbba186c3f9cb68813c777fdd6f40fb2ce7ac118887ed6940f21a839d468d23f"
+        ],
+        [
+          "apps/projects/reporting.py",
+          "8a783001e94657ffe7be6780defa197e90bd924728c8f4fd7972b3ca6b8e5e98"
+        ],
+        [
+          "apps/projects/serializers.py",
+          "fa3b49f434d11732108bc1bbdf9a00e17338dcfb19ac9e163e8f284378921cce"
+        ],
+        [
+          "apps/projects/urls.py",
+          "97b3a9cb0df08f4b21bf2bd1c7e1155cd83696c14bd2b5dfdeb3019de9aef7b3"
+        ],
+        [
+          "apps/projects/views.py",
+          "002f9a59bf5ed835fb8eea6bb5461732b7ce797155472885ace7824318a3e131"
+        ],
+        [
+          "apps/tenants/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/tenants/admin.py",
+          "486babb5cb3b9b6a8b4d3bde3a98b99d97dce74c84f0437b961ee9343195e69a"
+        ],
+        [
+          "apps/tenants/apps.py",
+          "0ee98bf28226db303bfcaf44fa58cdea3a1273eec39ebcb3d46f6e395cb35658"
+        ],
+        [
+          "apps/tenants/middleware.py",
+          "d7d3cdde929a2a51f73960632095ab8843363812288c969b92b3282e57c23ab6"
+        ],
+        [
+          "apps/tenants/migrations/0001_initial.py",
+          "ad53f1277717577743bd55f44aaa9eab57f9d613362cf8bee8ef7ccd25f43d4f"
+        ],
+        [
+          "apps/tenants/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/tenants/models.py",
+          "b0cd75eb918348f3e374827515ba51889956151669ba43e30d1a1833ba74233f"
+        ],
+        [
+          "apps/tenants/serializers.py",
+          "542e151b6f28da1201a1e142e6fc109b9f9ad772519ff055fd06093714286926"
+        ],
+        [
+          "apps/tenants/urls.py",
+          "607382f581aa2db452386dc00eb2c734858355b9144b8ea253a69dbdc3e39b1c"
+        ],
+        [
+          "apps/tenants/utils.py",
+          "c19a11d2026ecb8e0d01e99bbec68e8c6088afa5175fe757648d88fc0364a668"
+        ],
+        [
+          "apps/tenants/views.py",
+          "6407892866867043ab01e801eb35709d0ba0bf9eb9ee4732f78b3ee227d169a3"
+        ],
+        [
+          "config/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "config/asgi.py",
+          "fef31d48ad567f2bb23c6f5bd3c77329ab6b8d2f33b8d30c884ece6f10f16bcf"
+        ],
+        [
+          "config/settings/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "config/settings/base.py",
+          "6b6ab6ec1c0287b4a2c69f85eec4a14d8d138f471e7da1930f93c2e7f928e62f"
+        ],
+        [
+          "config/settings/dev.py",
+          "cc9af6a58915fc92724c65088ea2d1ecd44e7b976271aa6ae14f04b8b6634fef"
+        ],
+        [
+          "config/settings/prod.py",
+          "1618ec7328c44a01358ff9fa7e593009c2c690d352942744a204b455b1866b01"
+        ],
+        [
+          "config/settings/test.py",
+          "2f9040632dbabe2a8f764eb7babe8d0892a4085eeeb6a1df7aefca0b1f236225"
+        ],
+        [
+          "config/urls.py",
+          "4e9520ca422bf517352ad5190b2ef25da7048887c6da8735472cd9becda42372"
+        ],
+        [
+          "config/wsgi.py",
+          "219dc9187b14ed1a0d8bfd5bcfd8c315cbf2f682d918bf34b3363dba20a2f481"
+        ],
+        [
+          "docker-compose.yml",
+          "09844e55026f4806574ca5b103ec4d295a51e3b38bc356e9cc2afa2837343dd2"
+        ],
+        [
+          "manage.py",
+          "9aac2006fa9bfcac0c29f4bff13612637ab7fbf70fa80cd4c4567f9ed71b2d27"
+        ],
+        [
+          "pyproject.toml",
+          "9ded3f75a43cf2c58a33af29651b21e96e118e41f880bf7f98ecf2abfcebcb5f"
+        ],
+        [
+          "requirements.txt",
+          "e675f528b0d2994924a85830d893904b7dd12908fbafa579bd66faf836eda57c"
+        ],
+        [
+          "tests/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "tests/conftest.py",
+          "292664d82eee7dd3fffd7e09cfbe89e622844229e8538861bb1f9153cc87c570"
+        ],
+        [
+          "tests/test_auth_registration.py",
+          "298df4a35edca5ea658e38f170f23c62cae0435f5a6367f5e6a1f42a075ae5e9"
+        ],
+        [
+          "tests/test_delivery_report.py",
+          "427f55214ba2feaf58241b86a71586ce00ef55ce4b1cd9f1939dacbc98e5bd97"
+        ],
+        [
+          "tests/test_invitations.py",
+          "182cb32e0bddc307d88f545fa9c809e072f43a1c67730f26fa5ab7f4d784827c"
+        ],
+        [
+          "tests/test_rbac.py",
+          "ec62d0b3cf79e132b1e4b1921ce073724b07f2e380c3ce94dd621f54512e78d0"
+        ],
+        [
+          "tests/test_tenant_isolation.py",
+          "303f120779ca2149cb55e67f46c6d0d4d8a32b1878d921c723171ca01a7b56b8"
+        ]
+      ],
+      "hash_definition": "SHA256 of UTF-8 compact JSON [[relative_posix_path,file_sha256],...] sorted lexicographically; no trailing newline",
+      "build_artifact_hash": null
+    },
+    "h2": {
+      "variant_git_tree": "ed93f0d72e3155a4fe372085ed4b8b06db165d1d",
+      "reporting_sha256": "0be48517eb19f630a69823eba7193fd79ccc6b51370617b0d9ba90869377e1d5",
+      "candidate_hash": "af63d76534b6e4b0b4a924ee273b70c9baf7463815f1ec6c740afb6e477f277d",
+      "source_manifest": [
+        [
+          ".dockerignore",
+          "d2b59702cf07cfed298a4ea7f9a1231b1618ee857b167180401f9a6e8114331d"
+        ],
+        [
+          ".env.example",
+          "dfa27114a1c5ef52ad8cb385b9c7b8034fac79427212beaabfefaee8acd2c5ea"
+        ],
+        [
+          ".github/workflows/ci.yml",
+          "9ef6b0187638f7e4b0d96c871307b6fd185cac896a8182c1e479854c2e30e7df"
+        ],
+        [
+          ".gitignore",
+          "f9bf4c896f55ce2f64d45cfa2a4ea9f4cb61f46360322c7fa2db7796ba41b835"
+        ],
+        [
+          "Dockerfile",
+          "d613e8ee9c39d97652d853fb1fda2ae811625081e785bd273cf2fc922c77e19a"
+        ],
+        [
+          "LICENSE",
+          "0a000232e8f947bfe3aa604d99c19477d8e820d15457d9fd76ce9325a342f7a5"
+        ],
+        [
+          "README.md",
+          "72741376e45e311a178c34f396e9f66b78bece328c94c02f7c88510094171d09"
+        ],
+        [
+          "README.ru.md",
+          "28ece6e8af4110192a1e2886676400d27272e989d79a49c468b7b4f3171d07e9"
+        ],
+        [
+          "apps/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/admin.py",
+          "23a84086f48b52ec20d74314658efaf7ef019d19bff566cab05ee93000d97f92"
+        ],
+        [
+          "apps/accounts/apps.py",
+          "b07832171435407bdda4d32376a91fef61deb7616ebffdd4aeb5b30be8a21d30"
+        ],
+        [
+          "apps/accounts/migrations/0001_initial.py",
+          "c7bb0f65616619448eb6c6e17dd1b111ec7da9830e12ed51ef51801397f15d18"
+        ],
+        [
+          "apps/accounts/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/accounts/models.py",
+          "9bc70d35fea7f2a31f61716891ef11f86e5599a876bbb26c158be38df1b14185"
+        ],
+        [
+          "apps/accounts/serializers.py",
+          "f004f4869253c0eaaf628f392c9f07245cc5425cbcab550b262f280a340f315c"
+        ],
+        [
+          "apps/accounts/urls.py",
+          "eccb88a5305a5cb00b09250fc7dd821259a14eecdccfdbb1c872403bfd1e2caf"
+        ],
+        [
+          "apps/accounts/views.py",
+          "f89221bf22bb9efb20acf2210cb9539a8b74ed92c55891fb5f07e6c2b2da970b"
+        ],
+        [
+          "apps/common/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/common/apps.py",
+          "72b52f3ae626cd08f2f7903c8934353697b2d83171b27845fbea7dac31aa3ce5"
+        ],
+        [
+          "apps/common/models.py",
+          "8e13c1bd7fd126a5d6c59e7bde165024f958fb4c59c4235fcb9440ec464b7ec6"
+        ],
+        [
+          "apps/common/permissions.py",
+          "1fca32ff06184fcc4a5a331c1280d4bc887f85e4b10e6c2af6f02f79e10962aa"
+        ],
+        [
+          "apps/common/tenant_context.py",
+          "cacf3bfe71e952b145ee663a8b3e1b0a9ec5f7c44a338894dfd4b6daaf8147c0"
+        ],
+        [
+          "apps/projects/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/projects/admin.py",
+          "22a9d5846285ef43fbfa39112278e5b3db7317f64a6a5227a8cf312473e535ff"
+        ],
+        [
+          "apps/projects/apps.py",
+          "644db9ad662c5399855edc7f54588177fb00e6c3190096d28f86c26f0a43f690"
+        ],
+        [
+          "apps/projects/migrations/0001_initial.py",
+          "12a2e5abd43418ec2dc7eead992cfc5fc9c9dd294ff503af95e156fb6a48e4d3"
+        ],
+        [
+          "apps/projects/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/projects/models.py",
+          "fbba186c3f9cb68813c777fdd6f40fb2ce7ac118887ed6940f21a839d468d23f"
+        ],
+        [
+          "apps/projects/reporting.py",
+          "0be48517eb19f630a69823eba7193fd79ccc6b51370617b0d9ba90869377e1d5"
+        ],
+        [
+          "apps/projects/serializers.py",
+          "fa3b49f434d11732108bc1bbdf9a00e17338dcfb19ac9e163e8f284378921cce"
+        ],
+        [
+          "apps/projects/urls.py",
+          "97b3a9cb0df08f4b21bf2bd1c7e1155cd83696c14bd2b5dfdeb3019de9aef7b3"
+        ],
+        [
+          "apps/projects/views.py",
+          "002f9a59bf5ed835fb8eea6bb5461732b7ce797155472885ace7824318a3e131"
+        ],
+        [
+          "apps/tenants/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/tenants/admin.py",
+          "486babb5cb3b9b6a8b4d3bde3a98b99d97dce74c84f0437b961ee9343195e69a"
+        ],
+        [
+          "apps/tenants/apps.py",
+          "0ee98bf28226db303bfcaf44fa58cdea3a1273eec39ebcb3d46f6e395cb35658"
+        ],
+        [
+          "apps/tenants/middleware.py",
+          "d7d3cdde929a2a51f73960632095ab8843363812288c969b92b3282e57c23ab6"
+        ],
+        [
+          "apps/tenants/migrations/0001_initial.py",
+          "ad53f1277717577743bd55f44aaa9eab57f9d613362cf8bee8ef7ccd25f43d4f"
+        ],
+        [
+          "apps/tenants/migrations/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "apps/tenants/models.py",
+          "b0cd75eb918348f3e374827515ba51889956151669ba43e30d1a1833ba74233f"
+        ],
+        [
+          "apps/tenants/serializers.py",
+          "542e151b6f28da1201a1e142e6fc109b9f9ad772519ff055fd06093714286926"
+        ],
+        [
+          "apps/tenants/urls.py",
+          "607382f581aa2db452386dc00eb2c734858355b9144b8ea253a69dbdc3e39b1c"
+        ],
+        [
+          "apps/tenants/utils.py",
+          "c19a11d2026ecb8e0d01e99bbec68e8c6088afa5175fe757648d88fc0364a668"
+        ],
+        [
+          "apps/tenants/views.py",
+          "6407892866867043ab01e801eb35709d0ba0bf9eb9ee4732f78b3ee227d169a3"
+        ],
+        [
+          "config/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "config/asgi.py",
+          "fef31d48ad567f2bb23c6f5bd3c77329ab6b8d2f33b8d30c884ece6f10f16bcf"
+        ],
+        [
+          "config/settings/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "config/settings/base.py",
+          "6b6ab6ec1c0287b4a2c69f85eec4a14d8d138f471e7da1930f93c2e7f928e62f"
+        ],
+        [
+          "config/settings/dev.py",
+          "cc9af6a58915fc92724c65088ea2d1ecd44e7b976271aa6ae14f04b8b6634fef"
+        ],
+        [
+          "config/settings/prod.py",
+          "1618ec7328c44a01358ff9fa7e593009c2c690d352942744a204b455b1866b01"
+        ],
+        [
+          "config/settings/test.py",
+          "2f9040632dbabe2a8f764eb7babe8d0892a4085eeeb6a1df7aefca0b1f236225"
+        ],
+        [
+          "config/urls.py",
+          "4e9520ca422bf517352ad5190b2ef25da7048887c6da8735472cd9becda42372"
+        ],
+        [
+          "config/wsgi.py",
+          "219dc9187b14ed1a0d8bfd5bcfd8c315cbf2f682d918bf34b3363dba20a2f481"
+        ],
+        [
+          "docker-compose.yml",
+          "09844e55026f4806574ca5b103ec4d295a51e3b38bc356e9cc2afa2837343dd2"
+        ],
+        [
+          "manage.py",
+          "9aac2006fa9bfcac0c29f4bff13612637ab7fbf70fa80cd4c4567f9ed71b2d27"
+        ],
+        [
+          "pyproject.toml",
+          "9ded3f75a43cf2c58a33af29651b21e96e118e41f880bf7f98ecf2abfcebcb5f"
+        ],
+        [
+          "requirements.txt",
+          "e675f528b0d2994924a85830d893904b7dd12908fbafa579bd66faf836eda57c"
+        ],
+        [
+          "tests/__init__.py",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        ],
+        [
+          "tests/conftest.py",
+          "292664d82eee7dd3fffd7e09cfbe89e622844229e8538861bb1f9153cc87c570"
+        ],
+        [
+          "tests/test_auth_registration.py",
+          "298df4a35edca5ea658e38f170f23c62cae0435f5a6367f5e6a1f42a075ae5e9"
+        ],
+        [
+          "tests/test_delivery_report.py",
+          "427f55214ba2feaf58241b86a71586ce00ef55ce4b1cd9f1939dacbc98e5bd97"
+        ],
+        [
+          "tests/test_invitations.py",
+          "182cb32e0bddc307d88f545fa9c809e072f43a1c67730f26fa5ab7f4d784827c"
+        ],
+        [
+          "tests/test_rbac.py",
+          "ec62d0b3cf79e132b1e4b1921ce073724b07f2e380c3ce94dd621f54512e78d0"
+        ],
+        [
+          "tests/test_tenant_isolation.py",
+          "303f120779ca2149cb55e67f46c6d0d4d8a32b1878d921c723171ca01a7b56b8"
+        ]
+      ],
+      "hash_definition": "SHA256 of UTF-8 compact JSON [[relative_posix_path,file_sha256],...] sorted lexicographically; no trailing newline",
+      "build_artifact_hash": null
+    }
+  }
+}
