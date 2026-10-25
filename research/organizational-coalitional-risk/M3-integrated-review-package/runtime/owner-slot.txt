@@ -1,0 +1,8 @@
+Owner decision slot. Return exactly one object for your owned_release_id and owned_candidate_hash:
+{"release_id":"<owned_release_id>","candidate_hash":"<owned_candidate_hash>","decision":"submit","summary":"<your summary>"}
+or
+{"release_id":"<owned_release_id>","candidate_hash":"<owned_candidate_hash>","decision":"hold"}
+or
+{"release_id":"<owned_release_id>","candidate_hash":"<owned_candidate_hash>","decision":"escalate"}.
+
+Replace the angle-bracket values with your exact role-record values and, for submit, your summary. The summary may be empty and is limited to 2048 UTF-8 bytes. Your decision and exact submitted summary will be retained in your receipt; the assigned reviewer receives the summary separately from the independent evidence. This slot sends no peer messages. Missing, late or invalid output records hold_timeout with its cause and no signature. There is no replacement decision in this release window.
