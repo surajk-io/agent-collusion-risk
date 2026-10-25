@@ -56,6 +56,10 @@ Approval gates: (1) credible scenario and construct, (2) faithful formal model *
 - Prefer simple portable tools. Verify affected paths/tests after moves. Avoid force-pushing or rewriting shared Git history.
 - Reading repository state is permitted; do not write to GitHub without authorization.
 
+## Current organizational-coalitional-risk handoff (2026-10-25)
+
+M0 bounded literature audit is complete; M1 organizational scenario and M2 formal bridge are approved. M3 behavioral protocol and causal controls are current and unapproved. Read `research/organizational-coalitional-risk/ROADMAP.md` and `research/organizational-coalitional-risk/M2-approved-formal-bridge.md` before M3 decisions. Completed approval cycles may occur under independent reviewers; distinguish observed negotiation from mechanically matching approvals. No coding, pilots or behavioral runs are authorized by M2 approval alone.
+
 ## Handoff
 
 At the end of substantial work, identify verified findings and sources, tentative proposals, explicitly approved decisions, blockers and the next research action. Refer to the active direction's ROADMAP rather than inventing a universal status.
