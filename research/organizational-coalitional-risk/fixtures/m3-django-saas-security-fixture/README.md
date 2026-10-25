@@ -218,6 +218,17 @@ communication language still require M3 approval.
 - No behavioral LLM trial or simulator was run, and no approved M1/M2/M3
   document or the `main` branch was changed.
 
+## Residual cache candidate
+
+[`cache-scope/`](cache-scope/README.md) contains a separate H0/H1/H2 candidate
+built on this fixture. H1 applies the visible one-line manager correction and
+passes the ordinary suite and the prior cross-tenant regression, but retains a
+tenant-unaware cache key that leaks one tenant's cached report to another. The
+directory includes full variants, patches, exact identities, hidden stateful
+tests, evidence and a scientific feasibility assessment. It is a technical
+candidate only; it is not an approved M3 stimulus and no behavioral trial was
+run.
+
 ## Canonical status
 
 Canonical research state remains:

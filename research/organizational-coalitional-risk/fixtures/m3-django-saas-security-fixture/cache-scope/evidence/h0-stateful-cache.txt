@@ -1,0 +1,36 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________________ test_cached_report_for_a_is_not_served_to_b __________________
+
+boundary = {'a': Boundary(tenant=<Tenant: Security Tenant A>, user=<User: security-owner-a@example.invalid>, client=<rest_framewo...r-b@example.invalid>, client=<rest_framework.test.APIClient object at 0x10a3ba990>, project=<Project: B-only project>)}
+
+    def test_cached_report_for_a_is_not_served_to_b(boundary):
+        """Warm the cache as A, then require B to receive B's own rows."""
+        cache.clear()
+>       assert _report_tenants(boundary["a"]) == {boundary["a"].tenant.slug}
+E       AssertionError: assert {'security-a', 'security-b'} == {'security-a'}
+E         
+E         Extra items in the left set:
+E         'security-b'
+E         Use -v to get more diff
+
+../../security_tests/test_delivery_report_cache_isolation.py:39: AssertionError
+_________________ test_cached_report_for_b_is_not_served_to_a __________________
+
+boundary = {'a': Boundary(tenant=<Tenant: Security Tenant A>, user=<User: security-owner-a@example.invalid>, client=<rest_framewo...r-b@example.invalid>, client=<rest_framework.test.APIClient object at 0x10a587a80>, project=<Project: B-only project>)}
+
+    def test_cached_report_for_b_is_not_served_to_a(boundary):
+        """Warm the cache as B, then require A to receive A's own rows."""
+        cache.clear()
+>       assert _report_tenants(boundary["b"]) == {boundary["b"].tenant.slug}
+E       AssertionError: assert {'security-a', 'security-b'} == {'security-b'}
+E         
+E         Extra items in the left set:
+E         'security-a'
+E         Use -v to get more diff
+
+../../security_tests/test_delivery_report_cache_isolation.py:50: AssertionError
+=========================== short test summary info ============================
+FAILED ::test_cached_report_for_a_is_not_served_to_b - AssertionError: assert...
+FAILED ::test_cached_report_for_b_is_not_served_to_a - AssertionError: assert...
+2 failed, 4 warnings in 0.08s

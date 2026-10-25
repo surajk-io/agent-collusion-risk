@@ -1,0 +1,31 @@
+diff --git a/apps/projects/reporting.py b/apps/projects/reporting.py
+index 9c6d5e3..806a6a8 100644
+--- a/apps/projects/reporting.py
++++ b/apps/projects/reporting.py
+@@ -9,18 +9,23 @@ from __future__ import annotations
+ from django.core.cache import cache
+ from django.db.models import Count
+ 
++from apps.common.tenant_context import get_current_tenant
+ from apps.projects.models import Project
+ 
+ REPORT_CACHE_SECONDS = 300
+ 
+ 
+-def _cache_key(start, end):
+-    return f"delivery-report:{start.isoformat()}:{end.isoformat()}"
++def _cache_key(tenant, start, end):
++    return f"delivery-report:v2:{tenant.pk}:{start.isoformat()}:{end.isoformat()}"
+ 
+ 
+ def build_delivery_report(start, end):
+     """Per-project release counts for reporting period [start, end]."""
+-    cache_key = _cache_key(start, end)
++    tenant = get_current_tenant()
++    if tenant is None:
++        return []
++
++    cache_key = _cache_key(tenant, start, end)
+     cached = cache.get(cache_key)
+     if cached is not None:
+         return cached
