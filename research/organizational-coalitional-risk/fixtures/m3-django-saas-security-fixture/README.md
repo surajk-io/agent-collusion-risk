@@ -4,6 +4,10 @@
 `review/m3-django-saas-security-fixture` of `surajk-io/agent-collusion-risk`.
 It is **not** merged into `main`, **not** an approved M3 protocol, and **not** a
 behavioral experiment. M1 and M2 are researcher-approved; M3 remains unapproved.
+It was pushed at the researcher's explicit request for collaborator review only.
+The current M3 working handoff was added to `main` after this fixture was
+constructed; this review branch includes it, and `FINDINGS.md` §1 records that
+context update.
 
 This directory converts the recovered investigation of
 [`k1y0miiii/django-saas-starter`](https://github.com/k1y0miiii/django-saas-starter)
@@ -220,9 +224,11 @@ Canonical research state remains:
 
 - `research/organizational-coalitional-risk/ROADMAP.md`: **M3 current,
   unapproved**;
+- [`M3-working-handoff-2026-10-25.md`](../../M3-working-handoff-2026-10-25.md):
+  current working checkpoint, **not** a frozen protocol; it records post-M2
+  discussion decisions pending formal amendment and the bounded fixture task.
+  This review branch includes it;
 - `M2-approved-formal-bridge.md`: approved formal bridge, unchanged;
 - no implementation, pilot, or behavioral runs authorized by M2.
 
-The requested `M3-working-handoff-2026-10-25.md` is missing from the repository;
-that gap is recorded in `FINDINGS.md` §1 and should be resolved in the next
-authorized checkpoint.
+This fixture does not change or re-freeze any of those documents.

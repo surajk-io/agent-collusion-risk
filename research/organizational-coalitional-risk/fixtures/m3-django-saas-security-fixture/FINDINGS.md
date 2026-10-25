@@ -7,19 +7,29 @@ protocol. The fixture is committed only to the non-main review branch
 
 ## 1. Context-recovery note
 
-The requested latest working-context file,
-`research/organizational-coalitional-risk/M3-working-handoff-2026-10-25.md`, is
-**not present** in the canonical repository or elsewhere on this machine
-(checked Git history, the research directory, Spotlight, and the OpenCode
-temporary workspace). The canonical sources used here were `AGENTS.md`, the
+At fixture construction time, the requested working-context file,
+`research/organizational-coalitional-risk/M3-working-handoff-2026-10-25.md`, was
+**not present** in the then-current canonical checkout, Git history, the research
+directory, Spotlight, or the OpenCode temporary workspace. I did not invent its
+contents. The sources used for the initial construction were `AGENTS.md`, the
 root and direction `README.md`, `ROADMAP.md`,
 `M1-approved-scenario.md`, `M1-design-review.md`, and
 `M2-approved-formal-bridge.md`.
 
-This is a documentation gap, not evidence that the handoff never existed. I did
-not invent its contents. The previously tested code variants were recovered
-from temporary artifacts described in `PROVENANCE.md`; no prior prompt,
-transcript, analysis plan, or approval text was recovered with them.
+While this review branch was being prepared, `main` advanced with commits
+`65dce57` and `1c6927f`, which add the handoff and link it from the roadmap. The
+review branch now includes those commits. The handoff confirms that the fixture
+task was preparatory only: pin and verify the upstream source, preserve the
+clean/vulnerable patches, add independent cross-tenant tests, produce
+oracle-free owner/reviewer packets, and do not run behavioral trials, build the
+simulator, or push canonical files without separate authorization. The researcher
+gave that separate authorization for this non-main review branch. The handoff
+remains a working checkpoint, not an approved M3 protocol.
+
+This is a retrospective cross-check, not evidence that the earlier fixture
+design used the handoff. The previously tested code variants were recovered from
+temporary artifacts described in `PROVENANCE.md`; no prior prompt, transcript,
+analysis plan, or approval text was recovered with them.
 
 ## 2. What was executed
 
@@ -345,8 +355,10 @@ researcher decision.**
 
 ## 7. Limitations
 
-1. **Missing M3 handoff.** The named handoff file is absent. The prior
-   variant prompts, protocol, and approval status could not be recovered.
+1. **Handoff timing.** The M3 working handoff was absent during fixture
+   construction and was added to `main` afterward; this branch now includes it.
+   It confirms the bounded fixture task but is not an approved protocol. The
+   prior variant prompts and full protocol still could not be recovered.
 2. **Temporary-artifact provenance.** The variants were recovered from
    `/private/var/.../acr-preflight/probe1` and `probe1_clean`, not from Git.
    Provenance rests on source diff, timestamps, and the preserved pytest cache,
@@ -422,16 +434,19 @@ These reviews are technical criticism, not approval of the M3 protocol.
 
 ## 10. Next actions
 
-1. Researcher decides the blocking-severity question (Section 6.2) and whether
+1. Read the current
+   [`M3-working-handoff-2026-10-25.md`](../../M3-working-handoff-2026-10-25.md)
+   and treat it as a working checkpoint, not an approved protocol.
+2. Researcher decides the blocking-severity question (Section 6.2) and whether
    this fixture is a positive control or a main-condition candidate.
-2. Researcher decides whether candidate v2 is the approved technical baseline,
+3. Researcher decides whether candidate v2 is the approved technical baseline,
    or whether a stronger/longer-remediation defect is needed for M1.
-3. Researcher decides whether the upstream RBAC/tenant-isolation tests and
+4. Researcher decides whether the upstream RBAC/tenant-isolation tests and
    README tenancy discussion remain agent-visible (Section 6.3 and Section 9).
-4. Independent reviewer inspects `variants/vulnerable`, the independent tests,
+5. Independent reviewer inspects `variants/vulnerable`, the independent tests,
    the sanitized workspaces, and the packet mapping; confirms no report-specific
    oracle leakage.
-5. If the fixture is retained, freeze the exact packet exposure and feature
+6. If the fixture is retained, freeze the exact packet exposure and feature
    context as part of M3, then implement M4 validation.
-6. Do not run behavioral LLM trials or build the multi-agent simulator until
+7. Do not run behavioral LLM trials or build the multi-agent simulator until
    M3 is explicitly approved.
