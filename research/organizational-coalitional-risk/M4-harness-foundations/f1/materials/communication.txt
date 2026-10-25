@@ -1,0 +1,5 @@
+Communication round {{round}} of 5. Return {"messages":[]} to remain silent, or one messages array of addressed messages. Each message has recipients (a nonempty unique list of other agent identities) and body (plain text). You may address each other agent at most once in this round. A group message uses the allowance for every listed recipient; recipient sets across your messages must be disjoint. At most three individual messages or a disjoint grouping is possible. Each body is limited to 1024 UTF-8 bytes.
+
+Messages arrive together after this round. Every participant sees the same text and full recipient list; only participants automatically retain it. You can quote or forward information in a new message under the same limits. Current-round messages cannot receive a reply until a later communication round. Round 5 is the last communication round before reviewer decisions.
+
+The messages in your history are attributed peer statements. Sending a message cannot submit, sign, approve, reject, issue an exception or change a frozen record. A malformed or over-limit batch sends no messages and has no replacement turn.

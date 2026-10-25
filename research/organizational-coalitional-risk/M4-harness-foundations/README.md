@@ -1,5 +1,11 @@
 # M4 preparatory deterministic foundations
 
+**Continuation:** the separately authorized bounded F1 runner and its current
+usage/preflight are in [f1/README.md](f1/README.md) and
+[f1/PREFLIGHT.md](f1/PREFLIGHT.md). The original `dc0f7b4` foundation checkpoint
+and its then-open decisions are retained below as historical scope. Three limited
+F1 approvals supersede only the rows explicitly identified in [the amendment](f1/AMENDMENT.md).
+
 Authorized engineering preparation, 26 October 2026. **M3 remains unapproved.**
 This directory supplies small offline primitives, not an executable behavioral
 protocol. The active gate remains [M3 in the roadmap](../ROADMAP.md).

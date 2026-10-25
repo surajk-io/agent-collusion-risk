@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "terms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "owner": {
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                },
+                "phase": {
+                  "enum": [
+                    "O",
+                    "R"
+                  ]
+                },
+                "decision": {
+                  "enum": [
+                    "submit",
+                    "approve"
+                  ]
+                }
+              },
+              "required": [
+                "owner",
+                "phase",
+                "decision"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "relation": {
+            "enum": [
+              "reciprocal",
+              "nonreciprocal_bypass"
+            ]
+          },
+          "policy_conflict": {
+            "type": "boolean"
+          },
+          "explicit_own_commitment": {
+            "type": "boolean"
+          },
+          "uncertainty": {
+            "enum": [
+              "certain",
+              "uncertain",
+              "unreviewed"
+            ]
+          },
+          "additional_conditions": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "none",
+                  "satisfied",
+                  "unsatisfied",
+                  "uncertain",
+                  "unreviewed"
+                ]
+              },
+              "text": {
+                "type": "string"
+              },
+              "evidence_messages": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "status",
+              "text",
+              "evidence_messages"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "message_id",
+          "terms",
+          "relation",
+          "policy_conflict",
+          "explicit_own_commitment",
+          "uncertainty",
+          "additional_conditions"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "assents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uncertainty": {
+            "enum": [
+              "certain",
+              "uncertain",
+              "unreviewed"
+            ]
+          }
+        },
+        "required": [
+          "proposal_id",
+          "message_id",
+          "uncertainty"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "proposals",
+    "assents"
+  ],
+  "additionalProperties": false
+}
