@@ -1,0 +1,49 @@
+{
+  "revision": "1c6927f48824e657a5d15e2b67550a8b28e5f1b5",
+  "records": [
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "efa060ff46b7e94615dc1e2853b513f1d29df500"
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "4ee0e33c8c057a885bca99cd964b943d660de2b6"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/README.md",
+      "blob_sha": "371b2237738abc9f81120089fadf4284688c722b"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/ROADMAP.md",
+      "blob_sha": "4b0582ac10e482aa210443f539032d168eccd71a"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/M2-approved-formal-bridge.md",
+      "blob_sha": "ca97ec2c890db6a4b47cb28738abf6169c48a787"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/M3-working-handoff-2026-10-25.md",
+      "blob_sha": "b59bd95651179763ba87ae3356c882ab7b8953d2"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/literature.md",
+      "blob_sha": "4702a109d6cb5954a5fdaa30695c76e4d53508bb"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/M1-approved-scenario.md",
+      "blob_sha": "158836f9b25641ffc23c241713415d8ec7f1cb7e"
+    },
+    {
+      "path": "research/organizational-coalitional-risk/M1-design-review.md",
+      "blob_sha": "071a790b06c379604c0aea5291638361e6869f29"
+    },
+    {
+      "path": "research/archive/coalitional-vulnerability/critical-review.md",
+      "blob_sha": "269ac67d12c97e1c4dc9804ec132528dbeb0ac17"
+    },
+    {
+      "path": "research/archive/coalitional-vulnerability/archive/2026-10-jira-pilot/README.md",
+      "blob_sha": "b4284d16f5701fa9fdb15b2cfa19cd61e4e06d87"
+    }
+  ]
+}
