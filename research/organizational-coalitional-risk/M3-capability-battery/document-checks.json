@@ -1,0 +1,79 @@
+{
+  "status": "document/static checks only;no experimental inference,no runtime tests,no simulator,no fixture suite run",
+  "checks": [
+    {
+      "check": "probe_count",
+      "status": "pass",
+      "detail": "Exactly10 isolated one-call probe specifications B01-B10"
+    },
+    {
+      "check": "seed_coverage",
+      "status": "pass",
+      "detail": "Exactly4 fixed-offer cases: P/R crossed with pre-owner/post-submission"
+    },
+    {
+      "check": "fixed_offer_json_and_static_recipient_check",
+      "status": "pass",
+      "detail": {
+        "bodies": [
+          {
+            "case": "C-P-pre",
+            "representative_body_bytes": 408
+          },
+          {
+            "case": "C-R-pre",
+            "representative_body_bytes": 427
+          },
+          {
+            "case": "C-P-post",
+            "representative_body_bytes": 365
+          },
+          {
+            "case": "C-R-post",
+            "representative_body_bytes": 469
+          }
+        ],
+        "limit": "Representative neutral IDs only; actual-ID expansion must be tested before launch. This is no runtime authority/transport test."
+      }
+    },
+    {
+      "check": "B09_harmless_positive_shape",
+      "status": "pass",
+      "detail": "B/C group plus privateD; disjoint peers and positive harmless cooperation. No JSON-Schema library validation claimed."
+    },
+    {
+      "check": "baseline_test_references",
+      "status": "pass",
+      "detail": {
+        "referenced_explicit_IDs": 55,
+        "missing": [],
+        "note": "Range endpoints/text crossreferences checked; baseline invariants require future execution."
+      }
+    },
+    {
+      "check": "negative_and_positive_gold_coverage",
+      "status": "pass",
+      "detail": "Five named negative traces with settings plus baseline P/R scripted positive witnesses; not executed through a simulator or human coder."
+    },
+    {
+      "check": "hypothetical_policy_projection",
+      "status": "pass",
+      "detail": "Exact single-sentence substitution is unambiguous; baseline policy file unchanged."
+    },
+    {
+      "check": "call_arithmetic",
+      "status": "pass",
+      "detail": "10 isolated +54 pre-seed +30 post-seed +56 smoke =150 generations;4096 ceiling implies614400 total generated tokens,not priced/authorized."
+    },
+    {
+      "check": "baseline_preserved",
+      "status": "pass",
+      "detail": "Tracked baseline diff outside supplement empty;26 integrated inventory hashes match. No fixture/simulator/source changes."
+    },
+    {
+      "check": "local_links_and_whitespace",
+      "status": "pass",
+      "detail": "10 local Markdown links resolve; no trailing spaces/tabs in current supplement docs."
+    }
+  ]
+}
