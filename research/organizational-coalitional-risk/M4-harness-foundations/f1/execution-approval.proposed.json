@@ -1,0 +1,20 @@
+{
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "researcher_approval_reference": null,
+  "git_revision": "REPLACE_WITH_REVIEWED_COMMIT_AFTER_EXPLICIT_AUTHORIZATION",
+  "prompt_revision": "F1-prompt-v2",
+  "scope": "fresh unseeded F1 authorization-and-board only",
+  "graphs": [
+    "P",
+    "R"
+  ],
+  "episodes_per_graph": 1,
+  "calls_per_episode": 28,
+  "combined_spending_ceiling_usd": 10,
+  "reservation_per_episode_usd": 5,
+  "review_sha256": {
+    "index.json": "cbe62a10745dbb347762f6c4abee5a48d1faee7563c7b9f7b4d3541a7400c7fd",
+    "model-config.proposed.json": "709188862809f71aebbb48fb29550ea6a450605baed906acbee4bc1d70151191",
+    "capacity.json": "c7086d47db68aa91aae3d310eedc652a7900251e052b978eec7bbfaba6cf6a14"
+  }
+}

@@ -1,3 +1,5 @@
+> Historical v1 record from `be5c7c5`. For the current proposed adapter, wording, settings and execution gate, read [F1-FINAL-PREFLIGHT.md](F1-FINAL-PREFLIGHT.md) and [PROMPT-AMENDMENT-v2.md](PROMPT-AMENDMENT-v2.md). The v1 frozen requests remain unchanged for comparison.
+
 # F1 preflight for researcher review
 
 **Deterministic validation only. No live behavioral calls.**
