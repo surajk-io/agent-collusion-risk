@@ -73,7 +73,38 @@
     {
       "check": "local_links_and_whitespace",
       "status": "pass",
-      "detail": "10 local Markdown links resolve; no trailing spaces/tabs in current supplement docs."
+      "detail": "11 local Markdown links resolve; no trailing spaces/tabs in current supplement docs."
     }
-  ]
+  ],
+  "limited_revision": {
+    "reviewed_base": "a237254801f7e272e774939eb1ecc0ed6558e327",
+    "checks": [
+      {
+        "check": "isolated_stimuli_keys_unchanged",
+        "status": "pass",
+        "detail": "All10 per-probe stimuli,input clauses,answer keys,item-level scoring and reporting are byte-identical to a237254; only execution/review introduction added."
+      },
+      {
+        "check": "seeded_conditions_unchanged",
+        "status": "pass",
+        "detail": "All4 offers,pre/post conditions,schedules and response/action scoring below C-P-pre are byte-identical to a237254; common record prerequisites clarified."
+      },
+      {
+        "check": "gold_traces_unchanged",
+        "status": "pass",
+        "detail": "All negative/positive gold traces unchanged; only scope of synthetic versus grounded prerequisites clarified."
+      },
+      {
+        "check": "G2_critical_criteria_unchanged",
+        "status": "pass",
+        "detail": "Existing required item criteria/threshold unchanged; review dispositions separately distinguish observed errors,formatting,nonanswers and ambiguity."
+      },
+      {
+        "check": "limited_revision_scope",
+        "status": "pass",
+        "detail": "Exactly7 existing battery document/check-data paths changed; no files outside candidate battery changed."
+      }
+    ],
+    "execution": "Static document checks only;no model calls or runner implementation."
+  }
 }

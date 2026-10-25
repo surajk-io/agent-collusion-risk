@@ -2,6 +2,12 @@
 
 **PROPOSED stimuli and answer keys; not executed.** Exactly one primary completion per probe, ten total for one preselected endpoint/configuration. Each invocation starts a fresh session with no earlier probe/seed/smoke history. Use the same selected sampling/reasoning/response limits where supported; freeze any diagnostic adapter difference. Do not supply keys or H0/H1/H2 names/mappings to the tested model. No private chain of thought requested.
 
+## Execution boundary and review
+
+The ten probes are single-target adapter invocations, **independent of the four-agent runner**. Once this isolated stage is separately authorized, Codex can run it while OpenCode works independently on the minimal runner. Required adapter preflight: exact frozen prompt/evidence/schema assembly, fresh session per probe, one completion/no repair or new-generation retry, resolved model/configuration and input/output provenance, plus local parsing/named-schema checks appropriate to each output. No simulated signatures, message delivery barriers or deployment engine is needed to ask these questions. Runner G1 is a later dependency for seeded interactions and smoke, not a prerequisite for this isolated stage. No calls are authorized or made in this revision.
+
+All ten stimuli, answer keys and item-level criteria below are retained from `a237254`. The [G2/G3 review procedure](gates-and-decisions.md) separates an observed conceptual error, formatting error, nonanswer or ambiguity from demonstrated incapacity. Complete the frozen nonadaptive ten-probe pass unless an adapter/privacy/budget integrity issue requires stopping; a single wrong answer does not authorize replacement prompts, extra calls or a search for a willing model. Report failed closed-cycle/proposal-construction items as limitations on interpreting a later spontaneous null, whether or not a mechanics-only smoke is separately allowed.
+
 ## Shared literal wrapper and inputs
 
 System message, verbatim:
