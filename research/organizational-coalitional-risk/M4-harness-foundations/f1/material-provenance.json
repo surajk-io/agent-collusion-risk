@@ -1,0 +1,317 @@
+{
+  "runtime_sources": [
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/system.txt",
+      "sha256": "e4aec73fb74af20cd63ecfb98189c66fdcc1a928a76ebbbb6d6a7956032a9355"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/policy.txt",
+      "sha256": "798362ff558c130d8a24e7c23684946f404274371cde187309148e686c73879a"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/context.txt",
+      "sha256": "efafb5dd2ecacb1fd129a86c51f534dea2505d7aeabc13041ba3ced598cbe090"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/role.txt",
+      "sha256": "5f201fa40499ebedeab28d9a5e88686c95ba05b7f6a416e612bb492ea7e3093f"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/message-rules.txt",
+      "sha256": "fa42d6560cff0976a79c453601a1d1bbe9f71b41b28de4fdf5c9b448eb926c55"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/communication.txt",
+      "sha256": "7bd859e2aaef37a151ccc2ed664649c30f9e3d7d27e7720a9f4f06e7aaac1b36"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/owner-slot.txt",
+      "sha256": "e666f2c9d1b8e718d3a73800a02505b810c5dd7fb21cd81eab5a1556c13d9b1d"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/review-slot.txt",
+      "sha256": "24397f38d76108824f534465c25b7a1e0dc85c90f791abfefc55101b5058d43b"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/technical-context.md",
+      "sha256": "336f6ef40227eb919d038d0c628f4fb3d9e5a3c66383cfd8607c8ae1e557e720"
+    },
+    {
+      "ref": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+      "path": "research/organizational-coalitional-risk/M3-integrated-review-package/runtime/case-c5b-release-record.md",
+      "sha256": "96219a623b7e546115f46eb87f670855622524154755f61c6cd742747f435a2c"
+    }
+  ],
+  "source_ref": "b94a55197086d2635a53daebd51a6b945ee6eb95",
+  "source_path": "research/organizational-coalitional-risk/fixtures/m3-django-saas-security-fixture/cache-scope/workspace/h1/",
+  "source_inventory": [
+    [
+      ".dockerignore",
+      "d2b59702cf07cfed298a4ea7f9a1231b1618ee857b167180401f9a6e8114331d"
+    ],
+    [
+      ".env.example",
+      "dfa27114a1c5ef52ad8cb385b9c7b8034fac79427212beaabfefaee8acd2c5ea"
+    ],
+    [
+      ".github/workflows/ci.yml",
+      "9ef6b0187638f7e4b0d96c871307b6fd185cac896a8182c1e479854c2e30e7df"
+    ],
+    [
+      ".gitignore",
+      "f9bf4c896f55ce2f64d45cfa2a4ea9f4cb61f46360322c7fa2db7796ba41b835"
+    ],
+    [
+      "Dockerfile",
+      "d613e8ee9c39d97652d853fb1fda2ae811625081e785bd273cf2fc922c77e19a"
+    ],
+    [
+      "LICENSE",
+      "0a000232e8f947bfe3aa604d99c19477d8e820d15457d9fd76ce9325a342f7a5"
+    ],
+    [
+      "README.md",
+      "72741376e45e311a178c34f396e9f66b78bece328c94c02f7c88510094171d09"
+    ],
+    [
+      "README.ru.md",
+      "28ece6e8af4110192a1e2886676400d27272e989d79a49c468b7b4f3171d07e9"
+    ],
+    [
+      "apps/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/accounts/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/accounts/admin.py",
+      "23a84086f48b52ec20d74314658efaf7ef019d19bff566cab05ee93000d97f92"
+    ],
+    [
+      "apps/accounts/apps.py",
+      "b07832171435407bdda4d32376a91fef61deb7616ebffdd4aeb5b30be8a21d30"
+    ],
+    [
+      "apps/accounts/migrations/0001_initial.py",
+      "c7bb0f65616619448eb6c6e17dd1b111ec7da9830e12ed51ef51801397f15d18"
+    ],
+    [
+      "apps/accounts/migrations/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/accounts/models.py",
+      "9bc70d35fea7f2a31f61716891ef11f86e5599a876bbb26c158be38df1b14185"
+    ],
+    [
+      "apps/accounts/serializers.py",
+      "f004f4869253c0eaaf628f392c9f07245cc5425cbcab550b262f280a340f315c"
+    ],
+    [
+      "apps/accounts/urls.py",
+      "eccb88a5305a5cb00b09250fc7dd821259a14eecdccfdbb1c872403bfd1e2caf"
+    ],
+    [
+      "apps/accounts/views.py",
+      "f89221bf22bb9efb20acf2210cb9539a8b74ed92c55891fb5f07e6c2b2da970b"
+    ],
+    [
+      "apps/common/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/common/apps.py",
+      "72b52f3ae626cd08f2f7903c8934353697b2d83171b27845fbea7dac31aa3ce5"
+    ],
+    [
+      "apps/common/models.py",
+      "8e13c1bd7fd126a5d6c59e7bde165024f958fb4c59c4235fcb9440ec464b7ec6"
+    ],
+    [
+      "apps/common/permissions.py",
+      "1fca32ff06184fcc4a5a331c1280d4bc887f85e4b10e6c2af6f02f79e10962aa"
+    ],
+    [
+      "apps/common/tenant_context.py",
+      "cacf3bfe71e952b145ee663a8b3e1b0a9ec5f7c44a338894dfd4b6daaf8147c0"
+    ],
+    [
+      "apps/projects/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/projects/admin.py",
+      "22a9d5846285ef43fbfa39112278e5b3db7317f64a6a5227a8cf312473e535ff"
+    ],
+    [
+      "apps/projects/apps.py",
+      "644db9ad662c5399855edc7f54588177fb00e6c3190096d28f86c26f0a43f690"
+    ],
+    [
+      "apps/projects/migrations/0001_initial.py",
+      "12a2e5abd43418ec2dc7eead992cfc5fc9c9dd294ff503af95e156fb6a48e4d3"
+    ],
+    [
+      "apps/projects/migrations/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/projects/models.py",
+      "fbba186c3f9cb68813c777fdd6f40fb2ce7ac118887ed6940f21a839d468d23f"
+    ],
+    [
+      "apps/projects/reporting.py",
+      "8a783001e94657ffe7be6780defa197e90bd924728c8f4fd7972b3ca6b8e5e98"
+    ],
+    [
+      "apps/projects/serializers.py",
+      "fa3b49f434d11732108bc1bbdf9a00e17338dcfb19ac9e163e8f284378921cce"
+    ],
+    [
+      "apps/projects/urls.py",
+      "97b3a9cb0df08f4b21bf2bd1c7e1155cd83696c14bd2b5dfdeb3019de9aef7b3"
+    ],
+    [
+      "apps/projects/views.py",
+      "002f9a59bf5ed835fb8eea6bb5461732b7ce797155472885ace7824318a3e131"
+    ],
+    [
+      "apps/tenants/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/tenants/admin.py",
+      "486babb5cb3b9b6a8b4d3bde3a98b99d97dce74c84f0437b961ee9343195e69a"
+    ],
+    [
+      "apps/tenants/apps.py",
+      "0ee98bf28226db303bfcaf44fa58cdea3a1273eec39ebcb3d46f6e395cb35658"
+    ],
+    [
+      "apps/tenants/middleware.py",
+      "d7d3cdde929a2a51f73960632095ab8843363812288c969b92b3282e57c23ab6"
+    ],
+    [
+      "apps/tenants/migrations/0001_initial.py",
+      "ad53f1277717577743bd55f44aaa9eab57f9d613362cf8bee8ef7ccd25f43d4f"
+    ],
+    [
+      "apps/tenants/migrations/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "apps/tenants/models.py",
+      "b0cd75eb918348f3e374827515ba51889956151669ba43e30d1a1833ba74233f"
+    ],
+    [
+      "apps/tenants/serializers.py",
+      "542e151b6f28da1201a1e142e6fc109b9f9ad772519ff055fd06093714286926"
+    ],
+    [
+      "apps/tenants/urls.py",
+      "607382f581aa2db452386dc00eb2c734858355b9144b8ea253a69dbdc3e39b1c"
+    ],
+    [
+      "apps/tenants/utils.py",
+      "c19a11d2026ecb8e0d01e99bbec68e8c6088afa5175fe757648d88fc0364a668"
+    ],
+    [
+      "apps/tenants/views.py",
+      "6407892866867043ab01e801eb35709d0ba0bf9eb9ee4732f78b3ee227d169a3"
+    ],
+    [
+      "config/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "config/asgi.py",
+      "fef31d48ad567f2bb23c6f5bd3c77329ab6b8d2f33b8d30c884ece6f10f16bcf"
+    ],
+    [
+      "config/settings/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "config/settings/base.py",
+      "6b6ab6ec1c0287b4a2c69f85eec4a14d8d138f471e7da1930f93c2e7f928e62f"
+    ],
+    [
+      "config/settings/dev.py",
+      "cc9af6a58915fc92724c65088ea2d1ecd44e7b976271aa6ae14f04b8b6634fef"
+    ],
+    [
+      "config/settings/prod.py",
+      "1618ec7328c44a01358ff9fa7e593009c2c690d352942744a204b455b1866b01"
+    ],
+    [
+      "config/settings/test.py",
+      "2f9040632dbabe2a8f764eb7babe8d0892a4085eeeb6a1df7aefca0b1f236225"
+    ],
+    [
+      "config/urls.py",
+      "4e9520ca422bf517352ad5190b2ef25da7048887c6da8735472cd9becda42372"
+    ],
+    [
+      "config/wsgi.py",
+      "219dc9187b14ed1a0d8bfd5bcfd8c315cbf2f682d918bf34b3363dba20a2f481"
+    ],
+    [
+      "docker-compose.yml",
+      "09844e55026f4806574ca5b103ec4d295a51e3b38bc356e9cc2afa2837343dd2"
+    ],
+    [
+      "manage.py",
+      "9aac2006fa9bfcac0c29f4bff13612637ab7fbf70fa80cd4c4567f9ed71b2d27"
+    ],
+    [
+      "pyproject.toml",
+      "9ded3f75a43cf2c58a33af29651b21e96e118e41f880bf7f98ecf2abfcebcb5f"
+    ],
+    [
+      "requirements.txt",
+      "e675f528b0d2994924a85830d893904b7dd12908fbafa579bd66faf836eda57c"
+    ],
+    [
+      "tests/__init__.py",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    [
+      "tests/conftest.py",
+      "292664d82eee7dd3fffd7e09cfbe89e622844229e8538861bb1f9153cc87c570"
+    ],
+    [
+      "tests/test_auth_registration.py",
+      "298df4a35edca5ea658e38f170f23c62cae0435f5a6367f5e6a1f42a075ae5e9"
+    ],
+    [
+      "tests/test_delivery_report.py",
+      "427f55214ba2feaf58241b86a71586ce00ef55ce4b1cd9f1939dacbc98e5bd97"
+    ],
+    [
+      "tests/test_invitations.py",
+      "182cb32e0bddc307d88f545fa9c809e072f43a1c67730f26fa5ab7f4d784827c"
+    ],
+    [
+      "tests/test_rbac.py",
+      "ec62d0b3cf79e132b1e4b1921ce073724b07f2e380c3ce94dd621f54512e78d0"
+    ],
+    [
+      "tests/test_tenant_isolation.py",
+      "303f120779ca2149cb55e67f46c6d0d4d8a32b1878d921c723171ca01a7b56b8"
+    ]
+  ],
+  "source_hash": "16ba7b05cea8b2b4d23e2e445702a0386c3b55c79f056a2ac5c56cfbe8f7fe0e",
+  "build_hash": null,
+  "status": "Existing captured evidence; not rerun; literal F1 changes await review"
+}

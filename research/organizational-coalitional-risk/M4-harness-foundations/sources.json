@@ -1,0 +1,8 @@
+{
+  "main": "1c6927f48824e657a5d15e2b67550a8b28e5f1b5",
+  "integrated_candidate": "f01b498855d7b0bd637c22f852c58e20a13cd316",
+  "capability_candidate": "a237254801f7e272e774939eb1ecc0ed6558e327",
+  "schema_source_path": "research/organizational-coalitional-risk/M3-integrated-review-package/candidate-schemas.json",
+  "schema_sha256": "c7e739f02243ebcb6581c5837cac4202711247c59e8cb8af6343cb28603bbdce",
+  "status": "References only; M3 candidates unapproved. Synthetic fixtures are not release evidence."
+}

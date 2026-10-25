@@ -1,0 +1,44 @@
+test_annotation_extra_conditions_uncertainty_and_two_actor_minimum (test_f1.F1Tests.test_annotation_extra_conditions_uncertainty_and_two_actor_minimum) ... ok
+test_archive_corruption_and_overwrite_refused (test_f1.F1Tests.test_archive_corruption_and_overwrite_refused) ... ok
+test_atomic_input_snapshots_watermarks_and_privacy (test_f1.F1Tests.test_atomic_input_snapshots_watermarks_and_privacy) ... ok
+test_concurrent_stage_dispatch_and_late_result_cannot_overwrite (test_f1.F1Tests.test_concurrent_stage_dispatch_and_late_result_cannot_overwrite) ... ok
+test_hold_escalation_invalid_statuses_indistinguishable_to_reviewer (test_f1.F1Tests.test_hold_escalation_invalid_statuses_indistinguishable_to_reviewer) ... ok
+test_inclusive_cutoff_in_runner (test_f1.F1Tests.test_inclusive_cutoff_in_runner) ... ok
+test_live_adapter_rejected (test_f1.F1Tests.test_live_adapter_rejected) ... ok
+test_nonparticipant_and_researcher_state_noninterference (test_f1.F1Tests.test_nonparticipant_and_researcher_state_noninterference) ... ok
+test_q0_deploys_and_wrong_signature_gate_blocked (test_f1.F1Tests.test_q0_deploys_and_wrong_signature_gate_blocked) ... ok
+test_qualified_legitimate_gold_is_synthetic_not_actual_certificate (test_f1.F1Tests.test_qualified_legitimate_gold_is_synthetic_not_actual_certificate) ... ok
+test_replay_exact_requests_states_P_R_and_errors (test_f1.F1Tests.test_replay_exact_requests_states_P_R_and_errors) ... ok
+test_replay_preserves_late_completion_without_watchdog_event (test_f1.F1Tests.test_replay_preserves_late_completion_without_watchdog_event) ... ok
+test_request_flushed_before_send_response_retained_without_thought_leak (test_f1.F1Tests.test_request_flushed_before_send_response_retained_without_thought_leak) ... ok
+test_scripted_positive_negative_gold_episodes (test_f1.F1Tests.test_scripted_positive_negative_gold_episodes) ... ok
+test_external_config_contains_no_authentication_or_unknown_fields (test_f1.VertexTests.test_external_config_contains_no_authentication_or_unknown_fields) ... ok
+test_mocked_wire_retention_and_credential_nonlogging (test_f1.VertexTests.test_mocked_wire_retention_and_credential_nonlogging) ... ok
+test_provider_errors_no_repair_or_thought_fallback (test_f1.VertexTests.test_provider_errors_no_repair_or_thought_fallback) ... ok
+test_barrier_atomicity_order_idempotency_conflicts (test_foundations.DurableTests.test_barrier_atomicity_order_idempotency_conflicts) ... ok
+test_communication_delivery_and_replay_for_P_and_R (test_foundations.DurableTests.test_communication_delivery_and_replay_for_P_and_R) ... ok
+test_completion_order_does_not_affect_committed_bytes (test_foundations.DurableTests.test_completion_order_does_not_affect_committed_bytes) ... ok
+test_corruption_and_blob_integrity (test_foundations.DurableTests.test_corruption_and_blob_integrity) ... ok
+test_crash_after_replace_does_not_restore_stale_memory (test_foundations.DurableTests.test_crash_after_replace_does_not_restore_stale_memory) ... ok
+test_crash_before_replace_keeps_committed_prefix (test_foundations.DurableTests.test_crash_before_replace_keeps_committed_prefix) ... ok
+test_cross_episode_and_diagnostic_history_rejected (test_foundations.DurableTests.test_cross_episode_and_diagnostic_history_rejected) ... ok
+test_cutoff_inclusive_monotonic_only (test_foundations.DurableTests.test_cutoff_inclusive_monotonic_only) ... ok
+test_events_detached_and_uncommitted_delivery_denied (test_foundations.DurableTests.test_events_detached_and_uncommitted_delivery_denied) ... ok
+test_interrupted_invocation_cannot_be_resampled (test_foundations.DurableTests.test_interrupted_invocation_cannot_be_resampled) ... ok
+test_invalid_sender_batch_is_whole_and_other_senders_survive (test_foundations.DurableTests.test_invalid_sender_batch_is_whole_and_other_senders_survive) ... ok
+test_missing_output_is_error_and_incoming_is_retained (test_foundations.DurableTests.test_missing_output_is_error_and_incoming_is_retained) ... ok
+test_provenance_retains_bytes_and_git_revision (test_foundations.DurableTests.test_provenance_retains_bytes_and_git_revision) ... ok
+test_provider_isolation_logs_and_errors (test_foundations.DurableTests.test_provider_isolation_logs_and_errors) ... ok
+test_reference_slot_order_script_only (test_foundations.DurableTests.test_reference_slot_order_script_only) ... ok
+test_visibility_noninterference_and_packet_independence (test_foundations.DurableTests.test_visibility_noninterference_and_packet_independence) ... ok
+test_bad_output_bytes (test_foundations.SchemaTests.test_bad_output_bytes) ... ok
+test_decision_authority_all_actors_graphs_and_versions (test_foundations.SchemaTests.test_decision_authority_all_actors_graphs_and_versions) ... ok
+test_exact_vendored_schema (test_foundations.SchemaTests.test_exact_vendored_schema) ... ok
+test_named_schema_is_constrained_and_metadata_free (test_foundations.SchemaTests.test_named_schema_is_constrained_and_metadata_free) ... ok
+test_recipients_all_actors_and_utf8_limits (test_foundations.SchemaTests.test_recipients_all_actors_and_utf8_limits) ... ok
+test_unsubmitted_and_eligible_not_applicable (test_foundations.SchemaTests.test_unsubmitted_and_eligible_not_applicable) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 5.047s
+
+OK

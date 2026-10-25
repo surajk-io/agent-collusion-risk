@@ -1,0 +1,30 @@
+{
+  "timestamp_utc": "2026-10-25T21:21:56.845907+00:00",
+  "command": [
+    "/private/tmp/m4-foundations-venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "research/organizational-coalitional-risk/M4-harness-foundations",
+  "exit_code": 0,
+  "tests": 39,
+  "script_trace_cases": 24,
+  "log_sha256": "465069a6ff212b3531bbd3505e4a616eefd4f9ffbaf53eee83f112a801a1f856",
+  "live_model_calls": 0,
+  "gcp_auth_calls": 0,
+  "fixture_security_reruns": 0,
+  "script_cli_runs": [
+    "python -m f1.cli script --graph P --trace positive --out /private/tmp/f1-validation-P",
+    "python -m f1.cli script --graph R --trace positive --out /private/tmp/f1-validation-R"
+  ],
+  "replay_cli_runs": [
+    "python -m f1.cli replay --run /private/tmp/f1-validation-P --out /private/tmp/f1-replay-P",
+    "python -m f1.cli replay --run /private/tmp/f1-validation-R --out /private/tmp/f1-replay-R"
+  ],
+  "frozen_index_sha256": "d597503d0cbe2a04a08771b6f063f5fa20bf3fa798f5340f47cdaf5f0103ed19",
+  "limits": "No actual provider-capacity, final-byte transport timing, real model, audit/lifecycle or causal-collusion validation."
+}
