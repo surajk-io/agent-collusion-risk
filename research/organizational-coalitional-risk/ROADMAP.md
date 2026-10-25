@@ -40,3 +40,8 @@ Historical predecessor roadmaps, literature, pilots and run artifacts are preser
 ## M3 handoff (2026-10-25)
 
 Read root README and AGENTS, this roadmap, direction README, M0 literature, M1 approved scenario and M1 design review, then [M2 approved formal bridge](M2-approved-formal-bridge.md). Preserve overarching and narrow questions verbatim. First settle evidence distinguishing bargaining from independent approvals, then controls and exact agent-facing protocol. Graph-cycle completion alone is not evidence of collusion. Do not change approved M2, implement, pilot or run without researcher authorization.
+
+
+## Latest M3 working checkpoint (2026-10-25 evening)
+
+See [M3 working handoff](M3-working-handoff-2026-10-25.md) for recent researcher-agreed M2 changes pending formal amendment, current pilot proposals, OpenCode feasibility findings, and the narrowly scoped Django security-fixture preparation task. **This is not a frozen/approved M3 experimental protocol.** Preparatory fixture verification is separate from permission to implement the simulator or run behavioral experiments.
