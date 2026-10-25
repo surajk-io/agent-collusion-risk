@@ -1,6 +1,6 @@
 # Organizational coalitional risk — unified research direction
 
-**Status (2026-10-25):** The overarching question, unification, and [M1 qualitative scenario](M1-approved-scenario.md) are approved. Exact formal model, metrics, protocols and novelty claims remain **proposed / unverified**. M2 is current.
+**Status (2026-10-25):** The overarching question, [M1 qualitative scenario](M1-approved-scenario.md), and [M2 formal bridge](M2-approved-formal-bridge.md) are **researcher-approved**. M3 behavioral protocol and causal controls are current and **not approved**. No implementation, result or novelty claim has been approved.
 
 ## Locked overarching question
 
@@ -46,7 +46,7 @@ These compete with the null/alternative that such summaries have weak or no beha
 
 See [ROADMAP.md](ROADMAP.md). A bounded focused novelty audit is **complete**; see [literature.md](literature.md). Novelty of the eventual experiment or result remains unestablished. The researcher approved the balanced four-agent cross-workflow reviewer-network scenario in [M1-approved-scenario.md](M1-approved-scenario.md), after critique documented in [M1-design-review.md](M1-design-review.md). This approval does not authorize a particular executable model, prompt, or experiment.
 
-**The next intellectual bottleneck is M2: formally specifying initial conditions, permitted actions, timing, audit and reward mechanics, and the induced ex ante coalition opportunities.** Do not optimize synthetic payoff tables solely to generate the expected outcome.
+**The next intellectual bottleneck is M3: designing an empirical protocol that distinguishes actual reciprocal coordination from unilateral unsafe submissions, generic helpfulness, inattentive review, coercion, and mechanically completed approval cycles.** The M2 model is frozen in [M2-approved-formal-bridge.md](M2-approved-formal-bridge.md); no simulator or behavioral runs are authorized until M3 approval.
 
 No particular formalization, scalar, coalition counting rule, LLM provider, interaction horizon, or experiment has been approved. Approval gates follow [AGENTS.md](../../AGENTS.md).
 
