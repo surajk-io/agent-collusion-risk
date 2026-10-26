@@ -1,3 +1,7 @@
+> **POST-SUBMISSION STATUS (2026-10-26):** This is a dated **engineering development log**, not the present study state. After these offline checkpoints, the researcher authorized/executed **one live A block1 P/R pair** using frozen revision `00fdce373aaed58703478866025ddc864b66dac5`; Apart report was submitted. See [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md) and [RESULTS-2026-10-26.md](research/organizational-coalitional-risk/RESULTS-2026-10-26.md). The original run archives are outside GitHub. Old headings saying “no main study calls/approval” describe the earlier engineering checkpoints, not the final sprint state. No new live calls are authorized by this note.
+
+---
+
 # Main study implementation status
 
 ## One-pair execution/resume correction — 2026-10-26

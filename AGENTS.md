@@ -56,13 +56,14 @@ Approval gates: (1) credible scenario and construct, (2) faithful formal model *
 - Prefer simple portable tools. Verify affected paths/tests after moves. Avoid force-pushing or rewriting shared Git history.
 - Reading repository state is permitted; do not write to GitHub without authorization.
 
-## Current organizational-coalitional-risk handoff (2026-10-26)
+## Current organizational-coalitional-risk handoff (post-Apart submission, 2026-10-26)
 
-**Latest engineering science resolution (2026-10-26):** [M3-IMPLEMENTATION-BASELINE-2026-10-26.md](research/organizational-coalitional-risk/M3-IMPLEMENTATION-BASELINE-2026-10-26.md) chooses concrete parameters, case schedule, dual-final-action workflow and controls **for implementation**, superseding conflicting earlier proposals. It is not signed live-experiment authorization. Read it after CURRENT-STUDY and before applying older M3/F1 instructions.
+**Mandatory first read:** [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md), then [RESULTS-2026-10-26.md](research/organizational-coalitional-risk/RESULTS-2026-10-26.md) and [ROADMAP.md](research/organizational-coalitional-risk/ROADMAP.md). The four-quarter matched P/R **A / block1** pair was completed and the paper submitted; older banners asserting no main-study behavioral calls are historical and must not be repeated as current facts.
 
+- **Implemented:** [mainstudy harness](research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/README.md), frozen execution SHA `00fdce373aaed58703478866025ddc864b66dac5`, no changes to observed protocol in consolidation.
+- **Empirical:** Q1 qualified 8/8 deployed; Q2–Q4 unqualified 0/24 deployed; delivered messages P92/R174; one Q2 technical fallback per graph. No human-adjudicated semantic labels; original live transcripts remain outside GitHub.
+- **Scientific limits:** one matched pair, no B/C/D controls or block2, no demonstrated causal topology effect. Historical M2 payoff model is not measured model utility; positive scripted exchanges are apparatus tests only.
+- **Next action:** archive verification and human coding, then explicitly plan any new experiment. No live inference, raw transcript fabrication, retroactive alteration of frozen prompts/fixtures, or silent resumption of prior authorization.
+- **Historical proposals:** [archive](research/archive/README.md). The 25 Oct pilot-interaction candidate was not adopted; the GitHub report branch contains a superseded draft, not the submitted paper.
 
-M0 bounded literature audit complete; M1/M2 are approved historical checkpoints, but several assumptions have been superseded for the current working design. F1 one-quarter smoke actually completed on 2026-10-26 (56/56 model calls; no submissions); full multi-quarter M3 remains unapproved. **Mandatory first read for this direction: [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md)**, then ROADMAP, then historical M1/M2 and M3 as needed. Current agreements: external remediation without carryover, no detailed post-release repairs/exposure-duration/scalar welfare, simple probabilistic audit, persistent cross-quarter histories; board-visibility and graph-blind controls remain open. Exact hidden-dependency case and final authorization policy remain scientific proposals. Never mistake F1 or proposed historical M3 as main protocol.
-
-## Handoff
-
-At the end of substantial work, identify verified findings and sources, tentative proposals, explicitly approved decisions, blockers and the next research action. Refer to the active direction's ROADMAP rather than inventing a universal status.
+General collaboration principles and approval gates above continue to apply to **future** research.

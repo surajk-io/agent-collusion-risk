@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:m3-pilot-candidate:interaction-schemas:2026-10-25",
+  "title": "PROPOSED M3 single-quarter interaction schemas",
+  "$comment": "Validate using the appropriate #/$defs/NAME entry point, never the unconstrained document root. JSON Schema does not implement authority, timing, cross-message disjointness, body byte limits, duplicate raw JSON-key detection or transport semantics. All require runtime validation specified in interaction-spec.md. No simulator is implemented.",
+  "$defs": {
+    "Agent": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "OpaqueId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "CandidateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "Message": {
+      "type": "object",
+      "properties": {
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Agent"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "recipients",
+        "body"
+      ],
+      "additionalProperties": false,
+      "$comment": "Runtime: exclude authenticated sender; recipient sets across whole batch must be disjoint; enforce frozen UTF-8 byte limits."
+    },
+    "CommunicationBatch": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Message"
+          },
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "messages"
+      ],
+      "additionalProperties": false
+    },
+    "OwnerSubmit": {
+      "type": "object",
+      "properties": {
+        "release_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "candidate_hash": {
+          "$ref": "#/$defs/CandidateHash"
+        },
+        "decision": {
+          "const": "submit"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "release_id",
+        "candidate_hash",
+        "decision",
+        "summary"
+      ],
+      "additionalProperties": false,
+      "$comment": "Runtime: actor owns current candidate; O stage; hash and release match immutable manifest. Empty summary is permitted: no minimum explanation or reasoning disclosure."
+    },
+    "OwnerHoldOrEscalate": {
+      "type": "object",
+      "properties": {
+        "release_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "candidate_hash": {
+          "$ref": "#/$defs/CandidateHash"
+        },
+        "decision": {
+          "enum": [
+            "hold",
+            "escalate"
+          ]
+        }
+      },
+      "required": [
+        "release_id",
+        "candidate_hash",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "OwnerDecision": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/OwnerSubmit"
+        },
+        {
+          "$ref": "#/$defs/OwnerHoldOrEscalate"
+        }
+      ]
+    },
+    "ReviewDecision": {
+      "type": "object",
+      "properties": {
+        "release_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "candidate_hash": {
+          "$ref": "#/$defs/CandidateHash"
+        },
+        "decision": {
+          "enum": [
+            "approve",
+            "reject"
+          ]
+        }
+      },
+      "required": [
+        "release_id",
+        "candidate_hash",
+        "decision"
+      ],
+      "additionalProperties": false,
+      "$comment": "Runtime: actor is assigned reviewer; R stage; release submitted; exact version match."
+    },
+    "NoReviewDecision": {
+      "type": "object",
+      "properties": {
+        "decision": {
+          "const": "not_applicable"
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "additionalProperties": false,
+      "$comment": "Runtime: assigned release is not submitted. Other uses invalid."
+    },
+    "ReviewSlotOutput": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ReviewDecision"
+        },
+        {
+          "$ref": "#/$defs/NoReviewDecision"
+        }
+      ]
+    },
+    "HistoryRequest": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "participant_messages"
+        },
+        "through_round": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        }
+      },
+      "required": [
+        "kind",
+        "through_round"
+      ],
+      "additionalProperties": false,
+      "$comment": "Trusted context-builder API, not an interactive model tool in this candidate. Runtime: watermark bound to authenticated snapshot; automatic context always gets full permitted history."
+    },
+    "MessageEnvelope": {
+      "type": "object",
+      "properties": {
+        "message_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "episode_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "quarter": {
+          "const": 1
+        },
+        "round": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "sender": {
+          "$ref": "#/$defs/Agent"
+        },
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Agent"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "message_id",
+        "episode_id",
+        "quarter",
+        "round",
+        "sender",
+        "recipients",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    "HistoryResponse": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "participant_messages"
+        },
+        "episode_id": {
+          "$ref": "#/$defs/OpaqueId"
+        },
+        "quarter": {
+          "const": 1
+        },
+        "viewer": {
+          "$ref": "#/$defs/Agent"
+        },
+        "delivered_through_round": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MessageEnvelope"
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "episode_id",
+        "quarter",
+        "viewer",
+        "delivered_through_round",
+        "messages"
+      ],
+      "additionalProperties": false,
+      "$comment": "Runtime: messages are only from completed barriers <= watermark with viewer among sender or recipients. No hidden count/cursor. Order round, public sender order, original batch index."
+    }
+  }
+}

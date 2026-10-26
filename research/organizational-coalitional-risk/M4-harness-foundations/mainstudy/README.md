@@ -1,3 +1,7 @@
+> **Live sprint checkpoint (2026-10-26):** This harness was used for **one** approved A/block1 P/R pair at exact frozen Git revision `00fdce373aaed58703478866025ddc864b66dac5`. Observed outcome: qualified Q1 throughput 8/8, unqualified Q2–Q4 deployment 0/24. See [current state](../../CURRENT-STUDY.md), [operator-derived results](../../RESULTS-2026-10-26.md) and [submitted-paper record](../../SUBMISSION-2026-10-26.md). **No local run archive is checked into this repository.** The rest of this README is preserved as the **pre-execution engineering handoff**. Its “no live calls/approval” banners were accurate at that earlier checkpoint, not after the sprint. Running its dormant live commands would require new approval and a fresh frozen study.
+
+---
+
 # Main-study harness
 
 Four persistent roles, four observed quarters, two reviewer graphs and four information conditions. This is an offline-validated experimental apparatus, not behavioral evidence. **No main-study model calls or spending have been authorized.** Engineering authority is `../../M3-IMPLEMENTATION-BASELINE-2026-10-26.md`. Historical F1 code/evidence remains unchanged; its successful revision `273c814` was merged into this branch because origin/main lacked it.
