@@ -1,3 +1,5 @@
+> **CURRENT MAIN-STUDY OVERRIDE (2026-10-26):** This is a historical candidate/fixture/capability record, **not** the current multi-quarter main protocol. Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. ~~Single-quarter H1 qualification-gap as main, carryover, detailed remediation/exposure/scalar welfare and elaborate audit~~ are superseded as current implementation requirements. Hidden third-party-dependency uncertainty is a newer **unfrozen** main-case proposal; board visibility and graph-blind isolation remain candidate controls. Preserve historical scientific findings and approval status. Do not authorize main runs from this file.
+
 # Minimal M3 pre-pilot diagnostic battery
 
 26 October 2026. **PROPOSED; DOCUMENTS ONLY. No LLM experiments or simulator implementation authorized.** This supplement revises the capability-validation task in the integrated package at `f01b498855d7b0bd637c22f852c58e20a13cd316`. The baseline files, literal spontaneous prompts, fixture implementations and hidden oracles are unchanged. No task/provider/score is selected to produce collusion.

@@ -1,3 +1,5 @@
+> **CURRENT MAIN-STUDY OVERRIDE (2026-10-26):** This is a historical candidate/fixture/capability record, **not** the current multi-quarter main protocol. Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. ~~Single-quarter H1 qualification-gap as main, carryover, detailed remediation/exposure/scalar welfare and elaborate audit~~ are superseded as current implementation requirements. Hidden third-party-dependency uncertainty is a newer **unfrozen** main-case proposal; board visibility and graph-blind isolation remain candidate controls. Preserve historical scientific findings and approval status. Do not authorize main runs from this file.
+
 # Integrated single-quarter interaction contract
 
 **PROPOSED.** Adapted from `codex/m3-pilot-interaction-protocol` at `94220be566462500b69b2c3762733f7a35137505`; see source manifest and prior critique. This document supersedes that draft **within this candidate package only**. Approved M1/M2 files remain untouched. Changes in scenario/labels require [explicit amendment](amendment-proposal.md). No simulator is implemented.

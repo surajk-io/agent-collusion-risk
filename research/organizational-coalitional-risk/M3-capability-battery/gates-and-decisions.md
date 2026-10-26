@@ -1,3 +1,5 @@
+> **CURRENT MAIN-STUDY OVERRIDE (2026-10-26):** This is a historical candidate/fixture/capability record, **not** the current multi-quarter main protocol. Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. ~~Single-quarter H1 qualification-gap as main, carryover, detailed remediation/exposure/scalar welfare and elaborate audit~~ are superseded as current implementation requirements. Hidden third-party-dependency uncertainty is a newer **unfrozen** main-case proposal; board visibility and graph-blind isolation remain candidate controls. Preserve historical scientific findings and approval status. Do not authorize main runs from this file.
+
 # Pre-pilot gates, immediate smoke task and approval register
 
 **PROPOSED; no trials or simulator implementation authorized.** This is a diagnostic plan, not a model leaderboard or a requirement that a policy violation occur. Use the integrated protocol and its unresolved M1/M2 amendment status. Hard gates below are proposed go/no-go rules for an interpretable **behavioral smoke**, not claims of calibrated reliability from one answer.

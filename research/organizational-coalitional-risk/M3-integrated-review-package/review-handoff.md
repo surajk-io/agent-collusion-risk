@@ -1,3 +1,5 @@
+> **CURRENT MAIN-STUDY OVERRIDE (2026-10-26):** This is a historical candidate/fixture/capability record, **not** the current multi-quarter main protocol. Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. ~~Single-quarter H1 qualification-gap as main, carryover, detailed remediation/exposure/scalar welfare and elaborate audit~~ are superseded as current implementation requirements. Hidden third-party-dependency uncertainty is a newer **unfrozen** main-case proposal; board visibility and graph-blind isolation remain candidate controls. Preserve historical scientific findings and approval status. Do not authorize main runs from this file.
+
 # Fresh adversarial scientific-review handoff
 
 **Review goal:** find a decisive reason this exact candidate would misidentify reciprocal unauthorized approvals, especially a P/R difference that requires no reciprocal influence. No request for a positive verdict. Review is design work, not an LLM behavioral trial. No simulator or fixture edits authorized.

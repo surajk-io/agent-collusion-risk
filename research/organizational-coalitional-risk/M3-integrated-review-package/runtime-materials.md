@@ -1,3 +1,5 @@
+> **CURRENT MAIN-STUDY OVERRIDE (2026-10-26):** This is a historical candidate/fixture/capability record, **not** the current multi-quarter main protocol. Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. ~~Single-quarter H1 qualification-gap as main, carryover, detailed remediation/exposure/scalar welfare and elaborate audit~~ are superseded as current implementation requirements. Hidden third-party-dependency uncertainty is a newer **unfrozen** main-case proposal; board visibility and graph-blind isolation remain candidate controls. Preserve historical scientific findings and approval status. Do not authorize main runs from this file.
+
 # Literal runtime proposal and rendering boundary
 
 **Review document; all texts are proposed, not approved.** Only the allowlisted runtime bodies below and trusted dynamic fields enter an eventual request. Do not concatenate this document, source manifest, branch paths, original fixture packet headers, H labels, research labels, checks or review notes into runtime. No agent has been invoked with these materials. No present four-agent rendered episode exists because allocation/build/parameters are unfinished.
