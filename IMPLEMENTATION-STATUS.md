@@ -12,8 +12,8 @@ Authority: `research/organizational-coalitional-risk/M3-IMPLEMENTATION-BASELINE-
 | E1 core | mainstudy/contracts, runner, materials, F1 archive/transport reuse | S != signature; dual atomic D; q0 allowed | Core implemented; replay pending E4 |
 | E2 evidence | mainstudy/fixtures | two actual dependency implementations per archetype; executed limited/full oracle; exact hashes | Implemented; executed assertions passing |
 | E3 controls | materials projection, runner memory/audit | all serialized arms, role privacy, blind counterparty masking | Implemented; full regression in progress |
-| E4 dry runs | scripts/tests | four quarters × P/R × A/B/C/D × two blocks, no model calls | Pending |
-| E5 review | annotation/preflight/package | adversarial traces; worst-case context bound; independent critique; launch gate | Pending |
+| E4 dry runs | scripts, replay, CLI | four quarters × P/R × A/B/C/D × two blocks, no model calls | Complete matrix + 18 negative traces and exact replay executed |
+| E5 review | annotation/preflight/live/package | adversarial traces; worst-case context bound; independent critique; launch gate | In progress; maximal context launch blocker established |
 
 Scientific semantics: preserve locked overarching/narrow questions verbatim in the baseline. No new scientific decisions adopted. No backlog, maintenance, scalar welfare or oracle veto. F1 remains unchanged.
 
@@ -23,4 +23,14 @@ Baseline review E1–E3: no F1 submit-signature or quarter-one Binding reused; o
 
 Strongest remaining scientific failure mode: independent signatures or same-round pseudo-assent producing a primary label. Next phase must add manually coded semantic evidence plus authenticated receipt/action checks; never classify arbitrary text lexically.
 
-Next action: finish regression, checkpoint E1–E3, then E4 replay, complete matrix dry runs, E5 annotation and maximal legal context/budget gates. Final provider capacity/pricing/configuration, budget, stopping time, prompt and fixture signoff remain live-launch gates.
+## E4 checkpoint
+
+E1–E3 implementation checkpoint: a96c5b6. Recovery discovered successful frozen F1 273c814 existed on the original checkout's branch but was absent from origin/main; merged its ancestry unchanged (merge commit shown by `git log`). Actual successful F1 regression suite then passed: 56 total tests (50 pre-existing + 6 mainstudy), 10.386s. No historical F1 source modified by mainstudy.
+
+Executed `/private/tmp/mainstudy-env/bin/python -m mainstudy.cli validate --out /private/tmp/mainstudy-matrix-v1`: all 16 matrix episodes × 112 scripted generations and exact replay; 18 P/R negative episodes and replay; 2 maximal legal four-quarter NUL-message episodes. Each matrix episode had Q1 qualified throughput 4, Q2–4 q0 deployments 12 and hidden v1 deployments 6. These are SCRIPTED apparatus outcomes, not scientific behavioral evidence. Positive primary only in scripted A; silent arms report not_observable/None. Independent/cooperation/same-round/defection/stale/invalid/timeout/hold/withhold traces do not yield positive primary labels.
+
+E4 baseline/self-review: no later-quarter truth narrative, carryover or final-horizon announcement; proposer/assent text exists only in scripts, never agent templates. Exact request/replay paths are Q1–Q4 nonces. New failure mode: partial open calls must not be retried or counted as voluntary holds. Added reconciliation with explicit unknown/not-dispatched classifications; interruption adversarial test pending E5.
+
+**Established launch blocker:** maximal legal histories are not certified to fit proposed DeepSeek 1,048,576-token context. Structural byte/token bound exceeds it; normal scripted fits do not prove maximum fit. No truncation or cap reduction adopted. Expanded engineering wire-byte guard to 2MiB so legal histories can be inspected. Exact tokenization/encoding proof or separately approved provider capacity is still required. Proposed full-context reservation $75/matched pair, maximum $600/16 episodes (1,792 calls), NOT spending authorization. Budget, absolute stopping timestamp, prompts/fixtures/model config require separate researcher approval.
+
+Next action: adversarial replay/interruption and concurrency tests, mocked provider/approval gates; publish rendered review package and source/oracle inventory; independent final critique and final test run.

@@ -54,11 +54,12 @@ class Spec:
     block: int = 1
     seed: int = 20261026
     timeout_seconds: float = 180
-    max_input_bytes: int = 1048576
+    max_input_bytes: int = 2097152
 
     def __post_init__(self):
         if (self.graph not in ("P", "R") or self.condition not in AGENTS or
-                self.block not in (1, 2) or self.timeout_seconds <= 0 or self.max_input_bytes <= 0):
+                self.block not in (1, 2) or type(self.seed) is not int or
+                self.timeout_seconds <= 0 or self.max_input_bytes <= 0):
             raise Invalid("spec")
 
     @property
@@ -85,5 +86,6 @@ class Spec:
         return "mainstudy-offline"
 
 
-GENERATION = canonical({"temperature": 0, "candidateCount": 1, "maxOutputTokens": 4096,
-                        "responseMimeType": "application/json"})
+GENERATION = canonical({"temperature": 0, "top_p": 1, "max_tokens": 8192,
+                        "chat_template_kwargs": {"thinking": True},
+                        "response_format": {"type": "json_object"}, "stream": False})

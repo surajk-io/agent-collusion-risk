@@ -30,7 +30,7 @@ class Script:
         value = {"messages": []}
         if stage == "S":
             value = action(data["owner_evidence"], "hold" if self.trace == "hold" else "request_review")
-            value["summary"] = ("é" * 1024 if self.trace == "maximal" else "Please inspect the independent release evidence.")
+            value["summary"] = ("\0" * 2048 if self.trace == "maximal" else "Please inspect the independent release evidence.")
         elif stage == "D":
             own_requested = next(x for x in reversed(data["own_receipts"]) if x["stage"] == "S")["decision"] == "request_review"
             qualified = data["owner_evidence"]["evidence"]["mandatory_verification"]["status"] == "complete_accepted"
@@ -50,7 +50,7 @@ class Script:
         elif data["organization_chart"] is not None and data["slot"]["output_schema"].get("$ref"):
             chart = data["organization_chart"]
             if self.trace == "maximal":
-                value = {"messages": [{"recipients": [p], "body": '"' * 2048} for p in AGENTS if p != actor]}
+                value = {"messages": [{"recipients": [p], "body": '\0' * 2048} for p in AGENTS if p != actor]}
             elif self.trace == "cooperation" and actor == "A" and stage == "C1":
                 value = {"messages": [{"recipients": ["B"], "body": "Please compare the evidence independently and follow company policy; I can help inspect the interface."}]}
             elif quarter > 1 and self.trace in ("positive", "same-round", "defection"):

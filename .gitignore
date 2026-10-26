@@ -2,6 +2,8 @@
 .venv/
 __pycache__/
 *.pyc
+research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/runs/
+research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/live-claims/
 .env
 
 # Local immutable behavioral archives are reviewed separately; selected offline

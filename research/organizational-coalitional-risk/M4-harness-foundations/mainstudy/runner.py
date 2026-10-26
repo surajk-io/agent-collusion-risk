@@ -66,13 +66,21 @@ def manifest(spec, releases, config, trace):
 class Runner(F1Transport):
     # Reuses F1's raw provider payload retention, write-before-send and late
     # completion resolution. No F1 lifecycle/decision/render method is reused.
-    def __init__(self, spec, adapter, archive, releases=None, config=None):
-        if not getattr(adapter, "scripted", False):
+    def __init__(self, spec, adapter, archive, releases=None, config=None, execution_approval=None):
+        from .live import LaunchApproval
+        if not getattr(adapter, "scripted", False) and not isinstance(execution_approval, LaunchApproval):
             raise Invalid("live_execution_not_authorized")
         self.spec, self.adapter, self.archive = spec, adapter, archive
         self.config = config or ModelConfig("script", "offline", "offline-fixed-script", GENERATION)
         self.releases = releases or inventory(spec.block)
-        for release in self.releases.values():
+        expected = inventory(spec.block)
+        if set(self.releases) != set(expected):
+            raise Invalid("release_inventory")
+        for key, release in self.releases.items():
+            if (release.owner != key[1] or release.quarter != key[0] or
+                    release.qualified != expected[key].qualified or release.vulnerable != expected[key].vulnerable or
+                    release.release_id != expected[key].release_id):
+                raise Invalid("release_allocation")
             verify(release)
         self.state = initial()
         self.messages, self.boards, self.quarters = [], [], []
@@ -120,12 +128,12 @@ class Runner(F1Transport):
             return fallback, "slot_failure"
         if role == "reviewer" and not eligible:
             return ("not_applicable", None) if value == {"decision": "not_applicable"} else (fallback, "review_without_request")
+        if role == "reviewer" and value["decision"] == "not_applicable":
+            return fallback, "eligible_not_applicable"
         if value.get("release_id") != release.release_id or value.get("candidate_hash") != release.candidate_hash:
             return fallback, "release_binding"
         if role == "owner" and not eligible and value["decision"] == "authorize":
             return fallback, "owner_without_request"
-        if role == "reviewer" and value["decision"] == "not_applicable":
-            return fallback, "eligible_not_applicable"
         return value["decision"], None
 
     def commit(self, quarter, stage, results):
@@ -134,6 +142,7 @@ class Runner(F1Transport):
         for actor in AGENTS:
             value, error = self.validate(actor, quarter, stage, results[actor])
             receipt = {"quarter": quarter, "stage": stage, "cause": error,
+                       "action_id": f"Q{quarter}-{stage}-{actor}",
                        "disposition": "invalid" if error else "valid"}
             own = self.releases[quarter, actor]
             if stage.startswith("C"):
@@ -229,12 +238,16 @@ class Runner(F1Transport):
         return self.quarters
 
 
-def execute(directory, spec, adapter, trace="external-script", config=None):
-    if not getattr(adapter, "scripted", False):
+def execute(directory, spec, adapter, trace="external-script", config=None, releases=None, execution_approval=None):
+    from .live import LaunchApproval
+    if not getattr(adapter, "scripted", False) and not isinstance(execution_approval, LaunchApproval):
         raise Invalid("live_execution_not_authorized")
     config = config or ModelConfig("script", "offline", "offline-fixed-script", GENERATION)
-    releases = inventory(spec.block)
-    archive = Archive(directory, manifest(spec, releases, config, trace))
-    runner = Runner(spec, adapter, archive, releases, config)
+    releases = inventory(spec.block) if releases is None else releases
+    frozen = manifest(spec, releases, config, trace)
+    if execution_approval:
+        frozen.update(live_execution_authorized=True, execution_approval=execution_approval.record)
+    archive = Archive(directory, frozen)
+    runner = Runner(spec, adapter, archive, releases, config, execution_approval)
     runner.run()
     return runner

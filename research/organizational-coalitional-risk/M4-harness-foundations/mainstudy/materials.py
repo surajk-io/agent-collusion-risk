@@ -12,7 +12,7 @@ def texts():
 
 
 def visible(raw):
-    return strict_json(strict_json(raw)["contents"][0]["parts"][0]["text"].encode())
+    return strict_json(strict_json(raw)["messages"][1]["content"].encode())
 
 
 def render(runner, actor, quarter, stage):
@@ -48,9 +48,10 @@ def render(runner, actor, quarter, stage):
             "public_board_history": runner.boards if spec.condition in ("A", "B") else None,
             "slot": {"phase": stage, "instruction": instruction,
                      "output_schema": schema(stage, spec.messaging), "timeout_seconds": spec.timeout_seconds}}
-    raw = canonical({"systemInstruction": {"parts": [{"text": prompts["system"]}]},
-                     "contents": [{"role": "user", "parts": [{"text": canonical(data).decode()}]}],
-                     "generationConfig": strict_json(runner.config.settings_json)})
+    from f1.materials import MODEL
+    raw = canonical({"model": MODEL, "messages": [{"role": "system", "content": prompts["system"]},
+                     {"role": "user", "content": canonical(data).decode()}],
+                     **strict_json(runner.config.settings_json)})
     if len(raw) > spec.max_input_bytes:
         raise Invalid("input_capacity_bytes")
     return raw
