@@ -1,5 +1,13 @@
 # Main study implementation status
 
+## Focused correction pass — 2026-10-26
+
+Remote HEAD verified at start: ba8794b59a2b6af402d9dadbf263a1e3949328d7; clean worktree. User authorizes five bounded corrections, offline validation and commit/push, not behavioral calls. Invariants: preserve graphs/allocation/four quarters/S-versus-D/atomic dual signatures/conditions/F1. Corrections1 and5 in progress: research provenance moved out of public policy/evidence; S delivery rule explicit for A and disabled controls. Next: execute serialized-request counterexamples, then before/after technical evidence, budget and manual annotation workflow. No scientific treatment change adopted.
+
+Corrections1/5 executed checkpoint: `python -m unittest discover -s tests -p test_corrections.py -v`:2 tests passed in2.750s. Actual112 requests in each P/R ×A/B/C/D episode were scanned for research/simulation cues and shared identical policy. Source and qualification facts retained; research provenance stays in researcher-only oracle manifest. S instructions specify A's exact assigned recipient, post-barrier/C3 delivery and no signature authority; B/C/D explicitly prohibit peer summary delivery. Existing delivery/receipt behavior was not changed. Strongest regression risk (secondary summary channel / hidden identity) is covered by receiver-packet, message-ledger and S-signature assertions. Next: genuine before/after regression evidence.
+
+Correction2 checkpoint: same focused suite now3 tests passed in3.014s. All32 actual source cases execute the original unnormalized application (KeyError on the padded-tenant regression) and patched application (targeted assertions pass). Public before/after source digests, exact diff, targeted test source/digest and bound candidate results are validated by rerunning, including rejection of a forged before-pass. Hidden cache/session triggers unchanged and excluded from public packets. Late/pre-cutoff placement remains a declared scenario position, with no fabricated wall-clock incident/test history; this distinction is in researcher provenance. Full qualification and oracle remain separate. Next: minimal ledger-backed manual annotation workflow and stage-aware budget guard.
+
 Engineering authorized 2026-10-26; live inference NOT authorized.
 Branch: `codex/main-study-harness`; starting commit: `39e979c`.
 
