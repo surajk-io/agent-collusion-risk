@@ -1,7 +1,6 @@
 """Dormant pair-reserved live path. No authorized manifest is shipped.
 
-Current packaged capacity proof fails: validation stops before credentials.
-Only researcher-approved proof/configuration can open this execution path.
+Only researcher-approved proof/configuration/budget can open this path.
 """
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -17,7 +16,8 @@ from f1.live import token
 from f1.vertex import VertexAdapter, CallError
 from .contracts import Spec, ORDER, GENERATION
 from .materials import HERE, visible, material_hashes
-from .preflight import allocation, CONTEXT_LIMIT, OUTPUT_TOKENS, PAIR_RESERVATION_USD
+from .preflight import allocation, CONTEXT_LIMIT, OUTPUT_TOKENS
+from .budget import BudgetLedger, MAX_BUDGET_USD, PRICE_RECORD, pair_bound
 
 
 @dataclass(frozen=True)
@@ -53,12 +53,20 @@ def validate_approval(package, approval, repository):
             proof.get("reference_encoder_sha256") != ENCODER_SHA256 or
             not proof.get("byte_level_content_bound_verified") or not proof.get("reference_wrapper_verified")):
         raise Invalid("capacity_proof_not_attached")
+    budget_proof = strict_json((package / "budget-proof.json").read_bytes())
+    if ("budget-proof.json" not in index or budget_proof.get("profile") != "stage-aware-20usd-v1" or
+            not budget_proof.get("metadata_bound_verified") or
+            budget_proof.get("fixed_metadata_limit_bytes") != 65536 or
+            budget_proof.get("pair_bounds") != {c: pair_bound(Spec(condition=c)) for c in AGENTS}):
+        raise Invalid("budget_proof_not_attached")
     if (not value.get("approved_prompts_and_fixtures") or value.get("calls_per_episode") != 112 or
             value.get("max_pairs") not in range(1, 9) or
             value.get("max_calls") != value["max_pairs"] * 224 or
-            value.get("reservation_per_pair_usd") != PAIR_RESERVATION_USD or
-            value.get("maximum_budget_usd", 0) < value["max_pairs"] * PAIR_RESERVATION_USD or
-            value.get("maximum_budget_usd", 601) > 600 or value.get("no_retries_or_replacements") is not True):
+            value.get("budget_profile") != "stage-aware-20usd-v1" or value.get("pricing") != PRICE_RECORD or
+            value.get("pair_reservations_usd") != [p["reservation_usd"] for p in allocation()] or
+            type(value.get("maximum_budget_usd")) is not int or
+            not pair_bound(Spec())["reservation_usd"] <= value["maximum_budget_usd"] <= MAX_BUDGET_USD or
+            value.get("no_retries_or_replacements") is not True):
         raise Invalid("approval_scope_or_budget")
     try:
         stop = datetime.fromisoformat(value["stop_new_pairs_at"])
@@ -105,8 +113,9 @@ class MainAdapter(VertexAdapter):
 class BoundedLive:
     scripted = False
 
-    def __init__(self, adapter, spec):
+    def __init__(self, adapter, spec, budget=None, pair_number=None):
         self.adapter, self.spec = adapter, spec
+        self.budget, self.pair_number = budget, pair_number
         self.used, self.lock = set(), threading.Lock()
 
     def complete(self, request, timeout):
@@ -121,6 +130,9 @@ class BoundedLive:
             if len(request.input_bytes) > self.spec.max_input_bytes or bound + OUTPUT_TOKENS > CONTEXT_LIMIT:
                 raise Invalid("input_capacity_exceeded")
             self.used.add(key)  # includes unsuccessful/billed/open dispatches
+            if self.budget is None:
+                raise Invalid("budget_reservation_required")
+            self.budget.dispatch(self.pair_number, request, self.spec)
         return self.adapter.complete(request, timeout)
 
 
@@ -129,7 +141,7 @@ def claim_pair(path, pair, approval, out):
     # Never released after interruption; copying approval cannot add replacements.
     with Path(path).open("xb") as stream:
         stream.write(canonical({"pair": pair, "approval": approval.record,
-                                "reserved_usd": PAIR_RESERVATION_USD, "out": str(Path(out).resolve())}))
+                                "reserved_usd": pair["reservation_usd"], "out": str(Path(out).resolve())}))
         stream.flush()
         os.fsync(stream.fileno())
 
@@ -146,17 +158,25 @@ def execute_live(directory, package, approval_path):
     adapter = MainAdapter(config, token)
     claims = HERE / "live-claims" / value["git_revision"]
     claims.mkdir(parents=True, exist_ok=True)
+    budget = BudgetLedger(claims / "budget.json", value["maximum_budget_usd"])
     root = Path(directory)
     root.mkdir(parents=True, exist_ok=False)
     for pair in allocation()[:value["max_pairs"]]:
         if datetime.now(timezone.utc) >= datetime.fromisoformat(value["stop_new_pairs_at"]):
+            budget.journal.append("stop", "collection_stop", {"reason": "frozen_pair_start_cutoff"})
+            break
+        if not budget.reserve(pair):
+            budget.journal.append("stop", "collection_stop", {"reason": "insufficient_whole_pair_reservation", "next_pair": pair["pair"]})
             break
         claim_pair(claims / f"pair-{pair['pair']}.json", pair, approval, root)
         # A partial/error episode is retained; abort the whole collection on
         # integrity failure. Never silently replace or skip an assigned cell.
+        runners = []
         for spec_value in pair["specs"]:
             spec = Spec(**spec_value)
-            runner = execute(root / spec.episode, spec, BoundedLive(adapter, spec), "unseeded",
+            runner = execute(root / spec.episode, spec, BoundedLive(adapter, spec, budget, pair["pair"]), "unseeded",
                              config=config, execution_approval=approval)
             runner.archive.state("annotation-template", template(runner), "ANNOTATION")
             runner.archive.state("outcomes", outcomes(runner), "ANALYSIS")
+            runners.append(runner)
+        budget.settle(pair, runners)

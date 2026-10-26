@@ -5,12 +5,11 @@ from foundations.records import digest
 from f1.preflight import proposal_config
 from .contracts import Spec
 from .fixtures import inventory
+from .budget import MAX_BUDGET_USD, pair_bound, PRICE_RECORD
 
 CONTEXT_LIMIT = 1048576
 OUTPUT_TOKENS = 8192
 INPUT_RESERVATION = CONTEXT_LIMIT - OUTPUT_TOKENS
-PAIR_RESERVATION_USD = 75
-MAX_BUDGET_USD = 600
 TOKENIZER_SHA256 = "c90dfa01249db1be4245780a052ede752e1361c612ac6d08e2bdada7d599476b"
 ENCODER_SHA256 = "502bdaec8a3fd88ebc24c4721a7038fbe42f2063c664638127056107920035c1"
 
@@ -27,7 +26,7 @@ def allocation(seed=20261026):
             "graphs": ["P", "R"] if block == 1 else ["R", "P"],
             "case_allocation_sha256": case_hash, "specs": [asdict(Spec(graph=g, condition=condition, block=block, seed=seed))
                               for g in (["P", "R"] if block == 1 else ["R", "P"])],
-            "reserved_calls": 224, "reservation_usd": PAIR_RESERVATION_USD})
+            "reserved_calls": 224, "reservation_usd": pair_bound(Spec(condition=condition))["reservation_usd"]})
     return result
 
 
@@ -77,7 +76,8 @@ def capacity_report(runners):
                     "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing"],
         "checked_date": "2026-10-26", "usd_per_million": {"input": .30, "output": 1.20},
         "per_pair_ceiling_at_full_context_usd": 224 * (INPUT_RESERVATION * .30 + OUTPUT_TOKENS * 1.20) / 1e6,
-        "pair_reservation_usd": PAIR_RESERVATION_USD, "maximum_budget_usd": MAX_BUDGET_USD}
+        "stage_aware_pair_bounds": {c: pair_bound(Spec(condition=c)) for c in AGENTS},
+        "maximum_budget_usd": MAX_BUDGET_USD}
 
 
 def launch_proposal(package_hash):
@@ -85,11 +85,12 @@ def launch_proposal(package_hash):
         "git_revision": "REPLACE_WITH_REVIEWED_COMMIT", "package_sha256": package_hash,
         "provider_config": proposal_config(), "calls_per_episode": 112, "max_calls": 1792,
         "max_pairs": 8, "maximum_budget_usd": MAX_BUDGET_USD,
-        "reservation_per_pair_usd": PAIR_RESERVATION_USD,
+        "budget_profile": "stage-aware-20usd-v1", "pricing": PRICE_RECORD,
+        "pair_reservations_usd": [p["reservation_usd"] for p in allocation()],
         "stop_new_pairs_at": None, "timezone": "Asia/Kolkata",
         "capacity_proof_sha256": None, "capacity_proven": False,
         "approved_prompts_and_fixtures": False, "no_retries_or_replacements": True,
-        "note": "Full-context conservative reserve, not an expected charge or approved spend. Freeze an absolute timestamp before launch."}
+        "note": "Reserve the entire next pair from remaining $20 before either episode. Slack released only after complete validated224-call usage; any unknown usage retains full pair reserve. Replication/controls are not guaranteed. Freeze absolute stop time before launch."}
 
 
 def tokenizer_witness(tokenizer_path, runs, encoder_path=None):

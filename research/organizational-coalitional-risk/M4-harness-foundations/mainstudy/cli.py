@@ -85,10 +85,28 @@ def package(directory, validation_directory, tokenizer_path=None, encoder_path=N
     (root / "capacity.json").write_bytes(canonical(capacity))
     (root / "allocation.json").write_bytes(canonical(allocation()))
     (root / "fixture-evidence.json").write_bytes((Path(validation_directory) / "fixture-evidence.json").read_bytes())
+    from .budget import report as budget_report
+    tokenizer = None
+    if tokenizer_path:
+        from tokenizers import Tokenizer
+        tokenizer = Tokenizer.from_file(str(tokenizer_path))
+    (root / "budget-proof.json").write_bytes(canonical(budget_report(runners, validation_directory, tokenizer)))
+    from .manual import demo
+    demo_root = Path(validation_directory) / "manual-demo"
+    demo(demo_root)
+    (root / "manual-demo-summary.json").write_bytes((demo_root / "demo-summary.json").read_bytes())
+    for case in sorted(p for p in demo_root.iterdir() if p.is_dir()):
+        bundle = {"scope": "Known scripted apparatus annotations; not human-reviewed subject behavior",
+            "delivered": json.loads((case / "review/delivered.json").read_bytes()),
+            "reviewer_one": json.loads((case / "script-reviewer-one.json").read_bytes()),
+            "reviewer_two": json.loads((case / "script-reviewer-two.json").read_bytes()),
+            "episode_result": json.loads((case / "result/episode-result.json").read_bytes())}
+        (root / ("manual-" + case.name + ".json")).write_bytes(canonical(bundle))
+        (root / ("manual-" + case.name + "-components.csv")).write_bytes((case / "result/components.csv").read_bytes())
     for runner in runners:
         if runner.spec.block != 1:
             continue
-        for q, stage in ((1, "C1"), (3, "D")):
+        for q, stage in ((1, "C1"), (2, "S"), (3, "D")):
             name = f"{runner.spec.condition}-{runner.spec.graph}-Q{q}-{stage}-A"
             raw = (runner.archive.root / f"requests/Q{q}-{stage}-A.json").read_bytes()
             (root / (name + ".json")).write_bytes(raw)
@@ -128,6 +146,15 @@ def main():
     live = sub.add_parser("live")
     live.add_argument("--approval", required=True); live.add_argument("--package", required=True)
     live.add_argument("--out", required=True)
+    for command in ("annotate-export", "annotate-check", "annotate-resolve", "annotate-demo"):
+        command_parser = sub.add_parser(command)
+        command_parser.add_argument("--out", required=True)
+        if command != "annotate-demo": command_parser.add_argument("--run", required=True)
+        if command == "annotate-check": command_parser.add_argument("--review", required=True)
+        if command == "annotate-resolve":
+            command_parser.add_argument("--review-one", required=True)
+            command_parser.add_argument("--review-two", required=True)
+            command_parser.add_argument("--adjudication")
     args = parser.parse_args()
     if args.command == "script":
         runner, label = script(args.out, Spec(graph=args.graph, condition=args.condition, block=args.block, seed=args.seed), args.trace)
@@ -149,6 +176,17 @@ def main():
         with Path(args.out).open("xb") as stream:
             stream.write(canonical(result))
         print(json.dumps(result, indent=2))
+    elif args.command.startswith("annotate-"):
+        from . import manual
+        if args.command == "annotate-export":
+            result = manual.export(args.run, args.out)
+            print(f"Exported {len(result['messages'])} authenticated delivered messages; no provider reasoning.")
+        elif args.command == "annotate-check":
+            print(json.dumps(manual.check(args.run, args.review, args.out), indent=2))
+        elif args.command == "annotate-resolve":
+            print(json.dumps(manual.resolve(args.run, args.review_one, args.review_two, args.out, args.adjudication), indent=2))
+        else:
+            print(json.dumps(manual.demo(args.out), indent=2))
     else:
         from .live import execute_live
         execute_live(args.out, args.package, args.approval)
