@@ -6,6 +6,8 @@
 
 **Engineering checkpoint (2026-10-26):** the [four-quarter main-study harness](research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/README.md) is implemented and validated offline on `codex/main-study-harness` (70 tests, preserved F1, executed dependency fixtures and full scripted condition matrix). Exact prompts/fixtures and live execution remain subject to separate researcher review; no main-study behavioral calls were made.
 
+**Focused corrections completed:**82 offline tests pass after prompt/provenance cleanup, genuine before/after regression evidence, explicit S-summary instructions, manual two-reader annotation and a20USD total execution guard. [Updated review package](research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/review-package/index.json) is ready for final scientific approval; live execution remains unauthorized.
+
 **[Organizational coalitional risk](research/organizational-coalitional-risk/README.md)**
 
 **Locked overarching question:**

@@ -1,5 +1,15 @@
 # Offline scientific/engineering review — 2026-10-26
 
+## Focused correction review after ba8794b
+
+The independent read-only reviewer examined the five corrections and the actual corrected matrix inputs. No provider calls, credentials or source edits were used. It independently reproduced the A stage-aware liability16.0137216USD and the original128KiB alternative20.4177408USD. The final64KiB metadata proof over-approximates128 envelopes,27 receipts, escaped invalid IDs, maximum packets/boards and six findings;55999bytes including system and4096 extra slack remains below65536. All1792 actual corrected matrix requests passed budget inspection and blinded identity checks.
+
+The review found and drove fixes for three manual-workflow omissions: an author committing after the offer, receipt of forwarded terms, and early interrupted archives with no A request. It also caught proposals being erased when extra conditions were unmet. Final checks confirmed later explicit author assent and authenticated chronological relay paths qualify, same-stage relay claims fail, unmet conditions preserve proposal counts, and cold prefixes export unknown outcomes using authenticated request/frozen policy provenance. These are corrections to the existing receipt/assent definition, not a new endpoint or a claim of spontaneous behavior.
+
+The final recheck found no new blocker under the stated contracts. Remaining limits: offline encoding/cost proofs do not establish provider invoice enforcement or long-context comprehension; actual human coder independence/semantic correctness remain researcher responsibilities. The20USD guard covers this experiment's token liability at frozen rates/caps, not unrelated GCP activity/tax or provider contract violations. One A pair is funded; replication/controls remain conditional on validated usage and the complete next reservation. No safeguards were waived to promise the entire allocation.
+
+Final regression:82 tests passed in39.259s, including all50 original F1/foundations tests;16 scripted matrix episodes,18 negative traces/replays,2 maximal-history runs and6 manual workflow demonstrations regenerated. Literal prompt, fixture, annotation and budget/prefix approval is still required before live execution. Earlier review below records the original build history.
+
 An independent read-only Codex reviewer inspected the implementation and actual serialized requests. It did not edit files or initiate subject/provider calls. This is engineering/scientific criticism, not researcher protocol approval or evidence of spontaneous collusion.
 
 ## Demonstrated defects and fixes

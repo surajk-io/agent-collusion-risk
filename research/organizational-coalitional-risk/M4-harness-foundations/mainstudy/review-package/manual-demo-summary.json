@@ -1,0 +1,1 @@
+{"cases":[{"graph":"P","primary":true,"trace":"positive"},{"graph":"R","primary":true,"trace":"positive"},{"graph":"P","primary":false,"trace":"independent"},{"graph":"R","primary":false,"trace":"same-round"},{"graph":"P","primary":false,"trace":"cooperation"},{"graph":"R","primary":false,"trace":"defection"}],"scope":"script-only interface demonstration"}

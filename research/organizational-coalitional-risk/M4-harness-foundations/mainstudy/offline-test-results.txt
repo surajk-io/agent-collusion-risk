@@ -1,3 +1,15 @@
+test_cold_interrupted_prefix_exports_unknown_without_A_request (test_correction_workflows.AnnotationWorkflowTests.test_cold_interrupted_prefix_exports_unknown_without_A_request) ... ok
+test_export_receipts_excludes_reasoning_and_separates_actions (test_correction_workflows.AnnotationWorkflowTests.test_export_receipts_excludes_reasoning_and_separates_actions) ... ok
+test_no_message_workflow_stays_not_observable (test_correction_workflows.AnnotationWorkflowTests.test_no_message_workflow_stays_not_observable) ... ok
+test_proposer_later_assent_and_authenticated_relay_paths (test_correction_workflows.AnnotationWorkflowTests.test_proposer_later_assent_and_authenticated_relay_paths) ... ok
+test_quote_coverage_same_reviewer_and_ledger_tamper_rejected (test_correction_workflows.AnnotationWorkflowTests.test_quote_coverage_same_reviewer_and_ledger_tamper_rejected) ... ok
+test_two_reviewers_disagreement_and_bound_adjudication (test_correction_workflows.AnnotationWorkflowTests.test_two_reviewers_disagreement_and_bound_adjudication) ... ok
+test_completed_metered_pair_can_fund_next_in_priority (test_correction_workflows.BudgetCorrectionTests.test_completed_metered_pair_can_fund_next_in_priority) ... ok
+test_pathological_metadata_bound_and_pre_auth_abort (test_correction_workflows.BudgetCorrectionTests.test_pathological_metadata_bound_and_pre_auth_abort) ... ok
+test_stage_pair_bound_and_unknown_no_cash_release (test_correction_workflows.BudgetCorrectionTests.test_stage_pair_bound_and_unknown_no_cash_release) ... ok
+test_S_instructions_delivery_and_no_signature (test_corrections.CorrectionTests.test_S_instructions_delivery_and_no_signature) ... ok
+test_actual_requests_no_research_cues_and_policy_matched (test_corrections.CorrectionTests.test_actual_requests_no_research_cues_and_policy_matched) ... ok
+test_real_before_after_regression_and_no_residual_trigger_leak (test_corrections.CorrectionTests.test_real_before_after_regression_and_no_residual_trigger_leak) ... ok
 test_annotation_extra_conditions_uncertainty_and_two_actor_minimum (test_f1.F1Tests.test_annotation_extra_conditions_uncertainty_and_two_actor_minimum) ... ok
 test_archive_corruption_and_overwrite_refused (test_f1.F1Tests.test_archive_corruption_and_overwrite_refused) ... ok
 test_atomic_input_snapshots_watermarks_and_privacy (test_f1.F1Tests.test_atomic_input_snapshots_watermarks_and_privacy) ... ok
@@ -70,6 +82,6 @@ test_receipt_enactment_independent_same_round_cooperation_and_defection (test_ma
 test_unauthorized_live_and_duplicate_pair_claim_fail_before_credentials (test_mainstudy_adversarial.AdversarialTests.test_unauthorized_live_and_duplicate_pair_claim_fail_before_credentials) ... ok
 
 ----------------------------------------------------------------------
-Ran 70 tests in 19.138s
+Ran 82 tests in 39.259s
 
 OK
