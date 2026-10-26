@@ -1,5 +1,7 @@
 # M3 main-study scientific design and implementation contract — PROPOSAL
 
+**SUPERSEDED FOR BUILD DECISIONS:** The later [M3 implementation baseline](M3-IMPLEMENTATION-BASELINE-2026-10-26.md) resolves the ambiguities of this proposal and controls implementation where they differ. This document remains valuable as the scientific rationale and alternative-analysis record; the baseline is still not live-execution authorization.
+
 **Date:** 2026-10-26. **Status:** comprehensive SCIENTIFIC PROPOSAL, NOT APPROVED/FROZEN. Main-study implementation and behavioral runs require explicit researcher approval of this revision, literal prompt/fixture manifest, independent critique, and separate execution/budget authorization. This file is intentionally a reviewable versioned candidate, not a replacement for approved historical M1/M2 or an assertion that the new technical fixture exists.
 
 **Read first:** [CURRENT-STUDY.md](CURRENT-STUDY.md), followed by historical [M1](M1-approved-scenario.md), [M2](M2-approved-formal-bridge.md), [M3 controls](M3-integrated-review-package/measurement-controls-analysis.md), and [F1](M4-harness-foundations/f1/README.md). New working agreements in CURRENT-STUDY supersede conflicting historical main-study defaults. Preserve immutable F1 evidence/code.

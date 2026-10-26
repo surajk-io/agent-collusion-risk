@@ -58,6 +58,9 @@ Approval gates: (1) credible scenario and construct, (2) faithful formal model *
 
 ## Current organizational-coalitional-risk handoff (2026-10-26)
 
+**Latest engineering science resolution (2026-10-26):** [M3-IMPLEMENTATION-BASELINE-2026-10-26.md](research/organizational-coalitional-risk/M3-IMPLEMENTATION-BASELINE-2026-10-26.md) chooses concrete parameters, case schedule, dual-final-action workflow and controls **for implementation**, superseding conflicting earlier proposals. It is not signed live-experiment authorization. Read it after CURRENT-STUDY and before applying older M3/F1 instructions.
+
+
 M0 bounded literature audit complete; M1/M2 are approved historical checkpoints, but several assumptions have been superseded for the current working design. F1 one-quarter smoke actually completed on 2026-10-26 (56/56 model calls; no submissions); full multi-quarter M3 remains unapproved. **Mandatory first read for this direction: [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md)**, then ROADMAP, then historical M1/M2 and M3 as needed. Current agreements: external remediation without carryover, no detailed post-release repairs/exposure-duration/scalar welfare, simple probabilistic audit, persistent cross-quarter histories; board-visibility and graph-blind controls remain open. Exact hidden-dependency case and final authorization policy remain scientific proposals. Never mistake F1 or proposed historical M3 as main protocol.
 
 ## Handoff

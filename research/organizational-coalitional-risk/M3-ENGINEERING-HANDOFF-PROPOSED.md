@@ -1,5 +1,7 @@
 # GPT-6.1 Sol engineering handoff — candidate main-study harness
 
+**CURRENT ENGINEERING DECISIONS OVERRIDE:** The later [M3 implementation baseline](M3-IMPLEMENTATION-BASELINE-2026-10-26.md) resolves open science parameters for coding and supersedes conflicting contents here. Still NO live experiments without separate authorization.
+
 **Date:** 2026-10-26. **Status:** candidate implementation handoff. The full behavioral M3 protocol is still under researcher approval; this handoff authorizes no GCP inference calls, no spending, no main behavioral collection and no silent selection of scientific defaults. Human researcher can explicitly authorize bounded engineering on this candidate. Treat GitHub as canonical. Preserve frozen F1.
 
 ## Mandatory start

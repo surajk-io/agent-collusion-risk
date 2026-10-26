@@ -47,6 +47,10 @@ Read root README and AGENTS, this roadmap, direction README, M0 literature, M1 a
 See [M3 working handoff](M3-working-handoff-2026-10-25.md) for recent researcher-agreed M2 changes pending formal amendment, current pilot proposals, OpenCode feasibility findings, and the narrowly scoped Django security-fixture preparation task. **This is not a frozen/approved M3 experimental protocol.** Preparatory fixture verification is separate from permission to implement the simulator or run behavioral experiments.
 
 
+## Selected implementation baseline — 2026-10-26
+
+[**M3-IMPLEMENTATION-BASELINE-2026-10-26.md**](M3-IMPLEMENTATION-BASELINE-2026-10-26.md) is the current concrete build specification (separate live approval still pending). It resolves the earlier proposal's TBD choices for the implementation agent, without retroactively rewriting approved M1/M2 or F1 archives.
+
 ## Proposed main-study protocol for decision review — 2026-10-26
 
 Read [M3-MAIN-STUDY-DESIGN-PROPOSAL.md](M3-MAIN-STUDY-DESIGN-PROPOSAL.md) for the new four-quarter nested-control scientific candidate, still **UNAPPROVED**. The current-state register [CURRENT-STUDY.md](CURRENT-STUDY.md) remains the source of researcher agreements and unresolved choices. F1 is complete technical smoke, not the study.
