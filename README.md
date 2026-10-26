@@ -18,7 +18,7 @@ The research connects:
 
 The middle layer is a **candidate explanatory abstraction**, not an assumed sufficient statistic or validated predictor. Structure may also affect behavior directly.
 
-**Current priority:** [M3 behavioral protocol and causal controls](research/organizational-coalitional-risk/ROADMAP.md), building on the [M2 approved formal bridge](research/organizational-coalitional-risk/M2-approved-formal-bridge.md), [M1 approved scenario](research/organizational-coalitional-risk/M1-approved-scenario.md), and [bounded novelty audit](research/organizational-coalitional-risk/literature.md). F1 limited smoke was separately authorized and completed; no **main** behavioral experiment is yet approved.
+**Proposed new M3 study design:** [four-quarter scientific protocol — UNAPPROVED](research/organizational-coalitional-risk/M3-MAIN-STUDY-DESIGN-PROPOSAL.md). Read [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md) for commitments versus proposals.\n\n**Current priority:** [M3 behavioral protocol and causal controls](research/organizational-coalitional-risk/ROADMAP.md), building on the [M2 approved formal bridge](research/organizational-coalitional-risk/M2-approved-formal-bridge.md), [M1 approved scenario](research/organizational-coalitional-risk/M1-approved-scenario.md), and [bounded novelty audit](research/organizational-coalitional-risk/literature.md). F1 limited smoke was separately authorized and completed; no **main** behavioral experiment is yet approved.
 
 ## Working definitions
 

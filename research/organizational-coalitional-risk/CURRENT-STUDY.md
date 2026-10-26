@@ -55,6 +55,10 @@ Do not reduce the project to defect detection or treat mechanically completed cy
 | ~~Graph-blind condition cannot mask reviewer/owner identity~~ | True identity-masked condition feasible in principle, needs leakage tests |
 | ~~F1 approval covers main-study runs~~ | No: new independent approval and spending ceiling required |
 
+## Latest complete scientific candidate (not yet approved)
+
+A new reviewed-for-internal-coherence **scientific PROPOSAL** is [M3-MAIN-STUDY-DESIGN-PROPOSAL.md](M3-MAIN-STUDY-DESIGN-PROPOSAL.md). It proposes four observed quarters, Q1 qualified-safe followed by three q=0 opportunity windows, an S review-request distinct from an atomic dual-role final authorization D, a 5% per-deployed-release procedural spot-check, and a priority-ordered nested P/R controls ladder including messaging, board-history visibility and graph-blind isolation. **None of these previously open parameter choices became researcher-approved merely because a document was written.** Exact policy prompts, third-party dependency fixture, sample allocation and live execution require separate review/signoff. The earlier CURRENT-STUDY agreement/uncertainty summary remains authoritative where the proposal is still contested.
+
 ## Load-bearing decisions still OPEN (do not default to old proposals)
 
 1. Literal authorization policy; what review request versus owner release signature means; sufficient evidence, test completeness, exception rules and safe productivity.
