@@ -15,7 +15,7 @@ Before proposing research changes in a new chat, after a handoff, or when switch
 
 **Required reading procedure for any research direction and any milestone:**
 
-1. Read root `README.md` and `AGENTS.md`, then the **active direction's** `README.md` and `ROADMAP.md`. Use the roadmap to identify the active milestone/gate and all completed, skipped, or superseded milestones.
+1. Read root `README.md` and `AGENTS.md`, then the **active direction's** `CURRENT-STUDY.md` if present, followed by `README.md` and `ROADMAP.md`. Explicitly distinguish current decisions from historical approvals and superseded proposals. Use the roadmap to identify the active milestone/gate and all completed, skipped, or superseded milestones.
 2. Trace the milestone history **from the beginning through the current milestone**. For every preceding milestone, read its outcome/handoff, approved decisions, unresolved issues, and references needed to understand how the current state was reached. Read the current milestone's design/review/decision documents in full as relevant to the task.
 3. Follow the roadmap/handoff references to applicable literature, critiques, formal specifications, approved protocols, experiment summaries, and important negative results. Do not limit reading to a hardcoded M1 document or stop at a milestone simply because an older starter prompt names it. Read detailed past artifacts when their substance affects the present question; raw logs and unrelated archives need not all be re-read.
 4. If a milestone lacks an adequate handoff or file index, locate its relevant records and flag the documentation gap. Each milestone checkpoint should identify its status, approved/open decisions, findings, and the **files needed to resume the next milestone**; update those pointers when authorized. Never invent the contents of missing/inaccessible records.
@@ -56,9 +56,9 @@ Approval gates: (1) credible scenario and construct, (2) faithful formal model *
 - Prefer simple portable tools. Verify affected paths/tests after moves. Avoid force-pushing or rewriting shared Git history.
 - Reading repository state is permitted; do not write to GitHub without authorization.
 
-## Current organizational-coalitional-risk handoff (2026-10-25)
+## Current organizational-coalitional-risk handoff (2026-10-26)
 
-M0 bounded literature audit is complete; M1 organizational scenario and M2 formal bridge are approved. M3 behavioral protocol and causal controls are current and unapproved. Read `research/organizational-coalitional-risk/ROADMAP.md` and `research/organizational-coalitional-risk/M2-approved-formal-bridge.md` before M3 decisions. Completed approval cycles may occur under independent reviewers; distinguish observed negotiation from mechanically matching approvals. No coding, pilots or behavioral runs are authorized by M2 approval alone.
+M0 bounded literature audit complete; M1/M2 are approved historical checkpoints, but several assumptions have been superseded for the current working design. F1 one-quarter smoke actually completed on 2026-10-26 (56/56 model calls; no submissions); full multi-quarter M3 remains unapproved. **Mandatory first read for this direction: [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md)**, then ROADMAP, then historical M1/M2 and M3 as needed. Current agreements: external remediation without carryover, no detailed post-release repairs/exposure-duration/scalar welfare, simple probabilistic audit, persistent cross-quarter histories; board-visibility and graph-blind controls remain open. Exact hidden-dependency case and final authorization policy remain scientific proposals. Never mistake F1 or proposed historical M3 as main protocol.
 
 ## Handoff
 

@@ -1,3 +1,5 @@
+> **ACTIVE STATUS OVERRIDE — 2026-10-26:** Read [CURRENT-STUDY.md](CURRENT-STUDY.md) first. This document preserves earlier decisions/proposals, including assumptions superseded for the current main study. Do not implement or interpret older carryover, detailed repair/exposure/scalar welfare, single-quarter H1-as-main, categorical pre-review blocking, or multi-parameter audit systems as current requirements. Exact main-study policy, cases, horizon and controls still await approval.
+
 # M3 working handoff — 25 October 2026
 
 **Status:** Working discussion checkpoint, **not a frozen or approved M3 behavioral protocol**. M0 complete, M1 approved, M2 approved as `M2-approved-formal-bridge.md`; M3 current. No behavioral runs or M3 simulator have been implemented. Keep the Git repository as canonical state and distinguish decisions from proposals.

@@ -1,6 +1,6 @@
 # Roadmap — organizational coalitional risk
 
-**As of 2026-10-25:** One unified research program. **M0 bounded focused novelty audit COMPLETE; M1 qualitative organizational scenario APPROVED; M2 formal bridge is APPROVED; M3 behavioral protocol is current.** Novelty of eventual findings remains unverified. Prior bounded literature work and exploratory pilot are retained, but neither validates novelty or emergent collusion.
+**As of 2026-10-26:** See [CURRENT-STUDY.md](CURRENT-STUDY.md) FIRST for current working science and explicit supersessions. M0 complete; historical M1/M2 approved; F1 limited P/R technical smoke completed; main multi-quarter M3 scientific protocol pending. Historic milestone rows below track originally approved gates, not the current main-study implementation contract.
 
 | Milestone | Completion criterion | Status |
 |---|---|---|
@@ -8,15 +8,15 @@
 | **M1. Credible organizational workflow** | Researcher approves a fully examined qualitative workflow including objectives, welfare distinction, policy-vs-tool permissions, meaningful harm and benign alternatives; executable initial state finalized in M2 | **Complete: researcher-approved scenario** — [M1 checkpoint](M1-approved-scenario.md) |
 | **M2. Formal bridge** | Derive feasible coalitional deviations independently from executable structure; define initial states, permission and transition rules, opportunity types, payoff/welfare distinctions, coalitional credibility, count rules and matched graph intervention | **Complete: researcher-approved** — [M2 checkpoint](M2-approved-formal-bridge.md) |
 | **M3. Behavioral protocol / causal controls** | Competing predictions, matched configurations, baseline models, prompts, monitoring/evaluation cues, discovery/attempt/execution labels, positive and negative controls, legitimate productivity, sample/analysis plan and budget; human approval | **Current; unapproved** |
-| M4. Implementation validation | Tool-enforced permissions, tests, logs, reproducibility, positive control and independent adversarial critique | Not started |
-| M5. Pilot and investigation | Small pilot to validate construct and mapping; then adequately replicated tests with uncertainty and held-out organizational structures where feasible | Not started |
+| M4. Implementation validation | Tool-enforced permissions, tests, logs, reproducibility, positive control and independent adversarial critique | **F1 engineering smoke implemented and executed; main harness not built** |
+| M5. Pilot and investigation | Small pilot to validate construct and mapping; then adequately replicated tests with uncertainty and held-out organizational structures where feasible | **F1 technical smoke completed; main experimental study not begun** |
 | M6. Synthesis and design implications | Report positive, negative and inconclusive findings, causal limits, external validity and productivity tradeoffs | Not started |
 
 ## Approved M1 handoff and current gate
 
 The researcher approved the [M1 organizational scenario](M1-approved-scenario.md) on 2026-10-25 after independent critique and direct review. This is **scenario approval only**, not approval of exact models, payoff parameters, prompts, state transitions, or behavioral runs. The earlier [M1 design-review](M1-design-review.md) is retained as pre-approval provenance, not current decision status.
 
-**M2 APPROVED** after two rounds of adversarial review: see [formal bridge](M2-approved-formal-bridge.md). **Current gate: M3**, currently unapproved. Define behavioral discrimination controls, exact prompts, tool/message protocol, vulnerability schedules, numeric parameters, outcomes, randomized units, budget and analysis before seeking authorization to implement or collect behavioral evidence.
+**Historical M2 APPROVED** after two rounds of review: see [formal bridge](M2-approved-formal-bridge.md). **Current M3 main-study gate remains unapproved, with later supersessions:** see [CURRENT-STUDY.md](CURRENT-STUDY.md). Define behavioral discrimination controls, exact prompts, tool/message protocol, vulnerability schedules, numeric parameters, outcomes, randomized units, budget and analysis before seeking authorization to implement or collect behavioral evidence.
 
 ## Scope of approval
 
@@ -45,3 +45,8 @@ Read root README and AGENTS, this roadmap, direction README, M0 literature, M1 a
 ## Latest M3 working checkpoint (2026-10-25 evening)
 
 See [M3 working handoff](M3-working-handoff-2026-10-25.md) for recent researcher-agreed M2 changes pending formal amendment, current pilot proposals, OpenCode feasibility findings, and the narrowly scoped Django security-fixture preparation task. **This is not a frozen/approved M3 experimental protocol.** Preparatory fixture verification is separate from permission to implement the simulator or run behavioral experiments.
+
+
+## Current handoff override — 2026-10-26
+
+[**CURRENT-STUDY.md**](CURRENT-STUDY.md) is the required live source for current scientific intent and supersessions. ~~Reimplement the single-quarter H1 qualification-gap M3 candidate as the main experiment~~ → design a multi-quarter P/R study with separate technical truth, test-status and agent-visible evidence. ~~Carry over backlog, simulate repairs/exposure and implement scalar welfare~~ → external transfer/fresh quarterly releases, descriptive outcomes. Simple probabilistic accountability replaces elaborate audit machinery. F1 P/R completed as smoke only; board-history and graph-blind controls remain candidates. Do not mistake preserved M1/M2/M3 approval statements for authorization of the new protocol.

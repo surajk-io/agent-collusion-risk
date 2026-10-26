@@ -1,6 +1,6 @@
 # Agent Collusion Risk
 
-**Status (2026-10-25): M0 completed; M1 organizational scenario and M2 formal bridge approved; M3 behavioral protocol / causal controls current and unapproved.** No implementation, behavioral runs, empirical result or novelty claim is approved.
+**Status (2026-10-26):** M0 done; historical M1/M2 approved with superseding working decisions; F1 P/R smoke completed (56/56 successful model calls), **not the main study**. Main multi-quarter M3 design remains unfrozen/unapproved. **First read: [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md).**
 
 ## Active research direction
 
@@ -18,7 +18,7 @@ The research connects:
 
 The middle layer is a **candidate explanatory abstraction**, not an assumed sufficient statistic or validated predictor. Structure may also affect behavior directly.
 
-**Current priority:** [M3 behavioral protocol and causal controls](research/organizational-coalitional-risk/ROADMAP.md), building on the [M2 approved formal bridge](research/organizational-coalitional-risk/M2-approved-formal-bridge.md), [M1 approved scenario](research/organizational-coalitional-risk/M1-approved-scenario.md), and [bounded novelty audit](research/organizational-coalitional-risk/literature.md). No behavioral experiment is yet approved.
+**Current priority:** [M3 behavioral protocol and causal controls](research/organizational-coalitional-risk/ROADMAP.md), building on the [M2 approved formal bridge](research/organizational-coalitional-risk/M2-approved-formal-bridge.md), [M1 approved scenario](research/organizational-coalitional-risk/M1-approved-scenario.md), and [bounded novelty audit](research/organizational-coalitional-risk/literature.md). F1 limited smoke was separately authorized and completed; no **main** behavioral experiment is yet approved.
 
 ## Working definitions
 
@@ -49,7 +49,7 @@ Follow [AGENTS.md](AGENTS.md). Git is canonical durable state; chats are working
 
 ```text
 Use the GitHub repository surajk-io/agent-collusion-risk as canonical state.
-Read main-branch README.md, AGENTS.md, and
+Read main-branch README.md, AGENTS.md, the authoritative\nresearch/organizational-coalitional-risk/CURRENT-STUDY.md, and
 research/organizational-coalitional-risk/{README.md,ROADMAP.md,literature.md,M1-design-review.md,M1-approved-scenario.md,M2-approved-formal-bridge.md}.
 Use predecessor notes where relevant.
 

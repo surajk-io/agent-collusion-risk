@@ -1,6 +1,6 @@
 # Organizational coalitional risk — unified research direction
 
-**Status (2026-10-25):** The overarching question, [M1 qualitative scenario](M1-approved-scenario.md), and [M2 formal bridge](M2-approved-formal-bridge.md) are **researcher-approved**. M3 behavioral protocol and causal controls are current and **not approved**. No implementation, result or novelty claim has been approved.
+**Status (2026-10-26):** Historical M1 and M2 approved; current scientific decisions and supersessions are governed by [CURRENT-STUDY.md](CURRENT-STUDY.md), which must be read first. F1 P/R engineering smoke finished; complete multi-quarter M3 main study not yet approved.
 
 ## Locked overarching question
 
@@ -46,9 +46,9 @@ These compete with the null/alternative that such summaries have weak or no beha
 
 See [ROADMAP.md](ROADMAP.md). A bounded focused novelty audit is **complete**; see [literature.md](literature.md). Novelty of the eventual experiment or result remains unestablished. The researcher approved the balanced four-agent cross-workflow reviewer-network scenario in [M1-approved-scenario.md](M1-approved-scenario.md), after critique documented in [M1-design-review.md](M1-design-review.md). This approval does not authorize a particular executable model, prompt, or experiment.
 
-**The next intellectual bottleneck is M3: designing an empirical protocol that distinguishes actual reciprocal coordination from unilateral unsafe submissions, generic helpfulness, inattentive review, coercion, and mechanically completed approval cycles.** The M2 model is frozen in [M2-approved-formal-bridge.md](M2-approved-formal-bridge.md); no simulator or behavioral runs are authorized until M3 approval.
+**Current bottleneck: reconcile/freeze the multi-quarter M3 scientific protocol** (late plausible fixes, independent authorization, hidden truth, audit/history, P/R controls) as recorded in [CURRENT-STUDY.md](CURRENT-STUDY.md). F1's single-quarter qualification-gap exercise is finished technical smoke, not the proposed main study.
 
-No particular formalization, scalar, coalition counting rule, LLM provider, interaction horizon, or experiment has been approved. Approval gates follow [AGENTS.md](../../AGENTS.md).
+The historical M2 formal bridge was approved but superseded in several present-study assumptions; no exact current M3 horizon, numeric audit values, case allocation, LLM provider, or main experiment has been approved. Approval gates follow [AGENTS.md](../../AGENTS.md).
 
 ### Predecessor materials retained
 

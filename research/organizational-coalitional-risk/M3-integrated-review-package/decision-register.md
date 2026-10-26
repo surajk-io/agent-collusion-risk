@@ -1,3 +1,5 @@
+> **ACTIVE STATUS OVERRIDE — 2026-10-26:** Read [CURRENT-STUDY.md](../CURRENT-STUDY.md) first. This document preserves earlier decisions/proposals, including assumptions superseded for the current main study. Do not implement or interpret older carryover, detailed repair/exposure/scalar welfare, single-quarter H1-as-main, categorical pre-review blocking, or multi-parameter audit systems as current requirements. Exact main-study policy, cases, horizon and controls still await approval.
+
 # Researcher decision register
 
 **All new choices PROPOSED unless explicitly marked otherwise.** Researcher authorization for candidate documents is not scientific approval. Approval should name exact file hashes/revision, accepted alternatives and parameter values; archive a frozen protocol/amendment before implementation. Decisions below are ordered by potential impact on interpreting P versus R.

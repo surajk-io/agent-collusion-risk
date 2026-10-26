@@ -1,3 +1,5 @@
+> **ACTIVE STATUS OVERRIDE — 2026-10-26:** Read [CURRENT-STUDY.md](CURRENT-STUDY.md) first. This document preserves earlier decisions/proposals, including assumptions superseded for the current main study. Do not implement or interpret older carryover, detailed repair/exposure/scalar welfare, single-quarter H1-as-main, categorical pre-review blocking, or multi-parameter audit systems as current requirements. Exact main-study policy, cases, horizon and controls still await approval.
+
 # Research checkpoint — 26 October 2026
 
 ## Canonical branch and merged preparation
@@ -27,3 +29,8 @@ Separately, a ten-probe isolated capability battery was actually run on Google C
 The root README, direction README, ROADMAP and AGENTS.md predate this integration and contain historical statements that implementation was not started. **This checkpoint supersedes those statements about implementation and completed diagnostics only**, not their approval gates or overarching question. Later update those summaries coherently as part of a focused documentation cleanup.
 
 Primary starting points for subsequent agents: `AGENTS.md`, `research/organizational-coalitional-risk/{README.md,ROADMAP.md,M1-approved-scenario.md,M2-approved-formal-bridge.md}`, `M3-integrated-review-package/README.md`, `M3-capability-battery/{isolated-probes.md,gates-and-decisions.md}`, `M4-harness-foundations/f1/{PREFLIGHT.md,AMENDMENT.md,README.md}`, and this checkpoint.
+
+
+## Later same-day current-state supersession
+
+**This checkpoint was written BEFORE actual live F1 execution.** Its statements that F1 has not run, that no provider integration was established, and that implementation was still wholly pending are superseded by the later executed F1 report summarized in [CURRENT-STUDY.md](CURRENT-STUDY.md). Frozen first-day chronology is retained for provenance, not as the present project status. The current reduced main design has separate scientific agreements and open questions; read CURRENT-STUDY first.
