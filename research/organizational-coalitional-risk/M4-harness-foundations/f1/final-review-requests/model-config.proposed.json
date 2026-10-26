@@ -1,0 +1,1 @@
+{"endpoint":"https://aiplatform.googleapis.com/v1/projects/true-ion-507212-g5/locations/global/endpoints/openapi/chat/completions","generation_config":{"chat_template_kwargs":{"thinking":true},"max_tokens":8192,"response_format":{"type":"json_object"},"stream":false,"temperature":0,"top_p":1},"model":"deepseek-ai/deepseek-v4.1-flash-maas","provider":"gcp-model-garden"}

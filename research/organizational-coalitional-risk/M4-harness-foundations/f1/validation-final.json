@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-26",
+  "offline_only": true,
+  "no_model_auth_token_count_or_generation_calls": true,
+  "artifact_directory": "/private/tmp/f1-final-offline-20261026-bf2ppfb2",
+  "commands": [
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5ac4e44feb50a81cb22dc71a49e7a1d10cc02eed674f1e21daa76ff286670c3f",
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 50 tests in 8.924s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "f1.cli",
+        "script",
+        "--graph",
+        "P",
+        "--trace",
+        "positive",
+        "--out",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/P-positive"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "140a9a70ab8c9f800f2866d91647c91ec7b14cb586ce355dbb774c5dae1199e2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "f1.cli",
+        "replay",
+        "--run",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/P-positive",
+        "--out",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/P-replay"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "ba4e5dd9b8b5c58cc63303ccb982fec429577d39e254e4115a44aa94ddd912a2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "f1.cli",
+        "script",
+        "--graph",
+        "R",
+        "--trace",
+        "positive",
+        "--out",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/R-positive"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "f85d34844cf74eafea44d92f6bb29083c86f9e45622cb6695b4244afd83dabb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "f1.cli",
+        "replay",
+        "--run",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/R-positive",
+        "--out",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/R-replay"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "ba4e5dd9b8b5c58cc63303ccb982fec429577d39e254e4115a44aa94ddd912a2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/m4-foundations-venv/bin/python",
+        "-m",
+        "f1.cli",
+        "preflight",
+        "--out",
+        "/private/tmp/f1-final-offline-20261026-bf2ppfb2/preflight"
+      ],
+      "cwd": "/Users/suraj/agent-collusion-risk/research/organizational-coalitional-risk/M4-harness-foundations",
+      "exit_code": 0,
+      "stdout_sha256": "b20cdda4f90f686ffcbb48206d988782eed83dd54526c712e03e574a91dcb064",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "request_regeneration_byte_exact": true
+}

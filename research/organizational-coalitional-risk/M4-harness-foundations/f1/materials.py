@@ -14,8 +14,10 @@ WATERMARK = dict(zip(ORDER, (0, 1, 2, 2, 3, 4, 5)))
 NAMES = ("system.txt", "policy.txt", "context.txt", "role.txt", "message-rules.txt",
          "communication.txt", "owner-slot.txt", "review-slot.txt", "technical-context.md",
          "case-c5b-release-record.md")
-GENERATION_FIELDS = {"temperature", "topP", "topK", "seed", "maxOutputTokens",
-                     "thinkingConfig", "responseMimeType", "candidateCount"}
+MODEL = "deepseek-ai/deepseek-v4.1-flash-maas"
+PROMPT_REVISION = "F1-prompt-v2"
+GENERATION_FIELDS = {"temperature", "top_p", "max_tokens", "chat_template_kwargs",
+                     "response_format", "stream"}
 
 
 @dataclass(frozen=True)
@@ -35,10 +37,11 @@ class Spec:
         if self.graph not in {"P", "R"} or not self.namespace:
             raise ValueError("run_identity")
         generation = strict_json(self.generation_json)
-        if (set(generation) - GENERATION_FIELDS or generation.get("responseMimeType") != "application/json"
-                or generation.get("candidateCount") != 1 or self.timeout_seconds <= 0
+        if (set(generation) - GENERATION_FIELDS or generation.get("response_format") != {"type": "json_object"}
+                or generation.get("stream") is not False
+                or generation.get("chat_template_kwargs") != {"thinking": True} or self.timeout_seconds <= 0
                 or self.input_token_limit <= 0 or self.output_token_limit <= 0
-                or generation.get("maxOutputTokens") != self.output_token_limit):
+                or generation.get("max_tokens") != self.output_token_limit):
             raise ValueError("generation_contract")
 
     @property
@@ -77,14 +80,14 @@ def substitute(text, values):
 
 
 def render(spec, assets, actor, stage, state, history, receipts):
-    """Exact Vertex-compatible request BODY, before any adapter/authentication."""
+    """Exact Chat Completions body: two messages, no provider session/history."""
     index = AGENTS.index(actor)
     reviewed = AGENTS[spec.reviewers.index(actor)]
     binding = assets.binding(spec, actor)
     values = {"agent_id": actor, "owned_service_id": "service-" + actor,
               "owned_release_id": binding.release_id, "owned_candidate_hash": SOURCE,
               "reviewed_service_id": "service-" + reviewed, "reviewed_release_id": "release-" + reviewed,
-              "own_reviewer_id": spec.reviewers[index]}
+              "own_reviewer_id": spec.reviewers[index], "reviewed_owner_id": reviewed}
     assigned = None
     if stage in {"C3", "C4", "C5", "R"}:
         target = state[reviewed]
@@ -117,9 +120,9 @@ def render(spec, assets, actor, stage, state, history, receipts):
     # Insertion order is part of the literal rendering recipe.
     import json
     user = json.dumps(visible, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
-    request = {"systemInstruction": {"parts": [{"text": assets.texts["system.txt"]}]},
-               "contents": [{"role": "user", "parts": [{"text": user}]}],
-               "generationConfig": strict_json(spec.generation_json)}
+    request = {"model": MODEL, "messages": [
+        {"role": "system", "content": assets.texts["system.txt"]},
+        {"role": "user", "content": user}], **strict_json(spec.generation_json)}
     raw = json.dumps(request, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode()
     validate_visible(raw)
     return raw
@@ -127,11 +130,13 @@ def render(spec, assets, actor, stage, state, history, receipts):
 
 def validate_visible(raw):
     request = strict_json(raw)
-    if set(request) != {"systemInstruction", "contents", "generationConfig"}:
+    if set(request) != {"model", "messages"} | GENERATION_FIELDS or request["model"] != MODEL:
         raise ValueError("request_fields")
-    if len(request["contents"]) != 1 or request["contents"][0]["role"] != "user":
+    if (len(request["messages"]) != 2 or
+            [m["role"] for m in request["messages"]] != ["system", "user"] or
+            any(set(m) != {"role", "content"} for m in request["messages"])):
         raise ValueError("request_roles")
-    visible = strict_json(request["contents"][0]["parts"][0]["text"].encode())
+    visible = strict_json(request["messages"][1]["content"].encode())
     if set(visible) != {"company_policy", "release_window", "role_record", "organization_chart",
                         "interaction_rules", "owner_evidence", "assigned_review", "own_receipts",
                         "participant_messages", "slot"}:

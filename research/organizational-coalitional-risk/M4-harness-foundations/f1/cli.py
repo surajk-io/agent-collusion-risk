@@ -1,4 +1,4 @@
-"""Offline scripts/replay/freeze only. No live execution entry point."""
+"""Offline validation plus a separately authorized future live execution path."""
 import argparse
 from dataclasses import replace
 from pathlib import Path
@@ -16,18 +16,23 @@ from .vertex import Reply
 
 def script_spec(graph, namespace="scripted-apparatus"):
     return Spec("release-window-01", graph, namespace,
-                canonical({"temperature": 0, "candidateCount": 1,
-                           "maxOutputTokens": 4096, "responseMimeType": "application/json"}),
-                180, 65536, 4096, Limits(1024, 2048, True))
+                canonical({"temperature": 0, "top_p": 1, "max_tokens": 8192,
+                           "chat_template_kwargs": {"thinking": True},
+                           "response_format": {"type": "json_object"}, "stream": False}),
+                180, 393216, 8192, Limits(1024, 2048, True))
 
 
-def execute(directory, spec, trace="positive", adapter=None, config=None):
+def execute(directory, spec, trace="positive", adapter=None, config=None, execution_approval=None):
     assets = Assets()
     config = config or ModelConfig("script", "offline", "offline-fixed-script", spec.generation_json)
     repository = HERE.parents[3]
-    archive = Archive(directory, manifest(spec, assets, config,
-                                         {"kind": "scripted_apparatus", "trace": trace}, repository))
-    runner = Runner(spec, assets, config, adapter or Script(spec.graph, trace), archive)
+    origin = {"kind": "live_unseeded" if execution_approval else "scripted_apparatus", "trace": trace}
+    frozen = manifest(spec, assets, config, origin, repository)
+    if execution_approval:
+        frozen.update(live_execution_authorized=True, execution_approval=execution_approval.record)
+    archive = Archive(directory, frozen)
+    runner = Runner(spec, assets, config, adapter or Script(spec.graph, trace), archive,
+                    execution_approval=execution_approval)
     board = runner.run()
     # Default human forms preserve uncertainty. Gold keys are used only on known
     # scripts, never to classify arbitrary text from a target model.
@@ -52,6 +57,8 @@ class Replay:
                                 for e in events if e["event"] == "response_received"}
         self.status = {(e["stage"], e["actor"]): e["details"].get("http_status", 200)
                        for e in events if e["event"] == "response_received"}
+        self.error_details = {(e["stage"], e["actor"]): e["details"]
+                              for e in events if e["event"] == "error_body"}
         self.resolved = {stage: json.loads((self.root / f"states/slot-results-{stage}.json").read_bytes())
                          for stage in ORDER}
 
@@ -61,11 +68,16 @@ class Replay:
         if request.input_bytes != (self.root / "requests" / (name + ".json")).read_bytes():
             raise ValueError("replay_request_changed")
         resolved = self.resolved[request.slot_nonce][request.session.actor]
-        if resolved["error"]:
+        payload_path = self.root / "responses" / (name + ".json")
+        if not payload_path.exists():
             from .vertex import CallError
-            raise CallError(resolved["error"])
-        return Reply((self.root / "responses" / (name + ".json")).read_bytes(),
-                     self.representations[key], self.status[key])
+            partial = self.root / "responses" / (name + ".error-body")
+            details = self.error_details.get(key, {})
+            raise CallError(resolved["error"], partial.read_bytes() if partial.exists() else b"",
+                            details.get("representation", "no_response_body"), status=details.get("http_status"))
+        return Reply(payload_path.read_bytes(),
+                     self.representations[key], self.status[key],
+                     json.loads((self.root / "responses" / (name + ".metadata.json")).read_bytes()).get("final_byte"))
 
 
 def replay(original, target):
@@ -113,6 +125,12 @@ def main():
     replay_command.add_argument("--out", required=True)
     frozen = commands.add_parser("freeze")
     frozen.add_argument("--out", required=True)
+    preflight = commands.add_parser("preflight")
+    preflight.add_argument("--out", required=True)
+    live = commands.add_parser("live", help="requires separately recorded researcher authorization")
+    live.add_argument("--graph", choices=("P", "R"), required=True)
+    live.add_argument("--out", required=True)
+    live.add_argument("--approval", required=True)
     args = parser.parse_args()
     if args.command == "script":
         _, board = execute(args.out, script_spec(args.graph), args.trace)
@@ -120,6 +138,13 @@ def main():
     elif args.command == "replay":
         replay(args.run, args.out)
         print("Verified byte-identical requests and committed states; no model call.")
+    elif args.command == "preflight":
+        from .preflight import generate
+        summary = generate(args.out)
+        print(json.dumps({k: v for k, v in summary.items() if k != "rows"}, indent=2))
+    elif args.command == "live":
+        from .live import execute_live
+        execute_live(args.out, args.graph, args.approval)
     else:
         freeze(args.out)
         print("Frozen first P/R C1 requests for all four actors; review only.")

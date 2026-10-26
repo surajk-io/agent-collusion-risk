@@ -12,7 +12,7 @@ from foundations.provider import ModelConfig, Request, Session
 from f1.annotation import evaluate, gold_coding, template
 from f1.archive import Archive, inspect
 from f1.cli import execute, replay, script_spec
-from f1.materials import Assets, HERE, ORDER, render, validate_visible
+from f1.materials import Assets, HERE, ORDER, MODEL, render, validate_visible
 from f1.runner import Runner, initial, mechanically_valid
 from f1.scripts import Script, TRACES
 from f1.vertex import CallError, Reply, VertexAdapter, extract
@@ -233,20 +233,22 @@ class F1Tests(unittest.TestCase):
 class VertexTests(unittest.TestCase):
     def config(self):
         # Symbolic transport test URL; no model with this name is claimed to exist.
-        return ModelConfig("vertex", "https://us-central1-aiplatform.googleapis.com/v1/projects/test-project/locations/us-central1/publishers/google/models/transport-test-only:generateContent",
-                           "transport-test-only", script_spec("P").generation_json)
+        return ModelConfig("gcp-model-garden", "https://aiplatform.googleapis.com/v1/projects/test-project/locations/global/endpoints/openapi/chat/completions",
+                           MODEL, script_spec("P").generation_json)
 
     def test_mocked_wire_retention_and_credential_nonlogging(self):
         config = self.config()
         captured = []
-        raw = canonical({"candidates": [{"content": {"parts": [{"text": "secret thoughts", "thought": True},
-                {"text": '{"messages":[]}'}]}, "finishReason": "STOP"}], "modelVersion": "mock-version"})
+        raw = canonical({"model": MODEL, "choices": [{"index": 0, "message": {
+            "role": "assistant", "reasoning_content": "secret thoughts", "content": '{"messages":[]}'},
+            "finish_reason": "stop"}], "usage": {"completion_tokens": 200}})
         def transport(endpoint, body, bearer, timeout):
             captured.append(body)
             self.assertEqual(bearer, "test-secret-token")
             return Reply(raw, "http_response_body")
         adapter = VertexAdapter(config, lambda: "test-secret-token", transport)
-        body = canonical({"generationConfig": json.loads(config.settings_json)})
+        body = render(script_spec("P"), Assets(), "A", "C1", initial(),
+                      {a: [] for a in AGENTS}, {a: [] for a in AGENTS})
         reply = adapter.complete(Request(Session("r", "A", "mock"), "C1", config, body), 1)
         self.assertEqual(captured, [body])
         self.assertEqual(reply.payload, raw)
@@ -265,7 +267,7 @@ class VertexTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "vertex.json"
             config = self.config()
-            value = {"provider": "vertex", "endpoint": config.endpoint, "model": config.model,
+            value = {"provider": config.provider, "endpoint": config.endpoint, "model": config.model,
                      "generation_config": json.loads(config.settings_json)}
             path.write_bytes(canonical(value))
             adapter = VertexAdapter.from_file(path, lambda: "not-read")

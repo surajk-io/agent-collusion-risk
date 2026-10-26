@@ -7,10 +7,10 @@ import time
 
 from foundations.contracts import AGENTS, Invalid, communication, decode
 from foundations.provider import Request, Session, now
-from foundations.records import blob, digest, provenance
+from foundations.records import blob, digest, provenance, unblob
 from .archive import Archive
-from .materials import Assets, HERE, ORDER, SOURCE, render
-from .vertex import CallError, extract
+from .materials import Assets, HERE, ORDER, SOURCE, PROMPT_REVISION, render
+from .vertex import CallError, extract, metadata
 
 
 def initial():
@@ -27,7 +27,9 @@ def manifest(spec, assets, config, script_origin, repository):
         "generation_json": json.loads(spec.generation_json)},
         "protocol": {"integrated": "f01b498855d7b0bd637c22f852c58e20a13cd316",
                      "capability": "9eb31daa1fbdaf9c8512279afac3d59aeda64df4",
-                     "F1_amendment_sha256": digest((HERE / "AMENDMENT.md").read_bytes())},
+                     "F1_amendment_sha256": digest((HERE / "AMENDMENT.md").read_bytes()),
+                     "F1_v2_amendment_sha256": digest((HERE / "PROMPT-AMENDMENT-v2.md").read_bytes())},
+        "prompt_revision": PROMPT_REVISION,
         "model": {"provider": config.provider, "endpoint": config.endpoint, "model": config.model,
                   "settings": json.loads(config.settings_json)},
         "allocation": {a: {"service_id": "service-" + a, "release_id": "release-" + a,
@@ -44,9 +46,9 @@ def manifest(spec, assets, config, script_origin, repository):
 class Runner:
     def __init__(self, spec, assets, config, adapter, archive, *, execution_approval=None):
         if not getattr(adapter, "scripted", False):
-            # No approval object is defined/accepted in this revision. Prevent
-            # this implementation task from becoming a live collection path.
-            raise Invalid("live_execution_not_authorized")
+            from .live import Approval
+            if not isinstance(execution_approval, Approval) or execution_approval.graph != spec.graph:
+                raise Invalid("live_execution_not_authorized")
         if config.settings_json != spec.generation_json:
             raise Invalid("settings_mismatch")
         self.spec, self.assets, self.config = spec, assets, config
@@ -82,12 +84,14 @@ class Runner:
             self.archive.artifact(f"responses/{name}.json", reply.payload, stage, actor,
                 "response_received", "recorded", {"representation": reply.representation,
                  "http_status": reply.status, "handoff": handoff, "receipt": receipt})
+            self.archive.artifact(f"responses/{name}.metadata.json", json_bytes(metadata(reply)),
+                                  stage, actor, "response_metadata", "recorded")
             error = None
             if receipt["monotonic_ns"] > handoff["monotonic_ns"] + self.spec.timeout_seconds * 1e9:
                 error = "late_completion"
             try:
                 action_bytes = extract(reply)
-            except (Invalid, KeyError, TypeError, UnicodeError):
+            except (Invalid, KeyError, TypeError, UnicodeError, AttributeError, IndexError):
                 action_bytes, error = None, error or "provider_output"
         except CallError as exc:
             with lock:
@@ -95,7 +99,8 @@ class Runner:
                 starts.pop(actor, None)
             if exc.payload:
                 self.archive.artifact(f"responses/{name}.error-body", exc.payload, stage,
-                    actor, "error_body", "recorded", {"representation": exc.representation})
+                    actor, "error_body", "recorded", {"representation": exc.representation,
+                                                     "http_status": exc.status})
             self.archive.artifact(f"responses/{name}.error.json", json_bytes({"code": exc.code,
                 "handoff": handoff, "receipt": receipt}), stage, actor, "provider_error", exc.code)
             action_bytes, error = None, exc.code
@@ -104,6 +109,12 @@ class Runner:
             self.archive.event(stage, actor, "internal_error", "aborted")
             raise
         with lock:
+            # Offline replay preserves the original terminal resolution, including
+            # late HTTP bodies and watchdog dispositions, rather than re-timing it.
+            if getattr(self.adapter, "scripted", False) and hasattr(self.adapter, "resolved"):
+                original = self.adapter.resolved[stage][actor]
+                action_bytes = unblob(original["raw"]) if original["raw"] is not None else None
+                error = original["error"]
             if actor in output:
                 self.archive.event(stage, actor, "late_completion", "ignored")
             else:

@@ -3,3 +3,11 @@
 __pycache__/
 *.pyc
 .env
+
+# Local immutable behavioral archives are reviewed separately; selected offline
+# compatibility fixtures are retained under the harness tests.
+research/organizational-coalitional-risk/runs/
+research/organizational-coalitional-risk/M4-harness-foundations/runs/
+research/organizational-coalitional-risk/M4-harness-foundations/f1/execution-approval.json
+research/organizational-coalitional-risk/M4-harness-foundations/f1/execution-approval.claims/
+research/organizational-coalitional-risk/M4-harness-foundations/f1/live-claims/
