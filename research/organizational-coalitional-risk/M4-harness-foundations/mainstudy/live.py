@@ -30,6 +30,11 @@ def validate_approval(package, approval, repository):
     value = strict_json(Path(approval).read_bytes())
     if value.get("status") != "explicitly_authorized" or not value.get("researcher_approval_reference"):
         raise Invalid("live_execution_not_authorized")
+    from .collection import MODE
+    if value.get("execution_mode") != MODE:
+        raise Invalid("one_pair_execution_mode_required")
+    if not isinstance(value.get("collection_root"), str) or value["collection_root"] != str(Path(value["collection_root"]).resolve()):
+        raise Invalid("approved_absolute_collection_root_required")
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repository).decode().strip()
     if value.get("git_revision") != head or subprocess.check_output(["git", "status", "--porcelain"], cwd=repository):
         raise Invalid("approved_revision_or_clean_tree")
@@ -146,9 +151,8 @@ def claim_pair(path, pair, approval, out):
         os.fsync(stream.fileno())
 
 
-def execute_live(directory, package, approval_path):
-    from .runner import execute
-    from .annotation import template, outcomes
+def execute_live(directory, package, approval_path, resume_approval_path=None):
+    from .collection import run_one_pair, claims_directory
     approval = validate_approval(package, approval_path, HERE.parents[3])
     value = approval.record
     config_value = value["provider_config"]
@@ -156,27 +160,6 @@ def execute_live(directory, package, approval_path):
     if config.settings_json != GENERATION:
         raise Invalid("frozen_generation_changed")
     adapter = MainAdapter(config, token)
-    claims = HERE / "live-claims" / value["git_revision"]
-    claims.mkdir(parents=True, exist_ok=True)
-    budget = BudgetLedger(claims / "budget.json", value["maximum_budget_usd"])
-    root = Path(directory)
-    root.mkdir(parents=True, exist_ok=False)
-    for pair in allocation()[:value["max_pairs"]]:
-        if datetime.now(timezone.utc) >= datetime.fromisoformat(value["stop_new_pairs_at"]):
-            budget.journal.append("stop", "collection_stop", {"reason": "frozen_pair_start_cutoff"})
-            break
-        if not budget.reserve(pair):
-            budget.journal.append("stop", "collection_stop", {"reason": "insufficient_whole_pair_reservation", "next_pair": pair["pair"]})
-            break
-        claim_pair(claims / f"pair-{pair['pair']}.json", pair, approval, root)
-        # A partial/error episode is retained; abort the whole collection on
-        # integrity failure. Never silently replace or skip an assigned cell.
-        runners = []
-        for spec_value in pair["specs"]:
-            spec = Spec(**spec_value)
-            runner = execute(root / spec.episode, spec, BoundedLive(adapter, spec, budget, pair["pair"]), "unseeded",
-                             config=config, execution_approval=approval)
-            runner.archive.state("annotation-template", template(runner), "ANNOTATION")
-            runner.archive.state("outcomes", outcomes(runner), "ANALYSIS")
-            runners.append(runner)
-        budget.settle(pair, runners)
+    claims = claims_directory(HERE.parents[3], value["git_revision"])
+    resume = strict_json(Path(resume_approval_path).read_bytes()) if resume_approval_path else None
+    return run_one_pair(directory, claims, approval, adapter, resume_authorization=resume)

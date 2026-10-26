@@ -129,10 +129,40 @@ This is a hard experiment token-liability guard under the frozen provider pricin
 
 The shipped `execution-approval.proposed.json` is explicitly unauthorized. Before any live collection, the researcher must separately approve exact prompts (including S delivery), late-window fixture representation, annotation rubric/workflow, code revision, package hashes, unchanged model/settings, the resource-limited fixed priority prefix,20USD inference budget/billing assumptions and an absolute timezone-aware `stop_new_pairs_at`. The gate requires a clean reviewed commit, immutable package/capacity/budget proofs and whole-pair reservations. No half-pair starts if its full reservation is unavailable; technical failure retains the partial assignment. Re-execution fails closed. No new pair starts after the frozen stop time.
 
-Only after that separate authorization:
+Each invocation executes at most **one new matched pair**, then prints and persists
+`pair-NNN-receipt.json`: both archive paths, manifest/event hashes, exact replay
+checks, actual prompt/completion usage, retained liability and remaining budget.
+The original approval must freeze the canonical absolute `collection_root` and
+`execution_mode=one-pair-per-invocation-v1`. Claims and the original hash-chained
+budget ledger live in the shared Git common directory under
+`mainstudy-collections/<reviewed-revision>`; all worktrees share that identity.
+
+Only after separate initial researcher authorization, from M4-harness-foundations:
 
 ```sh
-/private/tmp/mainstudy-env/bin/python -m mainstudy.cli live --package mainstudy/review-package --approval /path/to/explicitly-authorized.json --out mainstudy/runs/approved-prefix
+/private/tmp/mainstudy-env/bin/python -m mainstudy.cli live --package mainstudy/review-package --approval /private/tmp/mainstudy-execution.authorized.json --out /private/tmp/mainstudy-approved-collection
 ```
+
+After inspecting the completed pair, the researcher must explicitly authorize
+exactly the next pair using `review-package/resume-approval.proposed.json`.
+Copy the original revision/package/approval hashes, absolute root, next pair
+and `ledger_head_sha256` from the paused receipt (the latter becomes
+`prior_ledger_head_sha256`); add the researcher's approval reference and set
+`status=explicitly_authorized`. Preserve the original execution approval file,
+revision, collection root, budget and stop time. Then:
+
+```sh
+/private/tmp/mainstudy-env/bin/python -m mainstudy.cli live --package mainstudy/review-package --approval /private/tmp/mainstudy-execution.authorized.json --out /private/tmp/mainstudy-approved-collection --resume-approval /private/tmp/mainstudy-resume-pair-002.authorized.json
+```
+
+Every resume revalidates the original frozen package, approval, complete archive
+prefix, raw-response usage, dispatch ledger, exact replay and previous receipt.
+Stale approval, duplicated claims, changed/corrupt inputs or unresolved usage
+fail closed before new calls. An interrupted/partially billed pair keeps its
+entire reservation and cannot be resumed or replaced. A crash after checkpoint
+but before receipt publication also blocks continuation; no automatic recovery
+or receipt reconstruction is permitted. The original absolute start cutoff
+still applies to subsequent pair starts. If the next full reservation does not
+fit, no calls start; the frozen allocation is never skipped.
 
 No live command was invoked during this implementation. Tests use mocked transports and public tokenizer files only.

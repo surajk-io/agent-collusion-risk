@@ -81,7 +81,10 @@ def capacity_report(runners):
 
 
 def launch_proposal(package_hash):
+    from .collection import MODE
     return {"status": "PROPOSED_NOT_AUTHORIZED", "researcher_approval_reference": None,
+        "execution_mode": MODE,
+        "collection_root": None,
         "git_revision": "REPLACE_WITH_REVIEWED_COMMIT", "package_sha256": package_hash,
         "provider_config": proposal_config(), "calls_per_episode": 112, "max_calls": 1792,
         "max_pairs": 8, "maximum_budget_usd": MAX_BUDGET_USD,

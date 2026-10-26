@@ -169,17 +169,22 @@ def report(runners, run_root, tokenizer=None):
 
 
 class BudgetLedger:
-    def __init__(self, path, limit_usd):
+    def __init__(self, path, limit_usd, *, resume=False):
         if type(limit_usd) is not int or not 0 < limit_usd <= MAX_BUDGET_USD:
             raise Invalid("authorization_budget_limit")
         self.limit = limit_usd * NANO
-        # One durable collection owner for this reviewed revision. Never remove
-        # this claim automatically, including on interruption/exception.
-        with Path(str(path) + ".lock").open("xb") as claim:
-            import os
-            claim.write(canonical({"limit_nano_usd": self.limit}))
-            claim.flush()
-            os.fsync(claim.fileno())
+        # Durable collection identity, never removed. The coordinator holds a
+        # separate OS invocation lock while reopening this single-writer ledger.
+        identity = Path(str(path) + ".lock")
+        if resume:
+            if not Path(path).is_file() or strict_json(identity.read_bytes()) != {"limit_nano_usd": self.limit}:
+                raise Invalid("budget_resume_identity")
+        else:
+            with identity.open("xb") as claim:
+                import os
+                claim.write(canonical({"limit_nano_usd": self.limit}))
+                claim.flush()
+                os.fsync(claim.fileno())
         self.journal, self.lock = Journal(path), threading.RLock()
 
     def committed_liability(self):
@@ -216,7 +221,7 @@ class BudgetLedger:
             self.journal.append(key, "dispatch", {"pair": pair_number,
                 "request_sha256": digest(request.input_bytes), "bound": slot_bound(spec, quarter, stage), **inspection})
 
-    def settle(self, pair, runners):
+    def settle(self, pair, runners, *, verify_only=False):
         """Only a completed pair can release reservation using validated usage.
 
         All transport errors, late completions and missing/untrusted usage retain
@@ -228,22 +233,39 @@ class BudgetLedger:
             if len(runners) != 2 or [asdict(r.spec) for r in runners] != reservation["specs"] or not all(r.original_complete and len(r.quarters) == 4 for r in runners):
                 raise Invalid("cannot_settle_partial_pair")
             charge, unknown, integrity_failure = 0, 0, False
+            prompt_tokens, completion_tokens = 0, 0
             dispatches = [e for e in self.journal.events if e["kind"] == "dispatch" and e["data"]["pair"] == pair["pair"]]
             if len(dispatches) != 224:
                 raise Invalid("cannot_settle_missing_dispatches")
+            dispatch_map = {e["key"]: e["data"] for e in dispatches}
             for runner in runners:
                 root = runner.archive.root
                 from f1.archive import inspect
-                inspect(root)
+                _, archive_events = inspect(root)
+                received = {(e["stage"], e["actor"]): e["details"] for e in archive_events
+                            if e["event"] == "response_received"}
                 for q in range(1, 5):
                     for s in ORDER:
                         results = strict_json((root / f"states/slot-results-Q{q}-{s}.json").read_bytes())
                         for actor in AGENTS:
                             bound = slot_bound(runner.spec, q, s)
+                            key = f"{runner.spec.episode}:Q{q}-{s}:{actor}:dispatch"
+                            recorded = dispatch_map.get(key)
+                            raw = (root / f"requests/Q{q}-{s}-{actor}.json").read_bytes()
+                            if not recorded or recorded["request_sha256"] != digest(raw) or recorded["bound"] != bound:
+                                raise Invalid("dispatch_archive_mismatch")
+                            if any(recorded[k] != v for k, v in inspect_request(raw, runner.spec, q, s).items()):
+                                raise Invalid("dispatch_budget_mismatch")
                             amount = bound["liability_nano_usd"]
                             meta_path = root / f"responses/Q{q}-{s}-{actor}.metadata.json"
                             if not results[actor]["error"] and meta_path.exists():
                                 metadata = strict_json(meta_path.read_bytes())
+                                from f1.vertex import Reply, metadata as project
+                                response = (root / f"responses/Q{q}-{s}-{actor}.json").read_bytes()
+                                detail = received.get((f"Q{q}-{s}", actor), {})
+                                if metadata != project(Reply(response, detail.get("representation"),
+                                                             detail.get("http_status"), metadata.get("final_byte"))):
+                                    raise Invalid("usage_metadata_raw_response_mismatch")
                                 usage = metadata.get("usage") or {}
                                 inp, out, total = usage.get("prompt_tokens"), usage.get("completion_tokens"), usage.get("total_tokens")
                                 if type(inp) is int and type(out) is int and (inp > bound["input_tokens"] or out > OUTPUT_TOKENS):
@@ -252,6 +274,8 @@ class BudgetLedger:
                                         type(inp) is int and type(out) is int and type(total) is int and total == inp + out and
                                         0 < inp <= bound["input_tokens"] and 0 <= out <= OUTPUT_TOKENS):
                                     amount = inp * INPUT_NANO_PER_TOKEN + out * OUTPUT_NANO_PER_TOKEN
+                                    prompt_tokens += inp
+                                    completion_tokens += out
                                 else:
                                     unknown += 1
                             else:
@@ -261,9 +285,18 @@ class BudgetLedger:
                 charge = reservation["reserved_nano_usd"]
             if charge > reservation["reserved_nano_usd"]:
                 raise Invalid("provider_usage_exceeds_reservation")
-            self.journal.append(f"pair-{pair['pair']}:settle", "pair_settlement", {
+            data = {
                 "pair": pair["pair"], "charge_nano_usd": charge, "unknown_usage_slots": unknown,
-                "metering_integrity_failure": integrity_failure})
+                "metering_integrity_failure": integrity_failure,
+                "usage": {"known_prompt_tokens": prompt_tokens, "known_completion_tokens": completion_tokens,
+                          "actual_prompt_tokens": None if unknown else prompt_tokens,
+                          "actual_completion_tokens": None if unknown else completion_tokens}}
+            key = f"pair-{pair['pair']}:settle"
+            if verify_only:
+                if self.journal.committed(key)["data"] != data:
+                    raise Invalid("settlement_archive_mismatch")
+            else:
+                self.journal.append(key, "pair_settlement", data)
             if integrity_failure:
                 raise Invalid("provider_usage_contract_violation")
-            return {"charge_usd_upper": charge / NANO, "unknown_usage_slots": unknown}
+            return {"charge_usd_upper": charge / NANO, "unknown_usage_slots": unknown, "usage": data["usage"]}

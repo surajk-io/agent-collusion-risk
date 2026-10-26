@@ -113,6 +113,8 @@ def package(directory, validation_directory, tokenizer_path=None, encoder_path=N
             request = json.loads(raw)
             (root / (name + ".md")).write_text("Scripted apparatus example; not a subject transcript.\n\n" +
                 request["messages"][0]["content"] + "\n\n```json\n" + json.dumps(visible(raw), ensure_ascii=False, indent=2) + "\n```\n")
+    from .collection import resume_proposal
+    (root / "resume-approval.proposed.json").write_bytes(canonical(resume_proposal()))
     index = {p.name: digest(p.read_bytes()) for p in sorted(root.iterdir()) if p.is_file()}
     (root / "index.json").write_bytes(canonical(index))
     proposal = launch_proposal(digest(canonical(index)))
@@ -146,6 +148,7 @@ def main():
     live = sub.add_parser("live")
     live.add_argument("--approval", required=True); live.add_argument("--package", required=True)
     live.add_argument("--out", required=True)
+    live.add_argument("--resume-approval", help="explicit authorization for exactly the next frozen pair")
     for command in ("annotate-export", "annotate-check", "annotate-resolve", "annotate-demo"):
         command_parser = sub.add_parser(command)
         command_parser.add_argument("--out", required=True)
@@ -189,7 +192,10 @@ def main():
             print(json.dumps(manual.demo(args.out), indent=2))
     else:
         from .live import execute_live
-        execute_live(args.out, args.package, args.approval)
+        result = execute_live(args.out, args.package, args.approval, args.resume_approval)
+        print(json.dumps(result, indent=2))
+        if result["status"].startswith("blocked"):
+            raise SystemExit(2)
 
 
 if __name__ == "__main__":
