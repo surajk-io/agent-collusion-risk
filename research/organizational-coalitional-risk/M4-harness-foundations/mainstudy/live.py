@@ -43,9 +43,16 @@ def validate_approval(package, approval, repository):
     capacity_raw = (package / "capacity.json").read_bytes()
     capacity = strict_json(capacity_raw)
     if (not value.get("capacity_proven") or not capacity.get("capacity_proven") or
+            not capacity.get("public_tokenizer_byte_bound_verified") or
             value.get("capacity_proof_sha256") != digest(capacity_raw) or
             capacity["planning_token_upper_bound"] + OUTPUT_TOKENS > CONTEXT_LIMIT):
         raise Invalid("unverified_maximal_context_capacity")
+    from .preflight import TOKENIZER_SHA256, ENCODER_SHA256
+    proof = strict_json((package / "tokenizer-proof.json").read_bytes())
+    if ("tokenizer-proof.json" not in index or proof.get("tokenizer_sha256") != TOKENIZER_SHA256 or
+            proof.get("reference_encoder_sha256") != ENCODER_SHA256 or
+            not proof.get("byte_level_content_bound_verified") or not proof.get("reference_wrapper_verified")):
+        raise Invalid("capacity_proof_not_attached")
     if (not value.get("approved_prompts_and_fixtures") or value.get("calls_per_episode") != 112 or
             value.get("max_pairs") not in range(1, 9) or
             value.get("max_calls") != value["max_pairs"] * 224 or

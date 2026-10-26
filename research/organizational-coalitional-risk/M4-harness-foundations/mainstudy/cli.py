@@ -67,12 +67,20 @@ def validate(directory):
     return report, runners
 
 
-def package(directory, validation_directory):
+def package(directory, validation_directory, tokenizer_path=None, encoder_path=None):
     root = Path(directory)
     report, runners = validate(validation_directory)
     root.mkdir(parents=True, exist_ok=False)
     summaries = {k: v for k, v in report.items() if k != "capacity"}
     capacity = report["capacity"]
+    if tokenizer_path:
+        from .preflight import tokenizer_witness
+        proof = tokenizer_witness(tokenizer_path, validation_directory, encoder_path)
+        (root / "tokenizer-proof.json").write_bytes(canonical(proof))
+        capacity["public_tokenizer_byte_bound_verified"] = proof["byte_level_content_bound_verified"]
+        capacity["tokenizer_sha256"] = proof["tokenizer_sha256"]
+        capacity["capacity_proven"] = capacity["fits_byte_bound"] and proof["byte_level_content_bound_verified"] and proof["reference_wrapper_verified"]
+        capacity["launch_blocker"] = None if capacity["capacity_proven"] else capacity["launch_blocker"]
     (root / "validation.json").write_bytes(canonical(summaries))
     (root / "capacity.json").write_bytes(canonical(capacity))
     (root / "allocation.json").write_bytes(canonical(allocation()))
@@ -111,6 +119,12 @@ def main():
     v.add_argument("--out", required=True)
     p = sub.add_parser("package")
     p.add_argument("--out", required=True); p.add_argument("--runs", required=True)
+    p.add_argument("--tokenizer", help="optional pinned public tokenizer; no inference")
+    p.add_argument("--encoder", help="optional pinned public encoding reference; no inference")
+    t = sub.add_parser("tokenizer-witness")
+    t.add_argument("--tokenizer", required=True); t.add_argument("--runs", required=True)
+    t.add_argument("--encoder")
+    t.add_argument("--out", required=True)
     live = sub.add_parser("live")
     live.add_argument("--approval", required=True); live.add_argument("--package", required=True)
     live.add_argument("--out", required=True)
@@ -126,9 +140,15 @@ def main():
         print(json.dumps({"matrix_episodes": len(report["matrix"]), "negative_traces": len(report["negative_traces"]),
                           "capacity_proven": report["capacity"]["capacity_proven"]}, indent=2))
     elif args.command == "package":
-        report = package(args.out, args.runs)
+        report = package(args.out, args.runs, args.tokenizer, args.encoder)
         print(json.dumps({"package": str(Path(args.out).resolve()), "no_live_calls": True,
                           "capacity_proven": report["capacity"]["capacity_proven"]}, indent=2))
+    elif args.command == "tokenizer-witness":
+        from .preflight import tokenizer_witness
+        result = tokenizer_witness(args.tokenizer, args.runs, args.encoder)
+        with Path(args.out).open("xb") as stream:
+            stream.write(canonical(result))
+        print(json.dumps(result, indent=2))
     else:
         from .live import execute_live
         execute_live(args.out, args.package, args.approval)

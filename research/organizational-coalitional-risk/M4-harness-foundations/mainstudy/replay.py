@@ -24,6 +24,7 @@ class Replay:
         self.partial = partial
         self.files = {p for e in events for p in e["files"]}
         self.responses = {(e["stage"], e["actor"]): e["details"] for e in events if e["event"] == "response_received"}
+        self.error_details = {(e["stage"], e["actor"]): e["details"] for e in events if e["event"] == "error_body"}
         self.resolved = {f"Q{q}-{s}": strict_json((self.root / f"states/slot-results-Q{q}-{s}.json").read_bytes())
                          for q in range(1, 5) for s in ORDER
                          if f"states/slot-results-Q{q}-{s}.json" in self.files}
@@ -69,11 +70,16 @@ class Replay:
         if result_path in self.files:
             resolved = strict_json((self.root / result_path).read_bytes())[actor]
             if resolved["error"] and (stage, actor) not in self.responses:
-                raise CallError(resolved["error"])
+                partial_path = f"responses/{stage}-{actor}.error-body"
+                details = self.error_details.get((stage, actor), {})
+                raise CallError(resolved["error"], (self.root / partial_path).read_bytes() if partial_path in self.files else b"",
+                                details.get("representation", "no_response_body"), status=details.get("http_status"))
         key = stage, actor
         if key in self.responses:
             detail = self.responses[key]
-            return Reply((self.root / "responses" / name).read_bytes(), detail["representation"], detail.get("http_status", 200))
+            metadata_path = f"responses/{stage}-{actor}.metadata.json"
+            final_byte = strict_json((self.root / metadata_path).read_bytes()).get("final_byte") if metadata_path in self.files else None
+            return Reply((self.root / "responses" / name).read_bytes(), detail["representation"], detail.get("http_status", 200), final_byte)
         error_path = "responses/" + name.removesuffix(".json") + ".error.json"
         if error_path in self.files:
             raise CallError(strict_json((self.root / error_path).read_bytes())["code"])
@@ -92,6 +98,7 @@ def replay(original, target, partial=False):
         q, a = key.split("-")
         releases[int(q), a] = Release(**(item | {k: canonical(item[k]) for k in ("source_json", "evidence_json", "oracle_json")}))
     runner = execute(target, spec, adapter, trace=m["trace"], config=config, releases=releases)
+    runner.original_complete = adapter.complete_archive
     # Compare every durable committed stage prefix, not nondeterministic clocks.
     for name in sorted(adapter.files):
         if re.fullmatch(r"states/Q[1-4]-(?:C[1-5]|S|D|board|audit|rollover)\.json", name):

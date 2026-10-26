@@ -9,11 +9,11 @@ Authority: `research/organizational-coalitional-risk/M3-IMPLEMENTATION-BASELINE-
 
 | Phase | Modules | Required evidence | Status |
 |---|---|---|---|
-| E1 core | mainstudy/contracts, runner, materials, F1 archive/transport reuse | S != signature; dual atomic D; q0 allowed | Core implemented; replay pending E4 |
+| E1 core | mainstudy/contracts, runner, materials, F1 archive/transport reuse | S != signature; dual atomic D; q0 allowed | Complete |
 | E2 evidence | mainstudy/fixtures | two actual dependency implementations per archetype; executed limited/full oracle; exact hashes | Implemented; executed assertions passing |
-| E3 controls | materials projection, runner memory/audit | all serialized arms, role privacy, blind counterparty masking | Implemented; full regression in progress |
+| E3 controls | materials projection, runner memory/audit | all serialized arms, role privacy, blind counterparty masking | Complete |
 | E4 dry runs | scripts, replay, CLI | four quarters × P/R × A/B/C/D × two blocks, no model calls | Complete matrix + 18 negative traces and exact replay executed |
-| E5 review | annotation/preflight/live/package | adversarial traces; worst-case context bound; independent critique; launch gate | In progress; maximal context launch blocker established |
+| E5 review | annotation/preflight/live/package | adversarial traces; worst-case context bound; independent critique; launch gate | Complete; separate live approval remains required |
 
 Scientific semantics: preserve locked overarching/narrow questions verbatim in the baseline. No new scientific decisions adopted. No backlog, maintenance, scalar welfare or oracle veto. F1 remains unchanged.
 
@@ -34,3 +34,17 @@ E4 baseline/self-review: no later-quarter truth narrative, carryover or final-ho
 **Established launch blocker:** maximal legal histories are not certified to fit proposed DeepSeek 1,048,576-token context. Structural byte/token bound exceeds it; normal scripted fits do not prove maximum fit. No truncation or cap reduction adopted. Expanded engineering wire-byte guard to 2MiB so legal histories can be inspected. Exact tokenization/encoding proof or separately approved provider capacity is still required. Proposed full-context reservation $75/matched pair, maximum $600/16 episodes (1,792 calls), NOT spending authorization. Budget, absolute stopping timestamp, prompts/fixtures/model config require separate researcher approval.
 
 Next action: adversarial replay/interruption and concurrency tests, mocked provider/approval gates; publish rendered review package and source/oracle inventory; independent final critique and final test run.
+
+## E5 final checkpoint
+
+The earlier context blocker above was resolved, not waived. Subject messages and summaries use lossless byte-length framing rather than escaped nested JSON. Final structural bound: 128 body occurrences (120 C + eight own/received S summaries), five additional summary occurrences, all at2048 bytes, plus131072 fixed metadata =403456 content bytes. Pinned public byte-level BPE has no expanding normalization/prefix spaces and all256 byte symbols exist. With4096 wrapper and8192 generation allowance, total415744 <1048576. Actual maximum metadata witness40604 bytes. Executed public reference encoding/tokenization on Q4 maximal witnesses: P286605 tokens, R286566; wrapper170 bytes. This is offline capacity under the documented model encoding, not an empirical provider call or comprehension claim. Launch requires the indexed tokenizer/encoding proof, not arithmetic alone.
+
+Final executed full suite: **70 tests passed in19.138s**, including all50 original foundations/F1 tests unchanged and20 main-study tests. Final CLI package at `/private/tmp/mainstudy-final-package-v2` and raw archives at `/private/tmp/mainstudy-final-runs-v2`:16 complete matrix episodes,18 negative episodes and2 maximal episodes, plus exact replays. Source/oracle fixture inventory and readable Q1/Q3 requests for both graphs and every information arm are committed under `mainstudy/review-package`. Test output is retained as `mainstudy/offline-test-results.txt`.
+
+Final self-review fixed three independently demonstrated issues: disabled-message S-summary side channel; false negative from incomplete reconciliation; retrospective cross-quarter assent. Optional peer S summaries now exist only in A; they are authenticated communication with persistent participant-only history and annotation IDs. A direct S-summary offer/C3-assent/enactment test passes. All assents must precede the earliest relevant D. Partial negatives stay unknown, with explicit technical unknown counts. The independent review record is `mainstudy/INDEPENDENT-REVIEW.md`.
+
+No F1 source/test/frozen-input modification was made; successful frozen F1 ancestry273c814 is included. No live behavioral provider call, credential request or inference charge was initiated. No backlog, repairs, scalar welfare or oracle veto survived into runtime.
+
+**Readiness: READY FOR RESEARCHER REVIEW.** No known failing offline check or unresolved demonstrated engineering defect. Provider long-context behavior remains unmeasured, the technical cases establish only the finite frozen workload, D retains archetype clues, and small-n graph effects cannot identify intent or an isolated cycle-length mechanism. Proposed configuration and conservative ceiling are fully written but unauthorized:112 calls/episode,1792 maximum, $75 reserved per pair/$600 maximum. Prompts/fixtures, model/settings, exact prefix and a timezone-aware absolute stop time require separate researcher approval.
+
+Next action: researcher inspect `mainstudy/README.md`, independent review and frozen review package. Do not execute `live` from a proposed manifest. The final code commit is recorded by the next checkpoint; `git rev-parse HEAD` resolves the documentation commit containing this status.

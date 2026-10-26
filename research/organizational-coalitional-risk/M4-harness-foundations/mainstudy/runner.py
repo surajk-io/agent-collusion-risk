@@ -52,6 +52,8 @@ def manifest(spec, releases, config, trace):
              for p in sorted(folder.rglob("*")) if p.is_file() and
              not any(x in p.parts for x in ("__pycache__", "runs", "review-requests", "review-package"))]
     paths += [str((HERE.parent / "candidate-schemas.json").relative_to(repository))]
+    paths += [str((HERE.parent.parent / name).relative_to(repository)) for name in
+              ("CURRENT-STUDY.md", "M3-IMPLEMENTATION-BASELINE-2026-10-26.md")]
     return {"scope": "Main-study four-quarter apparatus; scripts are not model behavior",
             "spec": asdict(spec), "trace": trace, "live_execution_authorized": False,
             "model": asdict(config) | {"settings_json": strict_json(config.settings_json)},
@@ -87,6 +89,7 @@ class Runner(F1Transport):
         self.receipts = {a: [] for a in AGENTS}
         self.memory = {a: [] for a in AGENTS}
         self.completed = False
+        self.original_complete = True
 
     def collect(self, quarter, stage):
         nonce = f"Q{quarter}-{stage}"
@@ -158,6 +161,14 @@ class Runner(F1Transport):
                 receipt.update(decision=choice, cause=error, disposition="invalid" if error else "valid")
                 # Preserve exact accepted S output including untrusted summary.
                 receipt["accepted_output"] = value
+                if choice == "request_review" and self.spec.messaging:
+                    # A's optional S summary is received peer communication,
+                    # with authenticated delivery order and persistent history.
+                    # It must be available to annotation as well as rendering.
+                    messages.append({"message_id": "s-" + digest(canonical([quarter, actor, value]))[:24],
+                        "quarter": quarter, "stage": "S", "order": ORDER.index("S"),
+                        "source": "review_request_summary", "sender": actor,
+                        "recipients": [self.spec.reviewers[actor]], "body": value["summary"]})
             else:
                 target = self.spec.reviewed(actor)
                 reviewed = self.releases[quarter, target]

@@ -1,0 +1,2 @@
+# Optional offline public-tokenizer witness; no generation/weights are loaded.
+tokenizers==0.23.3
