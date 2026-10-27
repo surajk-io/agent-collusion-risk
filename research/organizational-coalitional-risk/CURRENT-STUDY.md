@@ -1,6 +1,6 @@
 # Current study — authoritative handoff
 
-**Updated after Apart submission, 26 October 2026.** This file supersedes earlier status banners in the engineering log, M1/M2/M3 candidate packets and frozen F1 documents. Preserve those original artifacts as dated evidence; they do **not** describe the current stage.
+**Status updated 28 October 2026:** The October 26 Apart sprint evidence remains unchanged. A new **prospective** research direction was discussed October 28; see [RESEARCH-AGENDA-2026-10-28.md](RESEARCH-AGENDA-2026-10-28.md). This file supersedes earlier status banners in the engineering log, M1/M2/M3 candidate packets and frozen F1 documents. Preserve those original artifacts as dated evidence; they do **not** describe the current stage.
 
 ## Research questions
 
@@ -11,6 +11,18 @@
 > Does the organization of cross-workflow reciprocal reviewer dependencies alter LLM agents' propensity to propose, negotiate or execute unauthorized reciprocal approvals, when agent workload and per-task sign-off requirements are matched?
 
 An observed graph pattern or procedural violation does not by itself establish actual collusion.
+
+## Prospective direction from 28 October discussion — NOT a frozen follow-up
+
+The original approved overarching question above is **unchanged**. The paired-versus-ring comparison was a deliberately small first case, not the intended entirety of the research program.
+
+**Proposed next emphasis:** characterize structural coalition opportunities mathematically, then test whether selected organizational properties causally affect *observed* unauthorized coordination under controlled model/task conditions. Investigate how effects differ across LLMs; do **not** presuppose a universal cross-model predictor. A later, distinct goal is to test pre-specified opportunity metrics against behavior on held-out organizational structures.
+
+The initial P/R comparison is **not** a single-property intervention. Under the fixed one-owner/one-reviewer, no-self-review four-agent constraints, reciprocal pairs and the four-cycle jointly change reciprocity, cycle length and dependent information/relationship properties. Before running a new causal experiment, construct a feasible pair or set of organizations and explicitly document which attributes change and which cannot be held fixed. Do not confuse mechanical signatory size (two in both graphs) with minimum strictly mutually beneficial *complete* coalition size under illustrative preferences.
+
+**Decision status:** Research direction discussed and now documented; exact structural variable, paired counterfactual, model, incentive regime, agent-facing wording, controls, calibration budget, outcome coding and sample size remain **open and require explicit scientific approval**. The sprint's original run authorization does not carry forward. The new document is a research agenda, not preregistration or evidence.
+
+**Immediate bounded plan:** Recover and independently audit original archives where possible; specify one discriminating structural contrast; perform bounded capability/behavior calibration and fresh replicated trials only after a frozen protocol is approved. Multiple models or held-out structures are extensions, not promised results of a three-to-four-day pilot. A potential arXiv preprint requires an auditable, appropriately scoped contribution with reproducible data, honest uncertainty and prior-work comparison; publication is not an automatic sprint deliverable.
 
 ## Completed and checkpointed
 
