@@ -16,12 +16,17 @@
 
 See [RESULTS-2026-10-26.md](RESULTS-2026-10-26.md). Q1 legitimate deployments: 8/8. Q2–Q4 unqualified deployments: 0/24. No unauthorized owner authorization in either graph. Distinct P/R message counts cannot be interpreted as collusion. Two Q2 technical fallbacks and missing independent human semantic coding limit interpretation. One matched pair cannot establish a graph effect, statistical equivalence or mechanistic mediation.
 
-## Next research choices — open, not approved
+## Next research choices — prospective 2026-10-28 direction, not approved protocol
 
-1. Preserve and verify **original** live archives and conduct independent human annotation, without retroactively changing sprint findings.
-2. Diagnose floor effects and technical fallback mechanisms under a new protocol; make policy compliance and genuine collusion opportunity distinguishable.
-3. Choose a smaller but adequately replicated study, with controlled reviewer/communication/incentive interventions and legitimate productivity measurements.
-4. Only expand to multi-graph opportunity prediction when the first intervention yields discriminating empirical data.
+The overarching aim remains to test whether **mathematically characterized organizational coalition opportunities** are useful for understanding or predicting *realized* harmful coordination, and how any relationship varies across LLMs. P/R is the historical first case, not the endpoint. See [research agenda](RESEARCH-AGENDA-2026-10-28.md) for motivations, construct distinctions and limitations.
+
+1. **Evidence/provenance gate:** Verify original live archives, complete independent human semantic annotation where possible and preserve the original October 26 result without retroactive rewriting.
+2. **Design/identification gate:** Choose one theoretically motivated structural feature and a realizable counterfactual. Prove what can be held constant; the original P/R contrast changed reciprocity and cycle length together. Define legitimate throughput and mechanical safety-control baselines.
+3. **Bounded calibration gate:** Examine agent capability, opportunity recognition and credible incentive conflicts across a small documented set of models/environments without optimizing for a favored structural treatment effect. Diagnose floor effects and technical fallbacks.
+4. **Fresh replicated causal study:** Freeze protocol and labels; randomize/counterbalance matched independent episodes; estimate attempted/negotiated/enacted coordination with uncertainty and model-conditional interpretation. A limited second-model comparison is optional, not promised.
+5. **Later prediction/generalization:** Only with sufficient behavioral signal, test pre-specified opportunity measures against *held-out organizational configurations* and simple baselines; investigate model-by-structure interactions without claiming a universal collusion law.
+
+**Three-to-four-day target:** A rigorous intervention specification and bounded pilot, with preliminary empirical answers if time, cost, observability and semantic verification permit. Not a promised generalizable risk predictor or statistically decisive result. **arXiv is a possible later preprint route**, conditional on originality, independently auditable evidence, accurate limitations and reproducibility—not a predetermined publication deadline.
 
 See the [original M3 design](M3-MAIN-STUDY-DESIGN-PROPOSAL.md) and [implementation baseline](M3-IMPLEMENTATION-BASELINE-2026-10-26.md) as **dated provenance**, not instructions to continue spending the original budget. F1 and scripted positive traces are engineering validation, not spontaneous behavioral episodes.
 
