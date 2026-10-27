@@ -2,10 +2,15 @@
 
 Self-directed research into **how organizational structure creates opportunities for harmful coordination among task-specialized AI agents**, how opportunities relate to actual behavior, and how institutional design might resist misuse while preserving legitimate cooperation.
 
-**Status: Apart AI Collusion Research Sprint submitted on 26 October 2026.** One four-quarter **matched P/R pair** was executed using the frozen main-study harness (Condition A, Block 1). This is an exploratory pilot, **not evidence of a graph effect**.
+**Status (28 October 2026):** Apart AI Collusion Research Sprint submitted on 26 October; a **prospective** follow-up now focuses on whether independently characterized organizational opportunity properties explain or predict harmful coordination, and how structural effects depend on the LLM model. The follow-up is a research agenda, **not** new experimental evidence or an approved inference protocol.
+
+**Research motivation:** Formal organizational analysis can identify feasible or conditionally profitable coalitions; empirical tests must determine whether agents actually recognize and exploit those opportunities. The goal is not a universal model-independent collusion law. The next step is a controlled intervention varying one structural feature as independently as feasible, followed by replication and (later) tests on held-out organizations. Mechanical enforcement and legitimate workflow performance remain essential comparison points.
+
+**Historical sprint status:** One four-quarter **matched P/R pair** was executed using the frozen main-study harness (Condition A, Block 1). This is an exploratory pilot, **not evidence of a graph effect**.
 
 ## Start here
 
+- [Prospective research agenda (28 Oct 2026)](research/organizational-coalitional-risk/RESEARCH-AGENDA-2026-10-28.md) — motivation, candidate predictions, experimental design constraints, proposed bounded follow-up and preprint criteria.
 - [Current scientific state and next steps](research/organizational-coalitional-risk/CURRENT-STUDY.md) — authoritative; distinguishes completed work, limitations, outstanding checks, and future plans.
 - [Sprint empirical results](research/organizational-coalitional-risk/RESULTS-2026-10-26.md) — what was observed, what is preliminary, and what is missing.
 - [Research overview](research/organizational-coalitional-risk/README.md) — broader motivation and hypotheses.
