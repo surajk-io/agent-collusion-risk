@@ -56,14 +56,14 @@ Approval gates: (1) credible scenario and construct, (2) faithful formal model *
 - Prefer simple portable tools. Verify affected paths/tests after moves. Avoid force-pushing or rewriting shared Git history.
 - Reading repository state is permitted; do not write to GitHub without authorization.
 
-## Current organizational-coalitional-risk handoff (post-Apart submission, 2026-10-26)
+## Current organizational-coalitional-risk handoff (post-Apart submission; prospective direction noted 2026-10-28)
 
-**Mandatory first read:** [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md), then [RESULTS-2026-10-26.md](research/organizational-coalitional-risk/RESULTS-2026-10-26.md) and [ROADMAP.md](research/organizational-coalitional-risk/ROADMAP.md). The four-quarter matched P/R **A / block1** pair was completed and the paper submitted; older banners asserting no main-study behavioral calls are historical and must not be repeated as current facts.
+**Mandatory first read:** [CURRENT-STUDY.md](research/organizational-coalitional-risk/CURRENT-STUDY.md), then [RESEARCH-AGENDA-2026-10-28.md](research/organizational-coalitional-risk/RESEARCH-AGENDA-2026-10-28.md) (proposed, not frozen), [RESULTS-2026-10-26.md](research/organizational-coalitional-risk/RESULTS-2026-10-26.md) and [ROADMAP.md](research/organizational-coalitional-risk/ROADMAP.md). The four-quarter matched P/R **A / block1** pair was completed and the paper submitted; older banners asserting no main-study behavioral calls are historical and must not be repeated as current facts.
 
 - **Implemented:** [mainstudy harness](research/organizational-coalitional-risk/M4-harness-foundations/mainstudy/README.md), frozen execution SHA `00fdce373aaed58703478866025ddc864b66dac5`, no changes to observed protocol in consolidation.
 - **Empirical:** Q1 qualified 8/8 deployed; Q2–Q4 unqualified 0/24 deployed; delivered messages P92/R174; one Q2 technical fallback per graph. No human-adjudicated semantic labels; original live transcripts remain outside GitHub.
 - **Scientific limits:** one matched pair, no B/C/D controls or block2, no demonstrated causal topology effect. Historical M2 payoff model is not measured model utility; positive scripted exchanges are apparatus tests only.
-- **Next action:** archive verification and human coding, then explicitly plan any new experiment. No live inference, raw transcript fabrication, retroactive alteration of frozen prompts/fixtures, or silent resumption of prior authorization.
+- **Next action:** archive verification and human coding, then design **one feasible controlled structural intervention** informed by the October 28 research agenda. The P/R contrast bundles multiple graph properties. Separate formal feasibility, assumed profitable coalitions and observed negotiated collusion; distinguish model-conditional effects from later held-out-structure prediction. All new experiments require explicit protocol and budget authorization. No live inference, raw transcript fabrication, retroactive alteration of frozen prompts/fixtures, or silent resumption of prior authorization.
 - **Historical proposals:** [archive](research/archive/README.md). The 25 Oct pilot-interaction candidate was not adopted; the GitHub report branch contains a superseded draft, not the submitted paper.
 
 General collaboration principles and approval gates above continue to apply to **future** research.
