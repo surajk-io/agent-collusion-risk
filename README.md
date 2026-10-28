@@ -1,16 +1,16 @@
 # Agent Collusion Risk
 
-Self-directed research into **how organizational structure creates opportunities for harmful coordination among task-specialized AI agents**, how opportunities relate to actual behavior, and how institutional design might resist misuse while preserving legitimate cooperation.
+Self-directed research into **how organizational structure and task dependencies shape opportunities for collusion among task-specialized AI agents**, how agent incentives and repeated interactions affect the realization of those opportunities, and how organizations can preserve legitimate cooperation.
 
-**Status (28 October 2026):** Apart AI Collusion Research Sprint submitted on 26 October; a **prospective** follow-up now focuses on whether independently characterized organizational opportunity properties explain or predict harmful coordination, and how structural effects depend on the LLM model. The follow-up is a research agenda, **not** new experimental evidence or an approved inference protocol.
+**Status (29 October 2026):** Apart AI Collusion Research Sprint submitted on 26 October. The researcher has approved a refined **working question**: how ex ante organizational structure interacts with incentives and repeated interactions to shape the emergence, stability and dynamics of **collusion** (not harmful coordination broadly). A controlled structure-by-incentive experiment is the next design milestone; **no** new protocol, inference runs or spend have been approved.
 
-**Research motivation:** Formal organizational analysis can identify feasible or conditionally profitable coalitions; empirical tests must determine whether agents actually recognize and exploit those opportunities. The goal is not a universal model-independent collusion law. The next step is a controlled intervention varying one structural feature as independently as feasible, followed by replication and (later) tests on held-out organizations. Mechanical enforcement and legitimate workflow performance remain essential comparison points.
+**Research motivation:** Formal organizational analysis can identify feasible or conditionally profitable coalitions; empirical tests must determine whether agents recognize, negotiate and sustain collusive arrangements. The central empirical target is **how structure modifies agents' responses to incentive and history changes**, not an absolute model-independent collusion rate. A structure-by-incentive contrast must distinguish collusion from harmful assistance or coincident violations and retain legitimate workflow and mechanical-enforcement baselines. Later tests may examine held-out organizations.
 
 **Historical sprint status:** One four-quarter **matched P/R pair** was executed using the frozen main-study harness (Condition A, Block 1). This is an exploratory pilot, **not evidence of a graph effect**.
 
 ## Start here
 
-- [Prospective research agenda (28 Oct 2026)](research/organizational-coalitional-risk/RESEARCH-AGENDA-2026-10-28.md) — motivation, candidate predictions, experimental design constraints, proposed bounded follow-up and preprint criteria.
+- [Research agenda (28 Oct; refined 29 Oct 2026)](research/organizational-coalitional-risk/RESEARCH-AGENDA-2026-10-28.md) — motivation, candidate predictions, experimental design constraints, proposed bounded follow-up and preprint criteria.
 - [Current scientific state and next steps](research/organizational-coalitional-risk/CURRENT-STUDY.md) — authoritative; distinguishes completed work, limitations, outstanding checks, and future plans.
 - [Sprint empirical results](research/organizational-coalitional-risk/RESULTS-2026-10-26.md) — what was observed, what is preliminary, and what is missing.
 - [Research overview](research/organizational-coalitional-risk/README.md) — broader motivation and hypotheses.
