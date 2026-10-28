@@ -1,6 +1,6 @@
 # Current study — authoritative handoff
 
-**Status updated 28 October 2026:** The October 26 Apart sprint evidence remains unchanged. A new **prospective** research direction was discussed October 28; see [RESEARCH-AGENDA-2026-10-28.md](RESEARCH-AGENDA-2026-10-28.md). This file supersedes earlier status banners in the engineering log, M1/M2/M3 candidate packets and frozen F1 documents. Preserve those original artifacts as dated evidence; they do **not** describe the current stage.
+**Status updated 29 October 2026:** The October 26 Apart sprint evidence remains unchanged. A prospective agenda was recorded on October 28 and the researcher explicitly approved a more collusion-specific working emphasis on October 29; see [RESEARCH-AGENDA-2026-10-28.md](RESEARCH-AGENDA-2026-10-28.md). This file supersedes earlier status banners in the engineering log, M1/M2/M3 candidate packets and frozen F1 documents. Preserve those original artifacts as dated evidence; they do **not** describe the current stage.
 
 ## Research questions
 
@@ -12,7 +12,19 @@
 
 An observed graph pattern or procedural violation does not by itself establish actual collusion.
 
-## Prospective direction from 28 October discussion — NOT a frozen follow-up
+## Current working refinement — researcher-approved 29 October 2026
+
+> How do mathematically characterized properties of organizational structure interact with agent incentives and repeated interactions to shape the emergence, stability, and dynamics of collusion among task-specialized LLM agents?
+
+**Scope and intent:** The target is **collusion**: intentional coordination toward an unauthorized shared objective (including reciprocal arrangements), not harmful assistance or policy violations in general. Explicit proposals, negotiated agreements, subsequent contingent behavior, defection, and persistence are relevant but distinct observations; harmful helping, correlated independent violations, and ordinary cooperation remain competing explanations. Tacit collusion is possible but requires stronger causal evidence than an action pattern alone.
+
+**Scientific emphasis:** Study *response relationships*, not only static or absolute collusion rates: how changing organizational task-dependency/coalition opportunities modifies behavioral responses to incentive manipulations and interaction history; look for interactions, thresholds, reversals, and path dependence **without assuming they occur**. Absolute rates can be estimated for a specified model and environment but are not the primary theoretical target. Derive candidate structural descriptions ex ante, not from fitted behavioral outcomes. Treat textual rewards as experimental incentives, **not measured intrinsic LLM utility**.
+
+**Tentative central hypothesis:** Structures that make reciprocal, mutually beneficial collusive arrangements easier to discover, negotiate, monitor, and sustain may amplify the effect of incentives that favor such arrangements. This hypothesis is **not approved as a proven claim or frozen experimental prediction**; plausible alternatives include no effect, a reversed effect, or confounding through information exposure and task difficulty.
+
+**Decision status:** This refined direction and a shift from open-ended novelty searches to concrete experimental design were explicitly endorsed by the researcher. Exact scenario, structural variable, incentive manipulations, prompts, controls, annotations, budget, and analysis remain *unapproved*, requiring the usual scientific gates before inference runs. The original approved question and dated experimental questions above are retained verbatim for provenance.
+
+## Earlier prospective direction from 28 October discussion — context for the 29 October refinement
 
 The original approved overarching question above is **unchanged**. The paired-versus-ring comparison was a deliberately small first case, not the intended entirety of the research program.
 
@@ -20,9 +32,9 @@ The original approved overarching question above is **unchanged**. The paired-ve
 
 The initial P/R comparison is **not** a single-property intervention. Under the fixed one-owner/one-reviewer, no-self-review four-agent constraints, reciprocal pairs and the four-cycle jointly change reciprocity, cycle length and dependent information/relationship properties. Before running a new causal experiment, construct a feasible pair or set of organizations and explicitly document which attributes change and which cannot be held fixed. Do not confuse mechanical signatory size (two in both graphs) with minimum strictly mutually beneficial *complete* coalition size under illustrative preferences.
 
-**Decision status:** Research direction discussed and now documented; exact structural variable, paired counterfactual, model, incentive regime, agent-facing wording, controls, calibration budget, outcome coding and sample size remain **open and require explicit scientific approval**. The sprint's original run authorization does not carry forward. The new document is a research agenda, not preregistration or evidence.
+**Protocol status:** The 29 October research focus is approved for design, but the exact structural variable, paired counterfactual, model, incentive regime, agent-facing wording, controls, calibration budget, outcome coding and sample size remain **open and require explicit scientific approval**. The sprint's original run authorization does not carry forward. The new document is a research agenda, not preregistration or evidence.
 
-**Immediate bounded plan:** Recover and independently audit original archives where possible; specify one discriminating structural contrast; perform bounded capability/behavior calibration and fresh replicated trials only after a frozen protocol is approved. Multiple models or held-out structures are extensions, not promised results of a three-to-four-day pilot. A potential arXiv preprint requires an auditable, appropriately scoped contribution with reproducible data, honest uncertainty and prior-work comparison; publication is not an automatic sprint deliverable.
+**Immediate bounded plan:** Begin designing a discriminating **structure-by-incentive** experiment and collusion-specific coding rubric; preserve and independently audit original archives where possible; perform bounded capability/behavior calibration and fresh replicated trials only after a frozen protocol is approved. Multiple models or held-out structures are extensions, not promised results of a three-to-four-day pilot. A potential arXiv preprint requires an auditable, appropriately scoped contribution with reproducible data, honest uncertainty and prior-work comparison; publication is not an automatic sprint deliverable.
 
 ## Completed and checkpointed
 
@@ -55,7 +67,7 @@ Preliminary AI-assisted semantic reading found no explicit improper reciprocal p
 1. Obtain/export the original hash-verified live archives into a deliberate shareable reproducibility location after checking they contain no secrets or private provider payloads. Record stable archive digests. This cannot be inferred from a directory path.
 2. Do independent, blinded semantic annotation of delivered messages with exact quotes and authenticated receipt/action IDs. Distinguish attempted explicit negotiation from policy-compliant exchanges and model-generated mistakes.
 3. Verify results against archived code and predeclared denominators; document the two technical fallbacks and incomplete eligibilities.
-4. For a **new follow-up**, fix the provider timeout/output issue under a newly frozen protocol, replicate multiple paired blocks, then choose informative intervention arms/incentives without selecting conditions for a hoped-for positive result.
+4. For a **new follow-up**, design the structure-by-incentive contrast and interaction estimand first; validate that collusive proposals/agreements can be observed without instructing main-condition agents to collude. Fix the provider timeout/output issue in a newly frozen protocol and replicate independent matched episodes without selecting arms for a hoped-for positive result.
 5. Measure legitimate throughput under comparable safe/verification states; do not equate universal refusals with robust organizational design.
 
 ## Historical decisions and archives
