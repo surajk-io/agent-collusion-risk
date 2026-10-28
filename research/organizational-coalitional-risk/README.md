@@ -8,6 +8,14 @@
 
 **Long-term goal:** Design agent organizations that resist harmful coordination **while retaining legitimate cooperation and productivity**.
 
+## Current working research focus (approved 29 October 2026)
+
+> How do mathematically characterized properties of organizational structure interact with agent incentives and repeated interactions to shape the emergence, stability, and dynamics of collusion among task-specialized LLM agents?
+
+This **refines the working emphasis**, not the historical sprint question. The primary target is intentional collusive coordination, **not** all harmful assistance or coordinated task behavior. Study differences in behavioral *responses* to incentive and structural interventions, including potential reciprocal agreements and persistence, rather than seeking a universal absolute collusion rate. The proposed magnification of incentive effects by structural exploitability is a **tentative hypothesis**. Mechanically feasible violations, modeled mutually profitable coalitions, and observed collusion must remain separate. See [29 October agenda refinement](RESEARCH-AGENDA-2026-10-28.md#october-29-refinement--approved-working-direction-not-a-protocol).
+
+**Immediate next milestone:** Design a controlled structure-by-incentive contrast and collusion-specific evidence/annotation standards. No new experiment, model calls, or budget have yet been approved.
+
 ## Conceptual model
 
 1. **Institutional design:** local objectives, permissions, decision rights, communication, information and starting state.
@@ -16,7 +24,7 @@
 
 This is a **hypothesis about explanatory structure**, not an established mediated causal chain. Never infer actual collusion from a graph motif, a hidden software bug or one unsafe approval.
 
-## Next research direction (proposed 2026-10-28)
+## Earlier prospective framing (2026-10-28; refined above on 29 October)
 
 **The P/R study is a first example, not the intended scope of the research.** The longer-term question is whether mathematically characterized organizational coalition opportunities are informative about *observed* harmful coordination, first within a particular model/environment and eventually across held-out structures and different LLMs. The framework explicitly allows that different models may have different baseline propensities and respond differently to the same structural incentives. A universal model-independent risk predictor is **not** assumed.
 
