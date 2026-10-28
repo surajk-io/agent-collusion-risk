@@ -1,6 +1,23 @@
 # Research agenda — structural opportunities and model-dependent collusion (2026-10-28)
 
-**Status: prospective research direction, not an approved experimental protocol or completed result.** This checkpoint records the researcher's October 28 discussion and proposed next steps. The original overarching question remains in [CURRENT-STUDY.md](CURRENT-STUDY.md); the October 26 Apart submission and its frozen protocol are historical evidence, not rewritten here. Further research-design choices, model calls, and expenditure need separate explicit approval.
+**Status: October 28 prospective agenda with a researcher-approved October 29 focus refinement; still not an approved experimental protocol or completed result.** This checkpoint records the researcher's October 28 discussion and proposed next steps. The original overarching question remains in [CURRENT-STUDY.md](CURRENT-STUDY.md); the October 26 Apart submission and its frozen protocol are historical evidence, not rewritten here. Further research-design choices, model calls, and expenditure need separate explicit approval.
+
+
+## October 29 refinement — approved working direction, not a protocol
+
+The researcher clarified that the intended target is **collusion**, not harmful coordination broadly. Collusion requires evidence of intentional coordination around a joint unauthorized objective; unilateral noncompliance, spontaneous helping, benign task coordination, and independent errors are separate phenomena or competing explanations. Apparent reciprocal behavior does not alone establish intent, especially without communication or causal partner-response controls.
+
+**Refined research question:** How do mathematically characterized properties of organizational structure interact with agent incentives and repeated interactions to shape the emergence, stability, and dynamics of collusion among task-specialized LLM agents?
+
+The emphasis is on **comparative responses and system behavior**—structure-by-incentive interactions, responses to observed partner behavior, learning/reciprocity, agreement formation, defection, persistence, potential thresholds and nonlinearities—not the universal prediction of a single absolute collusion rate. Estimate effects conditional on an explicitly specified model and task. No assumed intrinsic LLM utility or universal monotonic relationship.
+
+**Tentative hypothesis, not a result:** Structures that permit more easily discovered, monitored, and sustained mutually beneficial collusive arrangements may magnify agents' responses to incentives favoring those arrangements. Strong competing hypotheses include no interaction, opposite interaction, and apparent effects driven by graph-linked differences in information, task difficulty, or mechanically feasible misconduct.
+
+**Priority experimental design gate:** Specify one realizable organizational-structure contrast and at least two interpretable incentive conditions, with a predeclared structure-by-incentive comparison. Hold opportunity to commit a single unauthorized act and legitimate workload as comparable as feasible; explicitly disclose bundled graph differences. Capture attempted proposals, contingent deals, reciprocation, partner-response evidence, enacted violations, legitimate throughput, and mechanical/independent-action controls **as separate outcomes**. Check model comprehension and floor effects before allocating a large run budget; do not artificially instruct the study agents to collude or optimize conditions for a favored effect. Freeze details and obtain approval before inference.
+
+**Novelty and effort:** Several prior studies vary organizational topology, incentives, repeated interactions, or their neighboring constructs. A scoped interaction study remains plausibly distinctive, **not proven novel**. Other research emerging during the same Apart sprint is contemporaneous independent work, not automatic grounds to erase originality; overlapping results nevertheless constrain the claim. Pause additional broad novelty reviews; check only concrete near-neighbors as needed to validate the chosen experimental contrast.
+
+**Priority:** Move from broad conceptual/literature exploration to a small falsifiable protocol. No code changes, paid calls, spending, or new run authorization follow from this agenda checkpoint.
 
 ## Why this question might matter
 
